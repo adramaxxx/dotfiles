@@ -1,2 +1,2 @@
-# dotfilles
+# dotfiles
 nothing special :) 
