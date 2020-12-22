@@ -35,6 +35,7 @@ Plug 'therubymug/vim-pyte'
 Plug 'dracula/vim'
 Plug 'joshdick/onedark.vim'
 Plug 'preservim/nerdtree'
+Plug 'itchyny/calendar.vim'
 call plug#end()
 
 " use navigation keys to move around windows when splitting
@@ -43,7 +44,7 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-colorscheme onedark
+colorscheme gruvbox
 set t_Co=256
 hi Normal guibg=NONE ctermbg=NONE
 
@@ -51,7 +52,7 @@ hi Normal guibg=NONE ctermbg=NONE
 map <leader>md :InstantMarkdownPreview<CR>
 let g:instant_markdown_autostart = 0
 let g:instant_markdown_mathjax = 1
-let g:instant_markdown_browser = ""
+let g:instant_markdown_browser = "firefox"
 
 " set spell when filetype is .md or .tex
 autocmd BufNewFile,BufRead *.md set spell
