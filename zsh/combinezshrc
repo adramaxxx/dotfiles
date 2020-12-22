@@ -1,0 +1,35 @@
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+# Path to your oh-my-zsh installation.
+export ZSH="/home/simon/.oh-my-zsh"
+
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time oh-my-zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $RANDOM_THEME
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+ZSH_THEME="robbyrussell"
+
+plugins=(git)
+
+source $ZSH/oh-my-zsh.sh
+
+# User configuration
+
+# export MANPATH="/usr/local/man:$MANPATH"
+export PATH="/sbin:$PATH"
+export PATH="/usr/sbin:$PATH"
+export PATH="/usr/bin:$PATH"
+compdef sshfs=scp
+
+alias remove-orphans='pacman -Rns $(pacman -Qtdq)'
+alias fixdir='sudo find . -type d -exec chmod 770 {} \;'
+alias fixfile='sudo find . -type f -exec chmod 660 {} \;'
+alias size-scan='du -sh * | grep -v "/$" | sort -rh'
+alias size-scan-hidden='du -sh * .* | grep -v "/$" | sort -rh'
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/fzf/completion.zsh
+source /usr/share/fzf/key-bindings.zsh
+source ~/.config/private_alias/aliases
+alias cmake="cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1"
+
