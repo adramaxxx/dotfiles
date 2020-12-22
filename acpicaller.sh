@@ -8,6 +8,7 @@ echo -e '\t 3 battery saving mode \n'
 echo -e '\t 4 rapid charging mode on \n'
 echo -e '\t 5 rapid charging mode off \n'
 
+echo -n 'option : ' 
 read OPTION
 
 case $OPTION in 
