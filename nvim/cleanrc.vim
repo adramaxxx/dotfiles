@@ -44,6 +44,8 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+let g:phpactorPhpBin = "/usr/bin/php"
+
 colorscheme gruvbox
 set t_Co=256
 hi Normal guibg=NONE ctermbg=NONE

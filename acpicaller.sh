@@ -2,11 +2,11 @@
 
 echo -e "acpi caller script for thinkpad 5 \n"
 
-echo -e '\t 1 intelligent cooling mode \n'
-echo -e '\t 2 extreme performance mode \n'
-echo -e '\t 3 battery saving mode \n'
-echo -e '\t 4 rapid charging mode on \n'
-echo -e '\t 5 rapid charging mode off \n'
+echo -e '\t 1 intelligent cooling mode (0x0) \n'
+echo -e '\t 2 extreme performance mode (0x1) \n'
+echo -e '\t 3 battery saving mode (0x2) \n'
+echo -e '\t 4 rapid charging mode on (0x1) \n'
+echo -e '\t 5 rapid charging mode off (0x0) \n'
 
 echo -n 'option : ' 
 read OPTION

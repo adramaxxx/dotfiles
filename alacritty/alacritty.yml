@@ -28,7 +28,7 @@
  #   cyan: "#56b6c2"
  #   white: "#ECEFF4"
 
-background_opacity: 0.85
+background_opacity: 0.95
 
 
   
@@ -39,8 +39,8 @@ TERM: xterm-256color
 colors:
   # Default colors
   primary:
-    # hard contrast: background = '#1d2021'
-    background: '#282828'
+    hard contrast: background = '#1d2021'
+    #background: '#282828'
     # soft contrast: background = '#32302f'
     foreground: '#ebdbb2'
 
