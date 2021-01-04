@@ -28,12 +28,12 @@ colors:
     cyan: "#56b6c2"
     white: "#ECEFF4"
 
-background_opacity: 0.95
+    #background_opacity: 0.95
 
 
   
 
-#TERM: xterm-256color
+TERM: xterm-256color
 
 # Colors (Gruvbox dark)
 #colors:

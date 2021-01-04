@@ -46,7 +46,8 @@ nnoremap <C-H> <C-W><C-H>
 
 let g:phpactorPhpBin = "/usr/bin/php"
 
-colorscheme gruvbox
+colorscheme onedark
+" below command is to keep tmux sane
 set t_Co=256
 hi Normal guibg=NONE ctermbg=NONE
 
