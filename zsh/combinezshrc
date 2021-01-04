@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/simon/.oh-my-zsh"
+export ZSH="/home/adramax/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -30,6 +30,6 @@ alias size-scan-hidden='du -sh * .* | grep -v "/$" | sort -rh'
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/fzf/completion.zsh
 source /usr/share/fzf/key-bindings.zsh
-source ~/.config/private_alias/aliases
+#source ~/.config/private_alias/aliases
 alias cmake="cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1"
 

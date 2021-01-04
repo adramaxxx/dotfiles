@@ -423,5 +423,8 @@ mode "$mode_gaps_outer" {
 # open bluetooth manager
 bindsym $mod+Mod1+b exec blueman-manager
 # mute microphone
-bindsym XF86AudioMicMute exec mutemicrophones
+bindsym XF86AudioMicMute exec mutemicrophone
 
+
+exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent
+exec --no-startup-id redshift-gtk
