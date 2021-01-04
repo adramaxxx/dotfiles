@@ -7,6 +7,8 @@ echo -e '\t 2 extreme performance mode (0x1) \n'
 echo -e '\t 3 battery saving mode (0x2) \n'
 echo -e '\t 4 rapid charging mode on (0x1) \n'
 echo -e '\t 5 rapid charging mode off (0x0) \n'
+echo -e '\t 6 battery conservation mode on (0x1) \n'
+echo -e '\t 7 battery conservation mode off (0x0) \n'
 
 echo -n 'option : ' 
 read OPTION
@@ -26,6 +28,12 @@ case $OPTION in
         ;;
     5) echo '\_SB.PCI0.LPC0.EC0.VPC0.SBMC 0x08' > /proc/acpi/call
         echo '\_SB.PCI0.LPC0.EC0.QCHO' > /proc/acpi/call
+        ;;
+    6) echo '\_SB.PCI0.LPC0.EC0.VPC0.SBMC 0x03' > /proc/acpi/call
+        echo '\_SB.PCI0.LPC0.EC0.BTSM' > /proc/acpi/call
+        ;;
+    7) echo '\_SB.PCI0.LPC0.EC0.VPC0.SBMC 0x05' > /proc/acpi/call
+        echo '\_SB.PCI0.LPC0.EC0.BTSM' > /proc/acpi/call
         ;;
 esac
 
