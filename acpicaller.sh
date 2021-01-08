@@ -36,5 +36,4 @@ case $OPTION in
         echo '\_SB.PCI0.LPC0.EC0.BTSM' > /proc/acpi/call
         ;;
 esac
-
 cat /proc/acpi/call | cut -d '' -f1

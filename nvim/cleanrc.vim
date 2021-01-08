@@ -3,7 +3,7 @@ set number rnu
 set clipboard=unnamedplus
 set tabstop=4 softtabstop=4
 set shiftwidth=4
-set expandtab
+set noexpandtab
 set wrap
 set smartcase
 set noswapfile
@@ -12,9 +12,6 @@ set nocompatible
 filetype plugin on
 set laststatus=2
 set statusline+=%f
-set hidden
-set title
-set showcmd
 
 " alot of the plugins are just colorschemes since i have a hard time deciding
 call plug#begin('~/.vim/plugged')
@@ -36,6 +33,8 @@ Plug 'dracula/vim'
 Plug 'joshdick/onedark.vim'
 Plug 'preservim/nerdtree'
 Plug 'itchyny/calendar.vim'
+Plug 'ntk148v/vim-horizon'
+Plug 'ericbn/vim-solarized'
 call plug#end()
 
 " use navigation keys to move around windows when splitting
@@ -44,13 +43,18 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-let g:phpactorPhpBin = "/usr/bin/php"
-
-colorscheme onedark
+"set background=dark
+colorscheme gruvbox
 " below command is to keep tmux sane
 set t_Co=256
+set termguicolors
 hi Normal guibg=NONE ctermbg=NONE
+"let g:solarized_termcolors=256
 
+"hi! Pmenu cterm=NONE gui=NONE ctermbg=233 ctermfg=252 guifg=#1c1e26 guibg=#d5d8da
+"hi! PmenuSbar cterm=NONE gui=NONE ctermbg=236 guibg=#3d425b
+"hi! PmenuSel cterm=NONE gui=NONE ctermbg=240 ctermfg=255 guibg=#5b6389 guifg=#eff0f4
+"hi! PmenuThumb cterm=NONE gui=NONE ctermbg=233 guibg=#1c1e26
 "instant markdown cfg
 map <leader>md :InstantMarkdownPreview<CR>
 let g:instant_markdown_autostart = 0
@@ -60,6 +64,13 @@ let g:instant_markdown_browser = "firefox"
 " set spell when filetype is .md or .tex
 autocmd BufNewFile,BufRead *.md set spell
 autocmd BufNewFile,BufRead *.tex set spell
+
+" set colorcolumn when working with cpp files
+autocmd BufNewFile,BufRead *.c set colorcolumn=110
+autocmd BufNewFile,BufRead *.h set colorcolumn=110
+autocmd BufNewFile,BufRead *.cpp set colorcolumn=110
+autocmd BufNewFile,BufRead *.hpp set colorcolumn=110
+
 
 " remapping to exit terminal mode
 tnoremap <Esc> <C-\><C-n>

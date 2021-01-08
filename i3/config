@@ -337,16 +337,31 @@ bar {
 	strip_workspace_numbers yes
 
     colors {
-        background #222D31
-        statusline #F9FAF9
-        separator  #454947
+         background #222222
+         statusline #eeeeee
+         separator #666666
+         #                  border  backgr. text
+         focused_workspace  #4c7899 #285577 #ffffff
+         active_workspace   #333333 #5f676a #ffffff
+         inactive_workspace #333333 #222222 #888888
+         urgent_workspace   #2f343a #900000 #ffffff
+        #background #2f343f
+        #statusline #2f343f
+        #separator #4b5262
+        ##background #222D31
+        #statusline #F9FAF9
+        ##separator  #454947
 
-#                      border  backgr. text
-        focused_workspace  #F9FAF9 #16a085 #292F34
-        active_workspace   #595B5B #353836 #FDF6E3
-        inactive_workspace #595B5B #222D31 #EEE8D5
-        binding_mode       #16a085 #2C2C2C #F9FAF9
-        urgent_workspace   #16a085 #FDF6E3 #E5201D
+#       #               border  backgr. text
+        ##focused_workspace  #F9FAF9 #16a085 #292F34
+        ##active_workspace   #595B5B #353836 #FDF6E3
+        ##inactive_workspace #595B5B #222D31 #EEE8D5
+        ##binding_mode       #16a085 #2C2C2C #F9FAF9
+        ##urgent_workspace   #16a085 #FDF6E3 #E5201D
+        #focused_workspace       #2f343f #bf616a #d8dee8
+        #active_workspace        #2f343f #2f343f #d8dee8
+        #inactive_workspace      #2f343f #2f343f #d8dee8
+        #urgent_workspacei       #2f343f #ebcb8b #2f343f
     }
 }
 
@@ -368,8 +383,8 @@ bindsym $mod+m bar mode toggle
 #############################
 
 # Set inner/outer gaps
-gaps inner 15
-gaps outer -2
+gaps inner 10
+gaps outer -4
 
 # Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
 # gaps inner|outer current|all set|plus|minus <px>
