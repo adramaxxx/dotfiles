@@ -253,9 +253,9 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 5 px or 5 ppt
+        bindsym l resize shrink width 5 px or 5 ppt
         bindsym k resize grow height 5 px or 5 ppt
-        bindsym l resize shrink height 5 px or 5 ppt
+        bindsym j resize shrink height 5 px or 5 ppt
         bindsym h resize grow width 5 px or 5 ppt
 
         # same bindings, but for the arrow keys
@@ -274,7 +274,7 @@ bindsym $mod+9 exec --no-startup-id blurlock
 
 # Autostart applications
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec --no-startup-id nitrogen --restore; sleep 1; picom -b
+exec --no-startup-id nitrogen --restore; sleep 1; picom -b 
 #exec --no-startup-id manjaro-hello
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
@@ -321,8 +321,14 @@ set_from_resource $term_color13    color13
 set_from_resource $term_color14    color14
 set_from_resource $term_color15    color15
 
+
 # Start i3bar to display a workspace bar (plus the system information i3status if available)
 bar {
+    #output DisplayPort-0
+    output eDP
+    output DisplayPort-0
+    tray_output primary
+
 	i3bar_command i3bar
 	status_command i3status
 	position top
@@ -340,11 +346,17 @@ bar {
          background #222222
          statusline #eeeeee
          separator #666666
+
+
+         #focused_workspace #fdf6e3 #859900 #fdf6e3
+         #active_workspace #fdf6e3 #6c71c4 #fdf6e3
+         #inactive_workspace #586e75 #93a1a1 #002b36
+         #urgent_workspace #d33682 #d33682 #fdf6e3
          #                  border  backgr. text
-         focused_workspace  #4c7899 #285577 #ffffff
-         active_workspace   #333333 #5f676a #ffffff
-         inactive_workspace #333333 #222222 #888888
-         urgent_workspace   #2f343a #900000 #ffffff
+         #focused_workspace  #4c7899 #285577 #ffffff
+         #active_workspace   #333333 #5f676a #ffffff
+         #inactive_workspace #333333 #222222 #888888
+         #urgent_workspace   #2f343a #900000 #ffffff
         #background #2f343f
         #statusline #2f343f
         #separator #4b5262
@@ -353,11 +365,11 @@ bar {
         ##separator  #454947
 
 #       #               border  backgr. text
-        ##focused_workspace  #F9FAF9 #16a085 #292F34
-        ##active_workspace   #595B5B #353836 #FDF6E3
-        ##inactive_workspace #595B5B #222D31 #EEE8D5
+        focused_workspace  #F9FAF9 #16a085 #292F34
+        active_workspace   #595B5B #353836 #FDF6E3
+        inactive_workspace #595B5B #222D31 #EEE8D5
         ##binding_mode       #16a085 #2C2C2C #F9FAF9
-        ##urgent_workspace   #16a085 #FDF6E3 #E5201D
+        urgent_workspace   #16a085 #FDF6E3 #E5201D
         #focused_workspace       #2f343f #bf616a #d8dee8
         #active_workspace        #2f343f #2f343f #d8dee8
         #inactive_workspace      #2f343f #2f343f #d8dee8
@@ -383,8 +395,8 @@ bindsym $mod+m bar mode toggle
 #############################
 
 # Set inner/outer gaps
-gaps inner 10
-gaps outer -4
+gaps inner 8
+gaps outer -2
 
 # Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
 # gaps inner|outer current|all set|plus|minus <px>

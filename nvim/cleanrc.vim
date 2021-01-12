@@ -12,6 +12,7 @@ set nocompatible
 filetype plugin on
 set laststatus=2
 set statusline+=%f
+set guicursor=
 
 " alot of the plugins are just colorschemes since i have a hard time deciding
 call plug#begin('~/.vim/plugged')
@@ -35,6 +36,7 @@ Plug 'preservim/nerdtree'
 Plug 'itchyny/calendar.vim'
 Plug 'ntk148v/vim-horizon'
 Plug 'ericbn/vim-solarized'
+Plug 'tomasiser/vim-code-dark'
 call plug#end()
 
 " use navigation keys to move around windows when splitting
@@ -44,7 +46,7 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 "set background=dark
-colorscheme gruvbox
+colorscheme vim-monokai-tasty
 " below command is to keep tmux sane
 set t_Co=256
 set termguicolors
@@ -59,7 +61,7 @@ hi Normal guibg=NONE ctermbg=NONE
 map <leader>md :InstantMarkdownPreview<CR>
 let g:instant_markdown_autostart = 0
 let g:instant_markdown_mathjax = 1
-let g:instant_markdown_browser = "firefox"
+let g:instant_markdown_browser = "chromium"
 
 " set spell when filetype is .md or .tex
 autocmd BufNewFile,BufRead *.md set spell
