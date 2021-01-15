@@ -37,6 +37,7 @@ Plug 'itchyny/calendar.vim'
 Plug 'ntk148v/vim-horizon'
 Plug 'ericbn/vim-solarized'
 Plug 'tomasiser/vim-code-dark'
+Plug 'dbeniamine/cheat.sh-vim'
 call plug#end()
 
 " use navigation keys to move around windows when splitting

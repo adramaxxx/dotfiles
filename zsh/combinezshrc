@@ -26,7 +26,7 @@ export PATH="/usr/sbin:$PATH"
 export PATH="/usr/bin:$PATH"
 #compdef sshfs=scp
 
-TERM=xterm-256color
+#TERM=xterm-256color
 
 alias remove-orphans='pacman -Rns $(pacman -Qtdq)'
 alias fixdir='sudo find . -type d -exec chmod 770 {} \;'
@@ -39,5 +39,63 @@ source /usr/share/fzf/key-bindings.zsh
 #source ~/.config/private_alias/aliases
 alias cmake="cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1"
 
+#Thue's emacs keybindings
+bindkey -e
+
+bindkey "\e[1~" beginning-of-line # Home
+bindkey "\e[4~" end-of-line # End
+bindkey "\e[5~" beginning-of-history # PageUp
+bindkey "\e[6~" end-of-history # PageDown
+bindkey "\e[2~" quoted-insert # Ins
+bindkey "\e[3~" delete-char # Del
+bindkey "\e[5C" forward-word
+bindkey "\eOc" emacs-forward-word
+bindkey "\e[5D" backward-word
+bindkey "\eOd" emacs-backward-word
+bindkey "\e\e[C" forward-word
+bindkey "\e\e[D" backward-word
+bindkey "\e[Z" reverse-menu-complete # Shift+Tab
+# for rxvt
+bindkey "\e[7~" beginning-of-line # Home
+bindkey "\e[8~" end-of-line # End
+# for non RH/Debian xterm, can't hurt for RH/Debian xterm
+bindkey "\eOH" beginning-of-line
+bindkey "\eOF" end-of-line
+# for freebsd console
+bindkey "\e[H" beginning-of-line
+bindkey "\e[F" end-of-line
+# for guake
+bindkey "\eOF" end-of-line
+bindkey "\eOH" beginning-of-line
+bindkey "^[[1;5D" backward-word
+bindkey "^[[1;5C" forward-word
+bindkey "\e[3~" delete-char # Del
+
+# fix ctrl + right/left
+bindkey '^[[1;5D' backward-word
+bindkey '^[[1;5C' forward-word
+# fix ctrl + delete
+bindkey '^[[3;5~' kill-word
+
+# allow up and down keys to be used when searching (ctrl + r)
+bindkey '^[[A' up-line-or-search
+bindkey '^[[B' down-line-or-search
+editor=nvim
+# Bind ctrl+x, ctrl+e to open current line in $EDITOR.
+autoload -U edit-command-line
+zle -N edit-command-line
+bindkey '^x^e' edit-command-line
+
+# Bind alt+s to prepend sudo on current line 
+prepend_sudo() {
+  if [[ "$BUFFER" != su(do|)\ * ]]; then
+    BUFFER="sudo $BUFFER"
+    (( CURSOR += 5 ))
+  fi
+}
+zle -N prepend_sudo
+bindkey '^[s' prepend_sudo
+
 plugins=(git)
 source $ZSH/oh-my-zsh.sh
+

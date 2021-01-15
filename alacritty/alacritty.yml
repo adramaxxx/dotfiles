@@ -1,4 +1,16 @@
-TERM: xterm-256color
+#TERM: xterm-256color
+TERM: alacritty
+
+padding:
+  x: 2
+  y: 2
+
+title: Alacritty
+
+font:
+  normal:
+    familiy: Jetbrains Mono
+    style: Regular
 
 
 schemes:
@@ -7,7 +19,8 @@ schemes:
      background: "#1e2127"
      #background: "#2E3440"
      foreground: "#D8DEE9"
-
+     #background: '0x000000'
+     # foreground: '0xdddddd'
    # Normal colors
     normal:
       black: "#3B4252"
