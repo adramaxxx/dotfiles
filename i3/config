@@ -3,6 +3,7 @@
 
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
 set $mod Mod4
+set $HOME /home/adramax
 
 # set default desktop layout (default is tiling)
 # workspace_layout tabbed <stacking|tabbed>
@@ -160,6 +161,7 @@ bindsym $mod+5 workspace $ws5
 bindsym $mod+6 workspace $ws6
 bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
 
 # Move focused container to workspace
 bindsym $mod+Ctrl+1 move container to workspace $ws1
@@ -170,6 +172,7 @@ bindsym $mod+Ctrl+5 move container to workspace $ws5
 bindsym $mod+Ctrl+6 move container to workspace $ws6
 bindsym $mod+Ctrl+7 move container to workspace $ws7
 bindsym $mod+Ctrl+8 move container to workspace $ws8
+bindsym $mod+Ctrl+9 move container to workspace $ws9
 
 # Move to workspace with focused container
 bindsym $mod+Shift+1 move container to workspace $ws1; workspace $ws1
@@ -180,6 +183,8 @@ bindsym $mod+Shift+5 move container to workspace $ws5; workspace $ws5
 bindsym $mod+Shift+6 move container to workspace $ws6; workspace $ws6
 bindsym $mod+Shift+7 move container to workspace $ws7; workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9; workspace $ws9
+
 
 # Open applications on specific workspaces
 # assign [class="Thunderbird"] $ws1
@@ -270,7 +275,7 @@ mode "resize" {
 }
 
 # Lock screen
-bindsym $mod+9 exec --no-startup-id blurlock
+#bindsym $mod+9 exec --no-startup-id blurlock
 
 # Autostart applications
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
@@ -323,62 +328,64 @@ set_from_resource $term_color15    color15
 
 
 # Start i3bar to display a workspace bar (plus the system information i3status if available)
-bar {
-    #output DisplayPort-0
-    output eDP
-    output DisplayPort-0
-    tray_output primary
+#bar {
+#    #output DisplayPort-0
+#    output eDP
+#    output DisplayPort-0
+#    tray_output primary
+#
+#	i3bar_command i3bar
+#	status_command i3status
+#	position top
+#
+### please set your primary output first. Example: 'xrandr --output eDP1 --primary'
+##	tray_output primary
+##	tray_output eDP1
+#
+#	bindsym button4 nop
+#	bindsym button5 nop
+##   font xft:URWGothic-Book 11
+#	strip_workspace_numbers yes
+#
+#    colors {
+#         background #222222
+#         statusline #eeeeee
+#         separator #666666
+#
+#
+#         #focused_workspace #fdf6e3 #859900 #fdf6e3
+#         #active_workspace #fdf6e3 #6c71c4 #fdf6e3
+#         #inactive_workspace #586e75 #93a1a1 #002b36
+#         #urgent_workspace #d33682 #d33682 #fdf6e3
+#         #                  border  backgr. text
+#         #focused_workspace  #4c7899 #285577 #ffffff
+#         #active_workspace   #333333 #5f676a #ffffff
+#         #inactive_workspace #333333 #222222 #888888
+#         #urgent_workspace   #2f343a #900000 #ffffff
+#        #background #2f343f
+#        #statusline #2f343f
+#        #separator #4b5262
+#        ##background #222D31
+#        #statusline #F9FAF9
+#        ##separator  #454947
+#
+##       #               border  backgr. text
+#        focused_workspace  #F9FAF9 #16a085 #292F34
+#        active_workspace   #595B5B #353836 #FDF6E3
+#        inactive_workspace #595B5B #222D31 #EEE8D5
+#        ##binding_mode       #16a085 #2C2C2C #F9FAF9
+#        urgent_workspace   #16a085 #FDF6E3 #E5201D
+#        #focused_workspace       #2f343f #bf616a #d8dee8
+#        #active_workspace        #2f343f #2f343f #d8dee8
+#        #inactive_workspace      #2f343f #2f343f #d8dee8
+#        #urgent_workspacei       #2f343f #ebcb8b #2f343f
+#    }
+#}
 
-	i3bar_command i3bar
-	status_command i3status
-	position top
-
-## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
-#	tray_output primary
-#	tray_output eDP1
-
-	bindsym button4 nop
-	bindsym button5 nop
-#   font xft:URWGothic-Book 11
-	strip_workspace_numbers yes
-
-    colors {
-         background #222222
-         statusline #eeeeee
-         separator #666666
-
-
-         #focused_workspace #fdf6e3 #859900 #fdf6e3
-         #active_workspace #fdf6e3 #6c71c4 #fdf6e3
-         #inactive_workspace #586e75 #93a1a1 #002b36
-         #urgent_workspace #d33682 #d33682 #fdf6e3
-         #                  border  backgr. text
-         #focused_workspace  #4c7899 #285577 #ffffff
-         #active_workspace   #333333 #5f676a #ffffff
-         #inactive_workspace #333333 #222222 #888888
-         #urgent_workspace   #2f343a #900000 #ffffff
-        #background #2f343f
-        #statusline #2f343f
-        #separator #4b5262
-        ##background #222D31
-        #statusline #F9FAF9
-        ##separator  #454947
-
-#       #               border  backgr. text
-        focused_workspace  #F9FAF9 #16a085 #292F34
-        active_workspace   #595B5B #353836 #FDF6E3
-        inactive_workspace #595B5B #222D31 #EEE8D5
-        ##binding_mode       #16a085 #2C2C2C #F9FAF9
-        urgent_workspace   #16a085 #FDF6E3 #E5201D
-        #focused_workspace       #2f343f #bf616a #d8dee8
-        #active_workspace        #2f343f #2f343f #d8dee8
-        #inactive_workspace      #2f343f #2f343f #d8dee8
-        #urgent_workspacei       #2f343f #ebcb8b #2f343f
-    }
-}
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # hide/unhide i3status bar
-bindsym $mod+m bar mode toggle
+bindsym $mod+m exec polybar-msg cmd toggle
 
 # Theme colors
 # class                   border  backgr. text    indic.   child_border
@@ -455,3 +462,4 @@ bindsym XF86AudioMicMute exec mutemicrophone
 
 exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent
 exec --no-startup-id redshift-gtk
+exec --no-startup-id mpd

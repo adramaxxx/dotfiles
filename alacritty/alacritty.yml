@@ -1,17 +1,14 @@
-#TERM: xterm-256color
-TERM: alacritty
-
-padding:
-  x: 2
-  y: 2
-
+TERM: xterm-256color
+#TERM: alacritty
 title: Alacritty
 
 font:
   normal:
     familiy: Jetbrains Mono
     style: Regular
+  size: 13
 
+background_opacity: 0.666
 
 schemes:
   onedark: &onedarkdark 

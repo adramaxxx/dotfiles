@@ -1,0 +1,7 @@
+intelligent_cooling = r"\_SB.PCI0.LPC0.EC0.VPC0.DYTC 0x000FB001"
+extreme_performance = r"\_SB.PCI0.LPC0.EC0.VPC0.DYTC 0x0012B001"
+battery_saving = r"\_SB.PCI0.LPC0.EC0.VPC0.DYTC 0x0013B001"
+rapid_charge_on = r"\_SB.PCI0.LPC0.EC0.VPC0.SBMC 0x07"
+rapid_charge_off = r"\_SB.PCI0.LPC0.EC0.VPC0.SBMC 0x08"
+battery_conservation_on = r"\_SB.PCI0.LPC0.EC0.VPC0.SBMC 0x03"
+battery_conservation_off = r"\_SB.PCI0.LPC0.EC0.VPC0.SBMC 0x05"
