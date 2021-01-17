@@ -56,14 +56,15 @@ font-0 = fixed:pixelsize=10;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=10;1
 font-3 = NotoMusic:pixelsize=10;1
+font-4 = JetBrainsMono Nerd Font:pixelsize=10;1
 
 modules-left = bspwm i3
-modules-center = mpd 
-modules-right = pulseaudio memory cpu battery temperature date
+modules-center = cmus 
+modules-right = cmuscontroller pulseaudio memory cpu battery temperature date
 seperator = |
 
 tray-position = right
-tray-padding = 2
+tray-padding = 1
 ;tray-background = #0063ff
 
 ;wm-restack = bspwm
@@ -181,7 +182,7 @@ icon-pause = 
 icon-next = 
 
 label-song = 𝄞 %artist% - %title% 𝄞
-label-song-maxlen = 45
+#label-song-maxlen = 55
 label-song-ellipsis = true
 
 [module/xbacklight]
@@ -370,19 +371,19 @@ type = internal/temperature
 thermal-zone = 0
 warn-temperature = 60
 
-format = <ramp> <label>
+format = <label>
 format-underline = #f50a4d
-format-warn = <ramp> <label-warn>
+format-warn = <label-warn>
 format-warn-underline = ${self.format-underline}
 
 label = %temperature-c%
 label-warn = %temperature-c%
 label-warn-foreground = ${colors.secondary}
 
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
-ramp-foreground = ${colors.foreground-alt}
+#ramp-0 = 
+#ramp-1 = 
+#ramp-2 = 
+#ramp-foreground = ${colors.foreground-alt}
 
 [module/powermenu]
 type = custom/menu
@@ -413,6 +414,34 @@ menu-2-0-exec = sudo poweroff
 menu-2-1 = cancel
 menu-2-1-exec = menu-open-0
 
+[module/cmus]
+type = custom/script
+format = <label>
+exec = ~/.config/polybar/cmus.sh
+exec-if = pgrep -x cmus
+interval = 1
+
+#click-left = cmus-remote --next
+#click-right = cmus-remote --prev
+#click-middle = cmus-remote --pause
+#scroll-up = cmus-remote --volume +5%
+#scroll-down = cmus-remote --volume -5%
+label-padding = 5
+#label-maxlen = 45
+#label-minlen = 45
+label-alignment = center
+label-mode-padding = 0
+label-font = 3
+format-underline = ${colors.foreground-alt}
+label = %output%
+
+[module/cmuscontroller]
+type = custom/text
+format = <content>
+content-padding = 1
+content-font = 3
+content = %{A1:cmus-remote --next:}%{A1:cmus-remote --prev:}%{A1:cmus-remote --play:}%{A1:cmus-remote --pause:} %{A}%{O10}%{A}%{O10}%{A}%{O10}%{A}%{O10} 
+
 [settings]
 screenchange-reload = true
 ;compositing-background = xor
@@ -422,8 +451,8 @@ screenchange-reload = true
 ;pseudo-transparency = false
 
 [global/wm]
-margin-top = 5
-margin-bottom = 5
+margin-top = 0
+margin-bottom = 0
 
 ; vim:ft=dosini
 
