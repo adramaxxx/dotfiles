@@ -46,7 +46,7 @@ bindsym $mod+z exec --no-startup-id morc_menu
 #exec --no-startup-id volumeicon
 #bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
 #exec --no-startup-id pulseaudio
-exec --no-startup-id pa-applet
+exec --no-startup-id pa-applet --disable-notifications
 bindsym $mod+Ctrl+m exec pavucontrol
 ################################################################################################
 
@@ -462,12 +462,13 @@ bindsym XF86AudioMicMute exec mutemicrophone
 
 exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent
 exec --no-startup-id redshift-gtk
-exec --no-startup-id mpd
 
 exec --no-startup-id flameshot
 bindsym Print exec --no-startup-id flameshot gui
 
-bindsym XF86AudioPlay exec cmus-remote --play
-bindsym XF86AudioPause exec cmus-remote --pause
+
+bindsym XF86AudioPlay exec $HOME/.i3/cmuscontrol
+bindsym XF86AudioPause exec $HOME/.i3/cmuscontrol
 bindsym XF86AudioNext exec cmus-remote --next
 bindsym XF86AudioPrev exec cmus-remote --prev
+

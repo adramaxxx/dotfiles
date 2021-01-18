@@ -37,6 +37,8 @@ Plug 'itchyny/calendar.vim'
 Plug 'ntk148v/vim-horizon'
 Plug 'ericbn/vim-solarized'
 Plug 'tomasiser/vim-code-dark'
+Plug 'ntk148v/vim-horizon'
+Plug 'chriskempson/base16-vim'
 Plug 'dbeniamine/cheat.sh-vim'
 call plug#end()
 
@@ -47,13 +49,17 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 "set background=dark
-colorscheme vim-monokai-tasty
+colorscheme onedark
 " below command is to keep tmux sane
-set t_Co=256
-set termguicolors
+"set t_Co=256 
+"let base16colorspace=256
+"source ~/.vimrc_background
 hi Normal guibg=NONE ctermbg=NONE
+set termguicolors
+hi LineNr cterm=NONE ctermbg=NONE guibg=NONE guifg=NONE
 "let g:solarized_termcolors=256
-
+"
+"
 "hi! Pmenu cterm=NONE gui=NONE ctermbg=233 ctermfg=252 guifg=#1c1e26 guibg=#d5d8da
 "hi! PmenuSbar cterm=NONE gui=NONE ctermbg=236 guibg=#3d425b
 "hi! PmenuSel cterm=NONE gui=NONE ctermbg=240 ctermfg=255 guibg=#5b6389 guifg=#eff0f4
@@ -62,7 +68,7 @@ hi Normal guibg=NONE ctermbg=NONE
 map <leader>md :InstantMarkdownPreview<CR>
 let g:instant_markdown_autostart = 0
 let g:instant_markdown_mathjax = 1
-let g:instant_markdown_browser = "chromium"
+"let g:instant_markdown_browser = "chromium"
 
 " set spell when filetype is .md or .tex
 autocmd BufNewFile,BufRead *.md set spell
@@ -98,3 +104,4 @@ nnoremap <C-n> :bnext<CR>
 nnoremap <C-p> :bprevious<CR>
 
 nmap <F6> :NERDTreeToggle<CR>
+

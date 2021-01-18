@@ -6,4 +6,4 @@ xrandr --output eDP --off --output HDMI-A-0 --mode 1920x1080 --pos 3440x0 --rota
 xset r rate 300 50
 wallpaperpath="/home/adramax/Pictures/wallpapers/"
 
-feh --bg-fill "$wallpaperpath"wallpaper1.jpg --bg-fill "$wallpaperpath"wallpaperguyincity.jpg
+#feh --bg-fill "$wallpaperpath"wallpaper1.jpg --bg-fill "$wallpaperpath"wallpaperguyincity.jpg

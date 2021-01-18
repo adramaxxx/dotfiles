@@ -57,13 +57,16 @@ font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=10;1
 font-3 = NotoMusic:pixelsize=10;1
 font-4 = JetBrainsMono Nerd Font:pixelsize=10;1
+font-5 = Unifont Upper:pixelsize=10;1
+font-6 = NotoMusic:pixelsize=10;1
+font-7 = Material Icons:pixelsize=10;1
 
 modules-left = bspwm i3
 modules-center = cmus 
 modules-right = cmuscontroller pulseaudio memory cpu battery temperature date
 seperator = |
 
-tray-position = right
+tray-position = none
 tray-padding = 1
 ;tray-background = #0063ff
 
@@ -210,7 +213,7 @@ card = intel_backlight
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = " "
+format-prefix = "🝒 "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #f90000
 label = %percentage:2%%
@@ -345,24 +348,24 @@ format-charging-underline = #ffb52a
 format-discharging = <animation-discharging> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
 
-format-full-prefix = " "
+format-full-prefix = ""
 format-full-prefix-foreground = ${colors.foreground-alt}
 format-full-underline = ${self.format-charging-underline}
 
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
 ramp-capacity-foreground = ${colors.foreground-alt}
 
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
 animation-charging-foreground = ${colors.foreground-alt}
 animation-charging-framerate = 750
 
-animation-discharging-0 = 
-animation-discharging-1 = 
-animation-discharging-2 = 
+animation-discharging-0 = 
+animation-discharging-1 = 
+animation-discharging-2 = 
 animation-discharging-foreground = ${colors.foreground-alt}
 animation-discharging-framerate = 750
 
@@ -419,7 +422,7 @@ type = custom/script
 format = <label>
 exec = ~/.config/polybar/cmus.sh
 exec-if = pgrep -x cmus
-interval = 1
+interval = 0.5
 
 #click-left = cmus-remote --next
 #click-right = cmus-remote --prev
@@ -427,20 +430,21 @@ interval = 1
 #scroll-up = cmus-remote --volume +5%
 #scroll-down = cmus-remote --volume -5%
 label-padding = 5
-#label-maxlen = 45
+label-maxlen = 80
 #label-minlen = 45
-label-alignment = center
+label-alignment = left
 label-mode-padding = 0
 label-font = 3
-format-underline = ${colors.foreground-alt}
+format-foreground = #00BBEE
 label = %output%
 
 [module/cmuscontroller]
 type = custom/text
 format = <content>
 content-padding = 1
-content-font = 3
-content = %{A1:cmus-remote --next:}%{A1:cmus-remote --prev:}%{A1:cmus-remote --play:}%{A1:cmus-remote --pause:} %{A}%{O10}%{A}%{O10}%{A}%{O10}%{A}%{O10} 
+content-font = 6
+content-foreground = #00BBEE
+content = %{A1:cmus-remote --shuffle:}%{A1:cmus-remote --next:}%{A1:cmus-remote --prev:}%{A1:cmus-remote --play:}%{A1:cmus-remote --pause:} %{A}%{O10}%{A}%{O10}%{A}%{O10}%{A}%{O10}🔀%{A}
 
 [settings]
 screenchange-reload = true

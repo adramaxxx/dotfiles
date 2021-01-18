@@ -8,16 +8,16 @@ font:
     style: Regular
   size: 13
 
-background_opacity: 0.666
+background_opacity: 0.85
 
 schemes:
   onedark: &onedarkdark 
     primary:
-     background: "#1e2127"
-     #background: "#2E3440"
-     foreground: "#D8DEE9"
-     #background: '0x000000'
-     # foreground: '0xdddddd'
+      #background: "#1e2127"
+    #background: "#2E3440"
+     #foreground: "#D8DEE9"
+     background: '0x000000'
+     foreground: '0xdddddd'
    # Normal colors
     normal:
       black: "#3B4252"
@@ -100,4 +100,4 @@ schemes:
       cyan:    '0x93a1a1'
       white:   '0xfdf6e3'
 
-colors: *solarizeddark
+colors: *onedarkdark
