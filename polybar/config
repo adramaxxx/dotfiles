@@ -18,8 +18,8 @@
 
 [colors]
 ;background = ${xrdb:color0:#222}
-background = #222
-background-alt = #444
+background = #D9000000
+;background-alt = #aa00000444
 ;foreground = ${xrdb:color7:#222}
 foreground = #dfdfdf
 foreground-alt = #555
@@ -38,13 +38,15 @@ radius = 0
 fixed-center = false
 
 background = ${colors.background}
-foreground = ${colors.foreground}
+oreground = ${colors.foreground}
+;background = #00a
+;border-color = #00a
+;foreground = #c5a9f9 
 
 line-size = 3
 line-color = #f00
 
 border-size = 0
-border-color = #00000000
 
 padding-left = 1
 padding-right = 1
@@ -435,7 +437,7 @@ label-maxlen = 80
 label-alignment = left
 label-mode-padding = 0
 label-font = 3
-format-foreground = #00BBEE
+;format-foreground = #020202
 label = %output%
 
 [module/cmuscontroller]
@@ -443,7 +445,7 @@ type = custom/text
 format = <content>
 content-padding = 1
 content-font = 6
-content-foreground = #00BBEE
+;content-foreground = #00BBEE
 content = %{A1:cmus-remote --shuffle:}%{A1:cmus-remote --next:}%{A1:cmus-remote --prev:}%{A1:cmus-remote --play:}%{A1:cmus-remote --pause:} %{A}%{O10}%{A}%{O10}%{A}%{O10}%{A}%{O10}🔀%{A}
 
 [settings]
