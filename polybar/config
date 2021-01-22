@@ -18,8 +18,9 @@
 
 [colors]
 ;background = ${xrdb:color0:#222}
-background = #D9000000
-;background-alt = #aa00000444
+background = #00000000
+background-alt = #00000000
+background-dab = #bf4f4b4b
 ;foreground = ${xrdb:color7:#222}
 foreground = #dfdfdf
 foreground-alt = #555
@@ -27,9 +28,74 @@ primary = #1b9fc6
 secondary = #e60053
 alert = #bd2c40
 
-[bar/example]
+[bar/secondarylaptop]
 enable-ipc = true
-monitor = ${env:MONITOR:}
+width = 100%
+height = 30
+monitor = eDP
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+font-0 = fixed:pixelsize=10;1
+font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
+font-2 = siji:pixelsize=10;1
+font-3 = NotoMusic:pixelsize=10;1
+font-4 = JetBrainsMono Nerd Font:pixelsize=10;1
+font-5 = Unifont Upper:pixelsize=10;1
+font-6 = NotoMusic:pixelsize=10;1
+font-7 = Material Icons:pixelsize=10;1
+
+modules-left = i3
+radius = 0
+fixed-center = false
+line-size = 3
+line-color = #f00
+
+border-size = 0
+
+padding-left = 1
+padding-right = 1
+
+module-margin-left = 1
+module-margin-right = 1
+seperator = |
+
+[bar/secondary]
+enable-ipc = true
+width = 100%
+height = 30
+monitor = HDMI-A-0
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+font-0 = fixed:pixelsize=10;1
+font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
+font-2 = siji:pixelsize=10;1
+font-3 = NotoMusic:pixelsize=10;1
+font-4 = JetBrainsMono Nerd Font:pixelsize=10;1
+font-5 = Unifont Upper:pixelsize=10;1
+font-6 = NotoMusic:pixelsize=10;1
+font-7 = Material Icons:pixelsize=10;1
+
+modules-left = i3
+radius = 0
+fixed-center = false
+line-size = 3
+line-color = #f00
+
+border-size = 0
+
+padding-left = 1
+padding-right = 1
+
+module-margin-left = 1
+module-margin-right = 1
+seperator = |
+
+[bar/laptop]
+enable-ipc = true
+monitor = eDP
+
 width = 100%
 height = 30
 ;offset-x = 1%
@@ -38,7 +104,7 @@ radius = 0
 fixed-center = false
 
 background = ${colors.background}
-oreground = ${colors.foreground}
+foreground = ${colors.foreground}
 ;background = #00a
 ;border-color = #00a
 ;foreground = #c5a9f9 
@@ -63,17 +129,76 @@ font-5 = Unifont Upper:pixelsize=10;1
 font-6 = NotoMusic:pixelsize=10;1
 font-7 = Material Icons:pixelsize=10;1
 
-modules-left = bspwm i3
+modules-left = i3
 modules-center = cmus 
 modules-right = cmuscontroller pulseaudio memory cpu battery temperature date
 seperator = |
 
-tray-position = none
+tray-position = right
 tray-padding = 1
 ;tray-background = #0063ff
 
 ;wm-restack = bspwm
-wm-restack = i3
+;wm-restack = i3
+
+;override-redirect = true
+
+;scroll-up = bspwm-desknext
+;scroll-down = bspwm-deskprev
+
+;scroll-up = i3wm-wsnext
+;scroll-down = i3wm-wsprev
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+[bar/primary]
+enable-ipc = true
+monitor = DisplayPort-0
+width = 100%
+height = 30
+;offset-x = 1%
+;offset-y = 1%
+radius = 0
+fixed-center = false
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+;background = #00a
+;border-color = #00a
+;foreground = #c5a9f9 
+
+line-size = 3
+line-color = #f00
+
+border-size = 0
+
+padding-left = 1
+padding-right = 1
+
+module-margin-left = 1
+module-margin-right = 1
+
+font-0 = fixed:pixelsize=10;1
+font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
+font-2 = siji:pixelsize=10;1
+font-3 = NotoMusic:pixelsize=10;1
+font-4 = JetBrainsMono Nerd Font:pixelsize=10;1
+font-5 = Unifont Upper:pixelsize=10;1
+font-6 = NotoMusic:pixelsize=10;1
+font-7 = Material Icons:pixelsize=10;1
+
+modules-left = i3
+modules-center = cmus 
+modules-right = cmuscontroller pulseaudio memory cpu battery temperature date
+seperator = |
+
+tray-position = right
+tray-padding = 1
+;tray-background = #0063ff
+
+;wm-restack = bspwm
+;wm-restack = i3
 
 ;override-redirect = true
 
@@ -425,7 +550,7 @@ format = <label>
 exec = ~/.config/polybar/cmus.sh
 exec-if = pgrep -x cmus
 interval = 0.5
-
+label-background = ${colors.background-dab}
 #click-left = cmus-remote --next
 #click-right = cmus-remote --prev
 #click-middle = cmus-remote --pause

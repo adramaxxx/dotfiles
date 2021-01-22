@@ -5,17 +5,17 @@ killall -q polybar
 # If all your bars have ipc enabled, you can also use 
 # polybar-msg cmd quit
 
-# Launch bar1 and bar2
+monitorcount=0
 
-if type "xrandr"; then
-  for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
-    MONITOR=$m polybar --reload example &
-  done
+for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
+  monitorcount=$((monitorcount + 1))
+done
+
+if [[ $monitorcount == 3 ]]
+then 
+  sethome
 else
-  polybar --reload example &
+  setmobile
 fi
-
-#echo "---" | tee -a /tmp/polybar1.log 
-#polybar example 2>&1 | tee -a /tmp/polybar1.log & disown
 
 echo "Bars launched..."
