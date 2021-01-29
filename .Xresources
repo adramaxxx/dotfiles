@@ -1,7 +1,7 @@
 /* use this command for adding in transparency */
-/**.alpha: 0.85 */
+*.alpha: 1
 
-!! gruvbox:
+!! gruvbox: */
 *.color0: #1d2021
 *.color1: #cc241d
 *.color2: #98971a
@@ -19,7 +19,7 @@
 *.color14: #8ec07c
 *.color15: #ebdbb2
 
-*.font: monospace:size=14
+*.font: monospace:size=12
 
 Xcursor.theme: xcursor-breeze
-Xcursor.size:                     0
+Xcursor.size:                     14

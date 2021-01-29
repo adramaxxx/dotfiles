@@ -17,44 +17,16 @@
 ;==========================================================
 
 [colors]
-background = ${xrdb:color0:#222}
-;background = #222
-background-alt = #444
+;background = ${xrdb:color0:#222}
+background = #00000000
+background-alt = #00000000
+background-dab = #bf4f4b4b
 ;foreground = ${xrdb:color7:#222}
 foreground = #dfdfdf
 foreground-alt = #555
-primary = #ffb52a
+primary = #1b9fc6
 secondary = #e60053
 alert = #bd2c40
-
-
-[bar/secondary]
-enable-ipc = true
-width = 100%
-height = 30
-monitor = HDMI-A-0
-background = ${colors.background}
-foreground = ${colors.foreground}
-
-font-0 = fixed:pixelsize=10;1
-font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = siji:pixelsize=10;1
-font-3 = NotoMusic:pixelsize=10;1
-font-4 = JetBrainsMono Nerd Font:pixelsize=10;1
-font-5 = Unifont Upper:pixelsize=10;1
-font-6 = NotoSansMono:pixelsize=10;1
-font-7 = Material Icons:pixelsize=10;1
-font-8 = Noto Sans Mono Nerd Font:pixelsize=10:1;
-
-
-
-modules-left = dwm
-fixed-center = false
-line-size = 3
-line-color = #f00
-radius=0
-border-size=0
-;border-size = 0
 
 [bar/secondarylaptop]
 enable-ipc = true
@@ -72,39 +44,29 @@ font-4 = JetBrainsMono Nerd Font:pixelsize=10;1
 font-5 = Unifont Upper:pixelsize=10;1
 font-6 = NotoMusic:pixelsize=10;1
 font-7 = Material Icons:pixelsize=10;1
-font-8 = Noto Sans Mono Nerd Font:pixelsize=10:1;
 
-modules-left = dwm
-fixed-center = false
-line-size = 3
-line-color = #f00
-radius=0
-border-size=0
-;border-size = 0
-
-[bar/primary]
-monitor = DisplayPort-0
-width = 100%
-height = 30
-;offset-x = 1%
-;offset-y = 1%
+modules-left = i3 dwm
 radius = 0
 fixed-center = false
-
-background = ${colors.background}
-foreground = ${colors.foreground}
-
 line-size = 3
 line-color = #f00
 
 border-size = 0
-border-color = #00000000
 
-padding-left = 0
-padding-right = 2
+padding-left = 1
+padding-right = 1
 
 module-margin-left = 1
-module-margin-right = 2
+module-margin-right = 1
+seperator = |
+
+[bar/secondary]
+enable-ipc = true
+width = 100%
+height = 30
+monitor = HDMI-A-0
+background = ${colors.background}
+foreground = ${colors.foreground}
 
 font-0 = fixed:pixelsize=10;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
@@ -114,20 +76,72 @@ font-4 = JetBrainsMono Nerd Font:pixelsize=10;1
 font-5 = Unifont Upper:pixelsize=10;1
 font-6 = NotoMusic:pixelsize=10;1
 font-7 = Material Icons:pixelsize=10;1
-font-8 = Noto Sans Mono Nerd Font:pixelsize=12:1;
 
-modules-left = dwm
+modules-left = i3 dwm
+radius = 0
+fixed-center = false
+line-size = 3
+line-color = #f00
+
+border-size = 0
+
+padding-left = 1
+padding-right = 1
+
+module-margin-left = 1
+module-margin-right = 1
+seperator = |
+
+[bar/laptop]
+enable-ipc = true
+monitor = eDP
+
+width = 100%
+height = 30
+;offset-x = 1%
+;offset-y = 1%
+radius = 0
+fixed-center = false
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+;background = #00a
+;border-color = #00a
+;foreground = #c5a9f9
+
+line-size = 3
+line-color = #f00
+
+border-size = 0
+
+padding-left = 1
+padding-right = 1
+
+module-margin-left = 1
+module-margin-right = 1
+
+font-0 = fixed:pixelsize=10;1
+font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
+font-2 = siji:pixelsize=10;1
+font-3 = NotoMusic:pixelsize=10;1
+font-4 = JetBrainsMono Nerd Font:pixelsize=10;1
+font-5 = Unifont Upper:pixelsize=10;1
+font-6 = NotoMusic:pixelsize=10;1
+font-7 = Material Icons:pixelsize=10;1
+
+modules-left = i3 dwm
 modules-center = cmus
-modules-right = cmuscontroller filesystem pulseaudio memory cpu wlan eth battery temperature date goat 
+modules-right = cmuscontroller pulseaudio memory cpu battery temperature date
+seperator = |
 
 tray-position = right
-tray-padding = 2
+tray-padding = 1
 ;tray-background = #0063ff
 
 ;wm-restack = bspwm
 ;wm-restack = i3
 
-;override-redirect = true
+override-redirect = false
 
 ;scroll-up = bspwm-desknext
 ;scroll-down = bspwm-deskprev
@@ -138,8 +152,9 @@ tray-padding = 2
 cursor-click = pointer
 cursor-scroll = ns-resize
 
-[bar/laptop]
-monitor = eDP
+[bar/primary]
+enable-ipc = true
+monitor = DisplayPort-0
 width = 100%
 height = 30
 ;offset-x = 1%
@@ -149,18 +164,20 @@ fixed-center = false
 
 background = ${colors.background}
 foreground = ${colors.foreground}
+;background = #00a
+;border-color = #00a
+;foreground = #c5a9f9
 
 line-size = 3
 line-color = #f00
 
 border-size = 0
-border-color = #00000000
 
-padding-left = 0
-padding-right = 2
+padding-left = 1
+padding-right = 1
 
 module-margin-left = 1
-module-margin-right = 2
+module-margin-right = 1
 
 font-0 = fixed:pixelsize=10;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
@@ -170,20 +187,20 @@ font-4 = JetBrainsMono Nerd Font:pixelsize=10;1
 font-5 = Unifont Upper:pixelsize=10;1
 font-6 = NotoMusic:pixelsize=10;1
 font-7 = Material Icons:pixelsize=10;1
-font-8 = Noto Sans Mono Nerd Font:pixelsize=10:1;
 
-
-modules-left = dwm
+modules-left = i3 dwm
 modules-center = cmus
-modules-right = cmuscontroller filesystem pulseaudio memory cpu wlan eth battery temperature date goat
+modules-right = cmuscontroller pulseaudio memory cpu battery temperature date
+seperator = |
+
 tray-position = right
-tray-padding = 2
+tray-padding = 1
 ;tray-background = #0063ff
 
 ;wm-restack = bspwm
 ;wm-restack = i3
 
-;override-redirect = true
+override-redirect = false
 
 ;scroll-up = bspwm-desknext
 ;scroll-down = bspwm-deskprev
@@ -253,7 +270,7 @@ index-sort = true
 wrapping-scroll = false
 
 ; Only show workspaces on the same output as the bar
-;pin-workspaces = true
+pin-workspaces = true
 
 label-mode-padding = 2
 label-mode-foreground = #000
@@ -283,92 +300,10 @@ label-urgent-padding = 2
 ; Separator in between workspaces
 ; label-separator = |
 
-[module/dwm]
-line-size = 1
-type = internal/dwm
-format = <label-tags> <label-layout> <label-floating> <label-title>
-; Path to dwm socket (default: /tmp/dwm.sock)
-; socket-path = /tmp/dwm.sock
-
-; Left-click to view tag, right-click to toggle tag view
-enable-tags-click = false
-; Scroll to cycle between available tags
-enable-tags-scroll = false
-; If true and enable-tags-scroll = true, scrolling will view all tags regardless if occupied
-tags-scroll-empty = false
-; If true and enable-tags-scroll = true, scrolling will cycle through tags backwards
-tags-scroll-reverse = false
-; If true and enable-tags-scroll = true, wrap active tag when scrolling
-tags-scroll-wrap = false
-; Left-click to set secondary layout, right-click to switch to previous layout
-enable-layout-click = false
-; Scroll to cycle between available layouts
-enable-layout-scroll = false
-; Wrap when scrolling and reaching begining/end of layouts
-layout-scroll-wrap = false
-; Reverse scroll direction
-layout-scroll-reverse = false
-
-; If enable-layout-click = true, clicking the layout symbol will switch to this layout
-secondary-layout-symbol = [M]
-
-; Separator in between shown tags
-; label-separator = |
-
-; Title of currently focused window
-; Available tokens:
-;   %title%
-label-title = %title%
-label-title-padding = 2
-label-title-forefround = ${colors.primary}
-label-title-maxlen = 30
-
-; Symbol of current layout
-; Available tokens:
-;   %symbol%
-label-layout = %symbol%
-label-layout-padding = 2
-label-layout-foreground = #000
-label-layout-background = ${colors.primary}
-
-; Text to show when currently focused window is floating
-label-floating = F
-
-; States: focused, unfocused, visible, urgent, empty
-; Available tokens:
-;   %name%
-
-; focused = Selected tag on focused monitor
-label-focused = %name%
-label-focused-background = ${colors.background-alt}
-label-focused-underline= ${colors.primary}
-;label-focused-underline= #fff
-label-focused-padding = 2
-
-; unfocused = Unselected tag on unselected monitor
-label-unfocused = %name%
-label-unfocused-padding = 2
-
-; visible = Unselected tag, but occupied tag on any monitor
-label-visible = %name%
-label-visible-background = ${self.label-focused-background}
-#label-visible-underline = ${self.label-focused-underline}
-label-visible-padding = ${self.label-focused-padding}
-
-; urgent = Unselected tag with window that has urgency hint set
-label-urgent = %name%
-label-urgent-background = ${colors.alert}
-label-urgent-padding = 2
-
-; empty = Unselected and unoccupied tag
-; This can be set to an empty string to hide empty tags
-label-empty =
-label-empty-background = ${colors.primary}
-label-empty-padding = 2
 
 [module/mpd]
 type = internal/mpd
-format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
+format-online = <label-song>
 
 icon-prev = 
 icon-stop = 
@@ -376,7 +311,8 @@ icon-play = 
 icon-pause = 
 icon-next = 
 
-label-song-maxlen = 25
+label-song = 𝄞 %artist% - %title% 𝄞
+#label-song-maxlen = 55
 label-song-ellipsis = true
 
 [module/xbacklight]
@@ -404,7 +340,7 @@ card = intel_backlight
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = " "
+format-prefix = "🝒 "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #f90000
 label = %percentage:2%%
@@ -419,7 +355,7 @@ label = %percentage_used%%
 
 [module/wlan]
 type = internal/network
-interface = wlp1s0
+interface = net1
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
@@ -441,7 +377,7 @@ ramp-signal-foreground = ${colors.foreground-alt}
 
 [module/eth]
 type = internal/network
-interface = enp3s0f3u1u3
+interface = eno1
 interval = 3.0
 
 format-connected-underline = #55aa55
@@ -460,21 +396,22 @@ type = internal/date
 interval = 5
 
 date =
-date-alt = " %Y-%m-%d"
+date-alt = "%d-%m-%Y"
 
 time = %H:%M
-time-alt = %H:%M:%S
+time-alt = %H:%M
 
 format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #0a6cf5
 
-label = %date% %time%
+;label = %date% %time%
+label = %time% %date%
 
 [module/pulseaudio]
 type = internal/pulseaudio
 
-format-volume = <label-volume> <bar-volume>
+format-volume = <label-volume>
 label-volume = VOL %percentage%%
 label-volume-foreground = ${root.foreground}
 
@@ -529,7 +466,7 @@ bar-volume-empty-foreground = ${colors.foreground-alt}
 [module/battery]
 type = internal/battery
 battery = BAT0
-adapter = ADP0
+adapter = ADP1
 full-at = 98
 
 format-charging = <animation-charging> <label-charging>
@@ -538,24 +475,24 @@ format-charging-underline = #ffb52a
 format-discharging = <animation-discharging> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
 
-format-full-prefix = " "
+format-full-prefix = ""
 format-full-prefix-foreground = ${colors.foreground-alt}
 format-full-underline = ${self.format-charging-underline}
 
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
+ramp-capacity-0 =
+ramp-capacity-1 =
+ramp-capacity-2 =
 ramp-capacity-foreground = ${colors.foreground-alt}
 
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
+animation-charging-0 =
+animation-charging-1 =
+animation-charging-2 =
 animation-charging-foreground = ${colors.foreground-alt}
 animation-charging-framerate = 750
 
-animation-discharging-0 = 
-animation-discharging-1 = 
-animation-discharging-2 = 
+animation-discharging-0 =
+animation-discharging-1 =
+animation-discharging-2 =
 animation-discharging-foreground = ${colors.foreground-alt}
 animation-discharging-framerate = 750
 
@@ -564,19 +501,19 @@ type = internal/temperature
 thermal-zone = 0
 warn-temperature = 60
 
-format = <ramp> <label>
+format = <label>
 format-underline = #f50a4d
-format-warn = <ramp> <label-warn>
+format-warn = <label-warn>
 format-warn-underline = ${self.format-underline}
 
 label = %temperature-c%
 label-warn = %temperature-c%
 label-warn-foreground = ${colors.secondary}
 
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
-ramp-foreground = ${colors.foreground-alt}
+#ramp-0 = 
+#ramp-1 = 
+#ramp-2 = 
+#ramp-foreground = ${colors.foreground-alt}
 
 [module/powermenu]
 type = custom/menu
@@ -632,14 +569,9 @@ label = %output%
 type = custom/text
 format = <content>
 content-padding = 1
-content-font = 9
+content-font = 6
 ;content-foreground = #00BBEE
 content = %{A1:cmus-remote --shuffle:}%{A1:cmus-remote --next:}%{A1:cmus-remote --prev:}%{A1:cmus-remote --play:}%{A1:cmus-remote --pause:} %{A}%{O10}%{A}%{O10}%{A}%{O10}%{A}%{O10}🔀%{A}
-
-[module/goat]
-type = custom/text
-format = <content>
-content = "%{A1:sudo st -e shutdownutil:}fuck outta here%{A}"
 
 [settings]
 screenchange-reload = true
@@ -650,7 +582,88 @@ screenchange-reload = true
 ;pseudo-transparency = false
 
 [global/wm]
-margin-top = 5
-margin-bottom = 5
+margin-top = 0
+margin-bottom = 0
 
 ; vim:ft=dosini
+
+[module/dwm]
+type = internal/dwm
+format = <label-tags> <label-layout> <label-floating> <label-title>
+; Path to dwm socket (default: /tmp/dwm.sock)
+; socket-path = /tmp/dwm.sock
+
+; Left-click to view tag, right-click to toggle tag view
+enable-tags-click = false
+; Scroll to cycle between available tags
+enable-tags-scroll = false
+; If true and enable-tags-scroll = true, scrolling will view all tags regardless if occupied
+tags-scroll-empty = false
+; If true and enable-tags-scroll = true, scrolling will cycle through tags backwards
+tags-scroll-reverse = false
+; If true and enable-tags-scroll = true, wrap active tag when scrolling
+tags-scroll-wrap = false
+; Left-click to set secondary layout, right-click to switch to previous layout
+enable-layout-click = false
+; Scroll to cycle between available layouts
+enable-layout-scroll = false
+; Wrap when scrolling and reaching beginning/end of layouts
+layout-scroll-wrap = false
+; Reverse scroll direction
+layout-scroll-reverse = false
+
+; If enable-layout-click = true, clicking the layout symbol will switch to this layout
+secondary-layout-symbol = [M]
+
+; Separator in between shown tags
+; label-separator = |
+
+; Title of currently focused window
+; Available tokens:
+;   %title%
+label-title = %title%
+label-title-padding = 2
+label-title-foreground = ${colors.primary}
+label-title-maxlen = 30
+
+; Symbol of current layout
+; Available tokens:
+;   %symbol%
+label-layout = %symbol%
+label-layout-padding = 2
+label-layout-foreground = #000
+label-layout-background = ${colors.primary}
+
+; Text to show when currently focused window is floating
+label-floating = F
+
+; States: focused, unfocused, visible, urgent, empty
+; Available tokens:
+;   %name%
+
+; focused = Selected tag on focused monitor
+label-focused = %name%
+label-focused-background = ${colors.background-alt}
+label-focused-underline= ${colors.primary}
+label-focused-padding = 2
+
+; unfocused = Unselected tag on unselected monitor
+label-unfocused = %name%
+label-unfocused-padding = 2
+
+; visible = Unselected tag, but occupied tag on any monitor
+label-visible = %name%
+label-visible-background = ${self.label-focused-background}
+label-visible-underline = ${self.label-focused-underline}
+label-visible-padding = ${self.label-focused-padding}
+
+; urgent = Unselected tag with window that has urgency hint set
+label-urgent = %name%
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 2
+
+; empty = Unselected and unoccupied tag
+; This can be set to an empty string to hide empty tags
+label-empty = %name%
+label-empty-background = ${colors.primary}
+label-empty-padding = 2

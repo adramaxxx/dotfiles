@@ -11,4 +11,4 @@ killall -q polybar
 polybar --reload primary &
 polybar --reload secondary &
 
-setroot --on 0 -z Pictures/wallpapers/wallpaperguyincity.jpg --on 2 -z -gx 48% Pictures/wallpapers/wallpaperoctaviafull.jpeg --on 1 -z Pictures/wallpapers/hd-wallpaper-1.jpeg
+#setroot --on 0 -z Pictures/wallpapers/wallpaperguyincity.jpg --on 2 -z -gx 48% Pictures/wallpapers/wallpaperoctaviafull.jpeg --on 1 -z Pictures/wallpapers/hd-wallpaper-1.jpeg

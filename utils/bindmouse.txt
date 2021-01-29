@@ -1,0 +1,6 @@
+modprobe i2c_hid
+invoke
+echo "i2c-ELAN0001:00" | tee /sys/bus/i2c/drivers/i2c_hid/bind
+
+If for whatever reason the module has loaded do
+echo "i2c-ELAN0001:00" | tee /sys/bus/i2c/drivers/elants_i2c/unbind

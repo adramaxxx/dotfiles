@@ -10,14 +10,14 @@ set noswapfile
 set nobackup
 set nocompatible
 filetype plugin on
-set laststatus=0
+set laststatus=2
 set guicursor=
 set hidden
 set title
 set noruler
 
 " alot of the plugins are just colorschemes since i have a hard time deciding
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.vim/plugged') 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -28,6 +28,7 @@ Plug 'lervag/vimtex'
 Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
 Plug 'tpope/vim-fugitive'
 Plug 'preservim/nerdtree'
+Plug 'godlygeek/tabular'
 call plug#end()
 
 " use navigation keys to move around windows when splitting
@@ -36,7 +37,7 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-"set background=dark
+set background=light
 "colorscheme onedark
 " below command is to keep tmux sane
 set t_Co=256
@@ -96,19 +97,20 @@ cabb Q q
 nnoremap ½ :ls <CR>
 
 "automatically delete trailing whitespace
-autocmd BufWritePre * %s/\s\+$//e
-autocmd BufWritePre * %s/\n\+\%$//e
-autocmd BufWritePre *.[ch] %s/\%$/\r/e
+"autocmd BufWritePre * %s/\s\+$//e
+"autocmd BufWritePre * %s/\n\+\%$//e
+"autocmd BufWritePre *.[ch] %s/\%$/\r/e
+
+
 
 " Function for toggling the bottom statusbar
-let s:hidden_all = 0
+let s:hidden_all = 1
 function! ToggleHiddenAll()
     if s:hidden_all  == 0
         let s:hidden_all = 1
-        set noshowmode
         set noruler
-        set laststatus=0
         set noshowcmd
+        set laststatus=0
         set showtabline=0
     else
         let s:hidden_all = 0
@@ -120,6 +122,13 @@ function! ToggleHiddenAll()
     endif
 endfunction
 nnoremap <leader>h :call ToggleHiddenAll()<CR>
+
+function! SaveNoWhiteSpace()
+	autocmd BufWritePre * %s/\s\+$//e
+    autocmd BufWritePre * %s/\n\+\%$//e
+    autocmd BufWritePre *.[ch] %s/\%$/\r/e
+endfunction
+nnoremap <leader>wnw :call SaveNoWhiteSpace()<CR>
 
 " autorun xrdb whenever .xresources is being saved
 autocmd BufRead,BufNewFile .Xresources,xdefaults set filetype=xdefaults
