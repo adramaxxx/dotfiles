@@ -1,0 +1,13 @@
+#!/bin/sh
+
+xset r rate 300 50 &
+picom -b &
+# power manager for easy access to light up and down
+xfce4-power-manager  &
+# easy access to mediakeys for volume through applet
+pa-applet &
+# map capslock to escape key
+#setxkbmap -option caps:swapescape &
+
+refreshsetup &
+nitrogen --restore &

@@ -6,7 +6,7 @@ font:
   normal:
     familiy: Roboto Mono
     style: Regular
-  size: 13
+  size: 12
 
   #background_opacity: 0.85
 
@@ -100,4 +100,4 @@ schemes:
       cyan:    '0x93a1a1'
       white:   '0xfdf6e3'
 
-colors: *onedarkdark
+colors: *solarizeddark
