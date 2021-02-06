@@ -13,9 +13,18 @@ done
 
 if [[ $monitorcount == 3 ]]
 then
-  ultrahome
+  $(sleep 2s)
+  polybar --reload primary &
+  polybar --reload secondary &
+  polybar --reload secondarylaptop &
+elif [[ $monitorcount == 2 ]]
+then
+  $(sleep 2s)
+  polybar --reload primary &
+  polybar --reload secondarylaptop &
 else
-  setmobile
+  $(sleep 2s)
+  polybar --reload laptop &
 fi
 
 echo "Bars launched..."

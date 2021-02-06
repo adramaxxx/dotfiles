@@ -1,14 +1,10 @@
 #!/bin/bash
-
-# set display ordering
-xrandr --output eDP --off --output HDMI-A-0 --mode 1920x1080 --pos 3440x0 --rotate left --output DisplayPort-0 --primary --mode 3440x1440 --pos 0x0 --rotate normal
-# set repeat rate
-xset r rate 300 50
+$(sleep 4s)
+xrandr --output eDP --mode 1920x1080 --pos 0x0 --rotate normal --output HDMI-A-0 --off --output DisplayPort-0 --primary --mode 3440x1440 --pos 1920x0 --rotate normal
+feh --bg-fill /home/adramax/Pictures/wallpapers/hd-wallpaper5.jpg --bg-fill Pictures/wallpapers/wallpaperguyincity.jpeg
 
 
-# polybar management
+# polybar managementlaptop
 killall -q polybar
 polybar --reload primary &
-polybar --reload secondary &
-
-#setroot --on 0 -z Pictures/wallpapers/wallpaperguyincity.jpg --on 2 -z -gx 48% Pictures/wallpapers/wallpaperoctaviafull.jpeg --on 1 -z Pictures/wallpapers/hd-wallpaper-1.jpeg
+polybar --reload secondarylaptop &

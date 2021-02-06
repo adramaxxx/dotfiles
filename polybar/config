@@ -17,16 +17,25 @@
 ;==========================================================
 
 [colors]
-background = ${xrdb:color0:#222}
-;background = #222
-background-alt = #444
+;background = ${xrdb:color0:#222}
+;;background = #222
+;background-alt = #444
+;;foreground = ${xrdb:color7:#222}
+;foreground = #dfdfdf
+;foreground-alt = #555
+;primary = #ffb52a
+;secondary = #e60053
+;alert = #bd2c40
+
+background = #b3414242
+background-alt = #b3414242
+background-dab = #b3414242
 ;foreground = ${xrdb:color7:#222}
 foreground = #dfdfdf
 foreground-alt = #555
-primary = #ffb52a
+primary = #1b9fc6
 secondary = #e60053
 alert = #bd2c40
-
 
 [bar/secondary]
 enable-ipc = true
@@ -118,7 +127,7 @@ font-8 = Noto Sans Mono Nerd Font:pixelsize=12:1;
 
 modules-left = dwm
 modules-center = cmus
-modules-right = cmuscontroller filesystem pulseaudio memory cpu wlan eth battery temperature date goat 
+modules-right = cmuscontroller filesystem pulseaudio memory cpu wlan eth battery temperature date goat
 
 tray-position = right
 tray-padding = 2
@@ -127,7 +136,7 @@ tray-padding = 2
 ;wm-restack = bspwm
 ;wm-restack = i3
 
-;override-redirect = true
+override-redirect = false
 
 ;scroll-up = bspwm-desknext
 ;scroll-down = bspwm-deskprev
@@ -183,7 +192,7 @@ tray-padding = 2
 ;wm-restack = bspwm
 ;wm-restack = i3
 
-;override-redirect = true
+override-redirect = false
 
 ;scroll-up = bspwm-desknext
 ;scroll-down = bspwm-deskprev
@@ -624,7 +633,7 @@ label-maxlen = 80
 #label-minlen = 45
 label-alignment = left
 label-mode-padding = 0
-label-font = 3
+label-font = 5
 ;format-foreground = #020202
 label = %output%
 

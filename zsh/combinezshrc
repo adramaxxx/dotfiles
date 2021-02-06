@@ -1,7 +1,3 @@
-export PATH="/sbin:$PATH"
-export PATH="/usr/sbin:$PATH"
-export PATH="/usr/bin:$PATH"
-
 autoload -U colors && colors	# Load colors
 PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
 setopt autocd		# Automatically cd into typed directory.
@@ -38,13 +34,13 @@ bindkey -v '^?' backward-delete-char
 function zle-keymap-select () {
     case $KEYMAP in
         vicmd) echo -ne '\e[1 q';;      # block
-        viins|main) echo -ne '\e[1 q';; # beam
+        viins|main) echo -ne '\e[5 q';; # beam
     esac
 }
 zle -N zle-keymap-select
 zle-line-init() {
     zle -K viins # initiate `vi insert` as keymap (can be removed if `bindkey -V` has been set elsewhere)
-    echo -ne "\e[1 q"
+    echo -ne "\e[5 q"
 }
 zle -N zle-line-init
 echo -ne '\e[1 q' # Use beam shape cursor on startup.
@@ -123,5 +119,7 @@ PERL_MM_OPT="INSTALL_BASE=/home/adramax/perl5"; export PERL_MM_OPT;
 
 alias media="tmux a -t cmus"
 alias craftdwm="sudo cp config.def.h config.h; make && sudo make clean install"
+alias sendtoclipboard="xclip -selection clipboard < "
+alias dragdrop="dragon-drag-and-drop"
 
 #refresh_shell

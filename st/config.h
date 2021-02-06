@@ -1,6 +1,6 @@
 /* See LICENSE file for copyright and license details. */
 
-/*
+	/*
  * appearance
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
@@ -55,14 +55,14 @@ static double maxlatency = 33;
  * blinking timeout (set to 0 to disable blinking) for the terminal blinking
  * attribute.
  */
-static unsigned int blinktimeout = 800;
+static unsigned int blinktimeout = 0;
 
 /*
  * interval (in milliseconds) between each successive call to ximspot. This
  * improves terminal performance while not reducing functionality to those
  * whom need XIM support.
  */
-int ximspot_update_interval = 1000;
+int ximspot_update_interval = 200;
 
 /*
  * thickness of underline and bar cursors
@@ -108,7 +108,7 @@ char *termname = "st-256color";
 unsigned int tabspaces = 8;
 
 /* bg opacity */
-float alpha = 0.8;
+float alpha = 1;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {

@@ -4,8 +4,8 @@ wallpaperpath="$HOME/Pictures/wallpapers/"
 #xset r rate 300 50
 
 #polybar config
-$(sleep 2s)
+$(sleep 4s)
 
 polybar --reload laptop &
 $(sleep 0.5s)
-hsetroot -cover Pictures/wallpapers/wallpaperoctaviafull.jpeg
+hsetroot -cover Pictures/wallpapers/wallpaperguyincity.jpeg
