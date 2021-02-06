@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 echo -e "acpi caller script for thinkpad 5 \n"
 
@@ -10,10 +10,10 @@ echo -e '\t 5 rapid charging mode off (0x0) \n'
 echo -e '\t 6 battery conservation mode on (0x1) \n'
 echo -e '\t 7 battery conservation mode off (0x0) \n'
 
-echo -n 'option : ' 
+echo -n 'option : '
 read OPTION
 
-case $OPTION in 
+case $OPTION in
     1) echo '\_SB.PCI0.LPC0.EC0.VPC0.DYTC 0x000FB001' > /proc/acpi/call
         echo '\_SB.PCI0.LPC0.EC0.SPMO' > /proc/acpi/call
         ;;
