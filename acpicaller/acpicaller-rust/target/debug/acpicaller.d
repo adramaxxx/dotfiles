@@ -1,0 +1,1 @@
+/home/adramax/Documents/repos/dotfiles/acpicaller/acpicaller-rust/target/debug/acpicaller: /home/adramax/Documents/repos/dotfiles/acpicaller/acpicaller-rust/src/acpivalues.rs /home/adramax/Documents/repos/dotfiles/acpicaller/acpicaller-rust/src/main.rs
