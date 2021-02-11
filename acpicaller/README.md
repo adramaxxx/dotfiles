@@ -16,3 +16,5 @@ The verification bits are as follows:
 - Battery conservation disabled: 0x0
 - Rapid charge enabled: 0x1
 - Rapid charge disabled: 0x0
+
+For a more detailed explanation please head to (insert link)
