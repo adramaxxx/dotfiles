@@ -118,8 +118,10 @@ PERL_MB_OPT="--install_base \"/home/adramax/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/home/adramax/perl5"; export PERL_MM_OPT;
 
 alias media="tmux a -t cmus"
-alias craftdwm="sudo cp config.def.h config.h; make && sudo make clean install"
+alias craftdwm="doas cp config.def.h config.h; make && doas make clean install"
 alias sendtoclipboard="xclip -selection clipboard < "
 alias dragdrop="dragon-drag-and-drop"
-
+alias publishsite="hugo; cp -r public/* /etc/http/personalwebsite"
+alias cat="bat"
+export CACUS="cacus.feralhosting.com"
 #refresh_shell
