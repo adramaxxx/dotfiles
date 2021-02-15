@@ -1,5 +1,5 @@
 #!/bin/sh
-#killall -q polybar
+killall -q polybar
 for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
   monitorcount=$((monitorcount + 1))
 done
