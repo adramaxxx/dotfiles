@@ -5,4 +5,4 @@ currentlight=$(doas bat $file)
 
 currentlightP=$(echo "scale=2;($currentlight/255)*100" | bc)
 #echo $currentlightP
-echo -n "☼$currentlightP%"
+echo -n "$currentlightP%"

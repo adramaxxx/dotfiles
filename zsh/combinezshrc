@@ -5,7 +5,12 @@ stty stop undef		# Disable ctrl-s to freeze terminal.
 setopt interactive_comments
 
 
-alias ls='ls --color'
+#alias ls='ls --color'
+alias ls='exa'
+#alias ls='exa -al --color=always --group-directories-first' # my preferred listing
+#alias la='exa -a --color=always --group-directories-first'  # all files and dirs
+#alias ll='exa -l --color=always --group-directories-first'  # long format
+#alias lt='exa -aT --color=always --group-directories-first' # tree listing
 
 # export MANPATH="/usr/local/man:$MANPATH"
 export PATH="/sbin:$PATH"
@@ -111,17 +116,15 @@ source /usr/share/fzf/key-bindings.zsh
 #     fi
 # }
 
-export PATH="/home/adramax/perl5/bin${PATH:+:${PATH}}"
-PERL5LIB="/home/adramax/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
-PERL_LOCAL_LIB_ROOT="/home/adramax/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
-PERL_MB_OPT="--install_base \"/home/adramax/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=/home/adramax/perl5"; export PERL_MM_OPT;
-
 alias media="tmux a -t cmus"
 alias craftdwm="doas cp config.def.h config.h; make && doas make clean install"
 alias sendtoclipboard="xclip -selection clipboard < "
 alias dragdrop="dragon-drag-and-drop"
 alias publishsite="hugo; cp -r public/* /etc/http/personalwebsite"
 alias cat="bat"
+alias vidtoaudio="youtube-dl -x --extract-audio --audio-format flac --audio-quality 0"
 export CACUS="cacus.feralhosting.com"
+alias editconf="nvim ~/.config/i3/config"
+alias stopnetmgr="doas systemctl stop NetworkManager"
+alias startnetmgr="doas systemctl start NetworkManager"
 #refresh_shell

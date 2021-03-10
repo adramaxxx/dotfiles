@@ -18,47 +18,24 @@
 
 [colors]
 ;background = ${xrdb:color0:#222}
-background = #00000000
-background-alt = #00000000
-background-dab = #bf4f4b4b
+;;background = #222
+;background-alt = #444
+;;foreground = ${xrdb:color7:#222}
+;foreground = #dfdfdf
+;foreground-alt = #555
+;primary = #ffb52a
+;secondary = #e60053
+;alert = #bd2c40
+
+background = #b3414242
+background-alt = #b3414242
+background-dab = #b3414242
 ;foreground = ${xrdb:color7:#222}
 foreground = #dfdfdf
 foreground-alt = #555
 primary = #1b9fc6
 secondary = #e60053
 alert = #bd2c40
-
-[bar/secondarylaptop]
-enable-ipc = true
-width = 100%
-height = 30
-monitor = eDP
-background = ${colors.background}
-foreground = ${colors.foreground}
-
-font-0 = fixed:pixelsize=10;1
-font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = siji:pixelsize=10;1
-font-3 = NotoMusic:pixelsize=10;1
-font-4 = JetBrainsMono Nerd Font:pixelsize=10;1
-font-5 = Unifont Upper:pixelsize=10;1
-font-6 = NotoMusic:pixelsize=10;1
-font-7 = Material Icons:pixelsize=10;1
-
-modules-left = i3 dwm
-radius = 0
-fixed-center = false
-line-size = 3
-line-color = #f00
-
-border-size = 0
-
-padding-left = 1
-padding-right = 1
-
-module-margin-left = 1
-module-margin-right = 1
-seperator = |
 
 [bar/secondary]
 enable-ipc = true
@@ -74,28 +51,49 @@ font-2 = siji:pixelsize=10;1
 font-3 = NotoMusic:pixelsize=10;1
 font-4 = JetBrainsMono Nerd Font:pixelsize=10;1
 font-5 = Unifont Upper:pixelsize=10;1
-font-6 = NotoMusic:pixelsize=10;1
+font-6 = NotoSansMono:pixelsize=10;1
 font-7 = Material Icons:pixelsize=10;1
+font-8 = Noto Sans Mono Nerd Font:pixelsize=10:1;
+
+
 
 modules-left = i3 dwm
-radius = 0
 fixed-center = false
 line-size = 3
 line-color = #f00
+radius=0
+border-size=0
+;border-size = 0
 
-border-size = 0
-
-padding-left = 1
-padding-right = 1
-
-module-margin-left = 1
-module-margin-right = 1
-seperator = |
-
-[bar/laptop]
+[bar/secondarylaptop]
 enable-ipc = true
+width = 100%
+height = 30
 monitor = eDP
+background = ${colors.background}
+foreground = ${colors.foreground}
 
+font-0 = fixed:pixelsize=12;1
+font-1 = unifont:fontformat=truetype:size=12:antialias=false;0
+font-2 = siji:pixelsize=12;1
+font-3 = NotoMusic:pixelsize=12;1
+font-4 = JetBrainsMono Nerd Font:pixelsize=12;1
+font-5 = Unifont Upper:pixelsize=12;1
+font-6 = NotoMusic:pixelsize=12;1
+font-7 = Material Icons:pixelsize=12;1
+font-8 = Noto Sans Mono Nerd Font:pixelsize=12:1;
+
+modules-left = i3 dwm
+fixed-center = false
+line-size = 3
+line-color = #f00
+radius=0
+border-size=0
+;border-size = 0
+
+[bar/primary]
+enable-ipc = true
+monitor = DisplayPort-0
 width = 100%
 height = 30
 ;offset-x = 1%
@@ -105,20 +103,18 @@ fixed-center = false
 
 background = ${colors.background}
 foreground = ${colors.foreground}
-;background = #00a
-;border-color = #00a
-;foreground = #c5a9f9
 
 line-size = 3
 line-color = #f00
 
 border-size = 0
+border-color = #00000000
 
-padding-left = 1
-padding-right = 1
+padding-left = 0
+padding-right = 2
 
 module-margin-left = 1
-module-margin-right = 1
+module-margin-right = 2
 
 font-0 = fixed:pixelsize=10;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
@@ -128,14 +124,14 @@ font-4 = JetBrainsMono Nerd Font:pixelsize=10;1
 font-5 = Unifont Upper:pixelsize=10;1
 font-6 = NotoMusic:pixelsize=10;1
 font-7 = Material Icons:pixelsize=10;1
+font-8 = Noto Sans Mono Nerd Font:pixelsize=12:1;
 
 modules-left = i3 dwm
 modules-center = cmus
-modules-right = cmuscontroller pulseaudio memory cpu battery temperature date
-seperator = |
+modules-right = cmuscontroller filesystem pulseaudio memory cpu wlan eth battery brightness date
 
 tray-position = right
-tray-padding = 1
+tray-padding = 2
 ;tray-background = #0063ff
 
 ;wm-restack = bspwm
@@ -152,9 +148,9 @@ override-redirect = false
 cursor-click = pointer
 cursor-scroll = ns-resize
 
-[bar/primary]
+[bar/laptop]
 enable-ipc = true
-monitor = DisplayPort-0
+monitor = eDP
 width = 100%
 height = 30
 ;offset-x = 1%
@@ -164,37 +160,35 @@ fixed-center = false
 
 background = ${colors.background}
 foreground = ${colors.foreground}
-;background = #00a
-;border-color = #00a
-;foreground = #c5a9f9
 
 line-size = 3
 line-color = #f00
 
 border-size = 0
+border-color = #00000000
 
-padding-left = 1
-padding-right = 1
+padding-left = 0
+padding-right = 2
 
 module-margin-left = 1
-module-margin-right = 1
+module-margin-right = 2
 
-font-0 = fixed:pixelsize=10;1
-font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = siji:pixelsize=10;1
-font-3 = NotoMusic:pixelsize=10;1
-font-4 = JetBrainsMono Nerd Font:pixelsize=10;1
-font-5 = Unifont Upper:pixelsize=10;1
-font-6 = NotoMusic:pixelsize=10;1
-font-7 = Material Icons:pixelsize=10;1
+font-0 = fixed:pixelsize=11;1
+font-1 = unifont:fontformat=truetype:size=10:antialias=false;0
+font-2 = siji:pixelsize=11;1
+font-3 = NotoMusic:pixelsize=11;1
+font-4 = JetBrainsMono Nerd Font:pixelsize=11;1
+font-5 = Unifont Upper:pixelsize=11;1
+font-6 = NotoMusic:pixelsize=11;1
+font-7 = Material Icons:pixelsize=11;1
+font-8 = Noto Sans Mono Nerd Font:pixelsize=11:1;
+
 
 modules-left = i3 dwm
 modules-center = cmus
-modules-right = cmuscontroller pulseaudio memory cpu battery temperature date
-seperator = |
-
+modules-right = cmuscontroller filesystem pulseaudio memory cpu wlan eth battery brightness date
 tray-position = right
-tray-padding = 1
+tray-padding = 2
 ;tray-background = #0063ff
 
 ;wm-restack = bspwm
@@ -301,20 +295,6 @@ label-urgent-padding = 2
 ; label-separator = |
 
 
-[module/mpd]
-type = internal/mpd
-format-online = <label-song>
-
-icon-prev = 
-icon-stop = 
-icon-play = 
-icon-pause = 
-icon-next = 
-
-label-song = 𝄞 %artist% - %title% 𝄞
-#label-song-maxlen = 55
-label-song-ellipsis = true
-
 [module/xbacklight]
 type = internal/xbacklight
 
@@ -340,7 +320,7 @@ card = intel_backlight
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = "🝒 "
+format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #f90000
 label = %percentage:2%%
@@ -355,7 +335,7 @@ label = %percentage_used%%
 
 [module/wlan]
 type = internal/network
-interface = net1
+interface = wlp1s0
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
@@ -377,7 +357,7 @@ ramp-signal-foreground = ${colors.foreground-alt}
 
 [module/eth]
 type = internal/network
-interface = eno1
+interface = enp3s0f3u1u3
 interval = 3.0
 
 format-connected-underline = #55aa55
@@ -396,22 +376,21 @@ type = internal/date
 interval = 5
 
 date =
-date-alt = "%d-%m-%Y"
+date-alt = " %Y-%m-%d"
 
 time = %H:%M
-time-alt = %H:%M
+time-alt = %H:%M:%S
 
 format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #0a6cf5
 
-;label = %date% %time%
-label = %time% %date%
+label = %date% %time%
 
 [module/pulseaudio]
 type = internal/pulseaudio
 
-format-volume = <label-volume>
+format-volume = <label-volume> <bar-volume>
 label-volume = VOL %percentage%%
 label-volume-foreground = ${root.foreground}
 
@@ -463,10 +442,11 @@ bar-volume-empty = ─
 bar-volume-empty-font = 2
 bar-volume-empty-foreground = ${colors.foreground-alt}
 
+
 [module/battery]
 type = internal/battery
 battery = BAT0
-adapter = ADP1
+adapter = ADP0
 full-at = 98
 
 format-charging = <animation-charging> <label-charging>
@@ -475,24 +455,22 @@ format-charging-underline = #ffb52a
 format-discharging = <animation-discharging> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
 
-format-full-prefix = ""
+format-full-prefix = " "
 format-full-prefix-foreground = ${colors.foreground-alt}
 format-full-underline = ${self.format-charging-underline}
 
-ramp-capacity-0 =
-ramp-capacity-1 =
-ramp-capacity-2 =
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
 ramp-capacity-foreground = ${colors.foreground-alt}
 
-animation-charging-0 =
-animation-charging-1 =
-animation-charging-2 =
+animation-charging-0 = 
 animation-charging-foreground = ${colors.foreground-alt}
 animation-charging-framerate = 750
 
-animation-discharging-0 =
-animation-discharging-1 =
-animation-discharging-2 =
+animation-discharging-0 = 
+animation-discharging-1 = 
+animation-discharging-2 = 
 animation-discharging-foreground = ${colors.foreground-alt}
 animation-discharging-framerate = 750
 
@@ -501,19 +479,19 @@ type = internal/temperature
 thermal-zone = 0
 warn-temperature = 60
 
-format = <label>
+format = <ramp> <label>
 format-underline = #f50a4d
-format-warn = <label-warn>
+format-warn = <ramp> <label-warn>
 format-warn-underline = ${self.format-underline}
 
 label = %temperature-c%
 label-warn = %temperature-c%
 label-warn-foreground = ${colors.secondary}
 
-#ramp-0 = 
-#ramp-1 = 
-#ramp-2 = 
-#ramp-foreground = ${colors.foreground-alt}
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-foreground = ${colors.foreground-alt}
 
 [module/powermenu]
 type = custom/menu
@@ -561,7 +539,7 @@ label-maxlen = 80
 #label-minlen = 45
 label-alignment = left
 label-mode-padding = 0
-label-font = 3
+label-font = 5
 ;format-foreground = #020202
 label = %output%
 
@@ -569,9 +547,22 @@ label = %output%
 type = custom/text
 format = <content>
 content-padding = 1
-content-font = 6
+content-font = 9
 ;content-foreground = #00BBEE
 content = %{A1:cmus-remote --shuffle:}%{A1:cmus-remote --next:}%{A1:cmus-remote --prev:}%{A1:cmus-remote --play:}%{A1:cmus-remote --pause:} %{A}%{O10}%{A}%{O10}%{A}%{O10}%{A}%{O10}🔀%{A}
+
+[module/goat]
+type = custom/text
+format = <content>
+content = "%{A1:doas systemctl poweroff:}fuck outta here%{A}"
+
+[module/brightness]
+interval = 0.5
+type = custom/script
+format = <label>
+format-underline = #dfdfdfdf
+exec = ~/.config/polybar/brightness.sh
+
 
 [settings]
 screenchange-reload = true
@@ -582,10 +573,8 @@ screenchange-reload = true
 ;pseudo-transparency = false
 
 [global/wm]
-margin-top = 0
-margin-bottom = 0
-
-; vim:ft=dosini
+margin-top = 5
+margin-bottom = 5
 
 [module/dwm]
 type = internal/dwm
@@ -654,7 +643,7 @@ label-unfocused-padding = 2
 ; visible = Unselected tag, but occupied tag on any monitor
 label-visible = %name%
 label-visible-background = ${self.label-focused-background}
-label-visible-underline = ${self.label-focused-underline}
+;label-visible-underline = ${self.label-focused-underline}
 label-visible-padding = ${self.label-focused-padding}
 
 ; urgent = Unselected tag with window that has urgency hint set
@@ -664,6 +653,9 @@ label-urgent-padding = 2
 
 ; empty = Unselected and unoccupied tag
 ; This can be set to an empty string to hide empty tags
-label-empty = %name%
+label-empty =
 label-empty-background = ${colors.primary}
 label-empty-padding = 2
+
+
+; vim:ft=dosini

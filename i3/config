@@ -9,14 +9,14 @@ set $HOME /home/adramax
 # workspace_layout tabbed <stacking|tabbed>
 
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
-default_border pixel 1
+default_border pixel 2
 default_floating_border none
 
 # Hide borders
 hide_edge_borders none
 
 # change borders
-bindsym $mod+u border none
+#bindsym $mod+u border none
 bindsym $mod+y border pixel 1
 bindsym $mod+n border normal
 
@@ -28,7 +28,7 @@ font xft:URWGothic-Book 11
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec st
+bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+q kill
@@ -43,7 +43,7 @@ bindsym $mod+d exec --no-startup-id dmenu_run
 #exec --no-startup-id volumeicon
 #bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
 #exec --no-startup-id pulseaudio
-exec --no-startup-id pa-applet --disable-notifications
+#exec --no-startup-id pa-applet --disable-notifications
 bindsym $mod+Ctrl+m exec pavucontrol
 ################################################################################################
 
@@ -53,6 +53,7 @@ bindsym $mod+Ctrl+m exec pavucontrol
 
 # Start Applications
 bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
+bindsym $mod+F1 exec alacritty -e nvim $HOME/.config/i3/config
 bindsym $mod+F2 exec brave
 #bindsym $mod+F3 exec pcmanfm
 bindsym $mod+F3 exec ranger
@@ -67,15 +68,11 @@ bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart du
 #bindsym $mod+Shift+h exec xdg-open /usr/share/doc/manjaro/i3_help.pdf
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 
-focus_follows_mouse yes
-mouse_warping output
-focus_wrapping yes
-
 # change focus
-bindsym $mod+h focus left
+bindsym $mod+h focus left 
 bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
+bindsym $mod+k focus up 
+bindsym $mod+l focus right 
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -130,7 +127,7 @@ bindsym $mod+Shift+minus move scratchpad
 
 # Show the next scratchpad window or hide the focused scratchpad window.
 # If there are multiple scratchpad windows, this command cycles through them.
-bindsym $mod+minus scratchpad show
+#bindsym $mod+minus scratchpad show
 
 #navigate workspaces next / previous
 bindsym $mod+0x2e workspace next
@@ -194,8 +191,8 @@ bindsym $mod+Shift+9 move container to workspace $ws9; workspace $ws9
 # Open specific applications in floating mode
 for_window [class="calamares"] floating enable border normal
 for_window [class="GParted"] floating enable border normal
-for_window [class="Lxappearance"] floating enable sticky enable border normal
-for_window [class="Nitrogen"] floating enable sticky enable border normal
+#for_window [class="Lxappearance"] floating enable sticky enable border normal
+#for_window [class="Nitrogen"] floating enable sticky enable border normal
 #for_window [class="Pavucontrol"] floating enable
 for_window [class="Qtconfig-qt4"] floating enable sticky enable border normal
 for_window [class="Timeset-gui"] floating enable border normal
@@ -259,22 +256,21 @@ mode "resize" {
 #bindsym $mod+9 exec --no-startup-id blurlock
 
 # Autostart applications
-exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+#exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 #exec --no-startup-id nitrogen --restore; sleep 1; picom -b
-exec --no-startup-id picom
+exec --no-startup-id picom -b
 #exec --no-startup-id manjaro-hello
-exec --no-startup-id nm-applet
-exec --no-startup-id xfce4-power-manager
-exec --no-startup-id pamac-tray
-exec --no-startup-id clipit
+#exec --no-startup-id nm-applet
+#exec --no-startup-id xfce4-power-manager
+#exec --no-startup-id pamac-tray
+#exec --no-startup-id clipit
 #exec --no-startup-id blueman-applet
 # exec_always --no-startup-id sbxkb
 #exec --no-startup-id start_conky_maia
 # exec --no-startup-id start_conky_green
-exec --no-startup-id xautolock -time 10 -locker blurlock
-exec_always --no-startup-id ff-theme-util
-exec_always --no-startup-id fix_xcursor
-exec xset r rate 300 50
+#exec --no-startup-id xautolock -time 10 -locker blurlock
+#exec_always --no-startup-id ff-theme-util
+#exec_always --no-startup-id fix_xcursor
 exec --no-startup-id start-pulseaudio-x11
 
 # Color palette used for the terminal ( ~/.Xresources file )
@@ -364,6 +360,9 @@ exec --no-startup-id start-pulseaudio-x11
 #    }
 #}
 
+exec_always xset r rate 300 50
+exec_always setxkbmap dk
+exec_always refreshsetup
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # hide/unhide i3status bar
@@ -371,7 +370,7 @@ bindsym $mod+b exec polybar-msg cmd toggle
 
 # Theme colors
 # class                   border  backgr. text    indic.   child_border
-  client.focused          #556064 #556064 #80FFF9 #FDF6E3
+  client.focused          #005577 #005577 #80FFF9 #005577
   client.focused_inactive #2F3D44 #2F3D44 #1ABC9C #454948
   client.unfocused        #2F3D44 #2F3D44 #1ABC9C #454948
   client.urgent           #CB4B16 #FDF6E3 #1ABC9C #268BD2
@@ -397,7 +396,7 @@ smart_gaps on
 
 # Smart borders (draw borders around container only if it is not the only container on this workspace)
 # on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
-#smart_borders off
+smart_borders on
 
 # Press $mod+Shift+g to enter the gap mode. Choose o or i for modifying outer/inner gaps. Press one of + / - (in-/decrement for current workspace) or 0 (remove gaps for current workspace). If you also press Shift with these keys, the change will be global for all workspaces.
 set $mode_gaps Gaps: (o) outer, (i) inner
@@ -443,7 +442,7 @@ bindsym XF86AudioMicMute exec mutemicrophone
 
 
 #exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent
-#exec --no-startup-id redshift-gtk
+#exec --no-startup-id redshift -l 57.046707:9.935932
 
 exec --no-startup-id flameshot
 bindsym Print exec --no-startup-id flameshot gui
@@ -453,3 +452,13 @@ bindsym XF86AudioPlay exec $HOME/.config/i3/cmuscontrol
 bindsym XF86AudioPause exec $HOME/.config/i3/cmuscontrol
 bindsym XF86AudioNext exec cmus-remote --next
 bindsym XF86AudioPrev exec cmus-remote --prev
+bindsym $mod+i exec cmus-remote --next
+bindsym $mod+u exec cmus-remote --prev
+bindsym $mod+minus exec $HOME/.config/i3/cmuscontrol
+bindsym XF86MonBrightnessUp exec brightness raise
+bindsym XF86MonBrightnessDown exec brightness lower
+bindsym XF86AudioRaiseVolume exec volumecontrol raise
+bindsym XF86AudioLowerVolume exec volumecontrol lower
+
+# enable tapping on mousepad
+exec_always xinput set-prop 'ELAN0001:00 04F3:3140 Touchpad' 'libinput Tapping Enabled' 1

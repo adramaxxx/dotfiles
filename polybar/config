@@ -27,13 +27,15 @@
 ;secondary = #e60053
 ;alert = #bd2c40
 
-background = #b3414242
-background-alt = #b3414242
-background-dab = #b3414242
+background = #282c34
+;background = #000000 
+background-alt = #414242
+background-dab = #414242
 ;foreground = ${xrdb:color7:#222}
-foreground = #dfdfdf
-foreground-alt = #555
-primary = #1b9fc6
+foreground = #bbc2cf
+;foreground = #dfdfdf
+foreground-alt = #dfdfdfdf
+primary = #2c79f5
 secondary = #e60053
 alert = #bd2c40
 
@@ -58,6 +60,7 @@ font-8 = Noto Sans Mono Nerd Font:pixelsize=10:1;
 
 
 modules-left = i3 dwm
+modules-center = cmus
 fixed-center = false
 line-size = 3
 line-color = #f00
@@ -73,17 +76,18 @@ monitor = eDP
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-font-0 = fixed:pixelsize=10;1
-font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = siji:pixelsize=10;1
-font-3 = NotoMusic:pixelsize=10;1
-font-4 = JetBrainsMono Nerd Font:pixelsize=10;1
-font-5 = Unifont Upper:pixelsize=10;1
-font-6 = NotoMusic:pixelsize=10;1
-font-7 = Material Icons:pixelsize=10;1
-font-8 = Noto Sans Mono Nerd Font:pixelsize=10:1;
+font-0 = fixed:pixelsize=12;1
+font-1 = unifont:fontformat=truetype:size=12:antialias=false;0
+font-2 = siji:pixelsize=12;1
+font-3 = NotoMusic:pixelsize=12;1
+font-4 = JetBrainsMono Nerd Font:pixelsize=12;1
+font-5 = Unifont Upper:pixelsize=12;1
+font-6 = NotoMusic:pixelsize=12;1
+font-7 = Material Icons:pixelsize=12;1
+font-8 = Noto Sans Mono Nerd Font:pixelsize=12:1;
 
 modules-left = i3 dwm
+modules-center = cmus 
 fixed-center = false
 line-size = 3
 line-color = #f00
@@ -95,7 +99,7 @@ border-size=0
 enable-ipc = true
 monitor = DisplayPort-0
 width = 100%
-height = 30
+height = 35
 ;offset-x = 1%
 ;offset-y = 1%
 radius = 0
@@ -128,7 +132,8 @@ font-8 = Noto Sans Mono Nerd Font:pixelsize=12:1;
 
 modules-left = i3 dwm
 modules-center = cmus
-modules-right = cmuscontroller filesystem pulseaudio memory cpu wlan eth battery brightness date
+modules-right = cmuscontroller pulseaudio battery brightness date
+;modules-right = cmuscontroller filesystem pulseaudio memory cpu wlan eth battery brightness date
 
 tray-position = right
 tray-padding = 2
@@ -174,19 +179,20 @@ module-margin-left = 1
 module-margin-right = 2
 
 font-0 = fixed:pixelsize=10;1
-font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = siji:pixelsize=10;1
-font-3 = NotoMusic:pixelsize=10;1
-font-4 = JetBrainsMono Nerd Font:pixelsize=10;1
-font-5 = Unifont Upper:pixelsize=10;1
-font-6 = NotoMusic:pixelsize=10;1
-font-7 = Material Icons:pixelsize=10;1
-font-8 = Noto Sans Mono Nerd Font:pixelsize=10:1;
+font-1 = unifont:fontformat=truetype:size=11:antialias=false;0
+font-2 = siji:pixelsize=11;1
+font-3 = NotoMusic:pixelsize=11;1
+font-4 = JetBrainsMono Nerd Font:pixelsize=11;1
+font-5 = Unifont Upper:pixelsize=11;1
+font-6 = NotoMusic:pixelsize=11;1
+font-7 = Material Icons:pixelsize=11;1
+font-8 = Noto Sans Mono Nerd Font:pixelsize=11:1;
 
 
 modules-left = i3 dwm
 modules-center = cmus
-modules-right = cmuscontroller filesystem pulseaudio memory cpu wlan eth battery brightness date
+modules-right = cmuscontroller memory pulseaudio battery brightness wlan eth date
+;modules-right = cmuscontroller filesystem pulseaudio memory cpu wlan eth battery brightness date
 tray-position = right
 tray-padding = 2
 ;tray-background = #0063ff
@@ -272,7 +278,7 @@ label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
 label-focused = %index%
-label-focused-background = ${colors.background-alt}
+label-focused-background = ${colors.primary}
 label-focused-underline= ${colors.primary}
 label-focused-padding = 2
 
@@ -320,7 +326,7 @@ card = intel_backlight
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = " "
+format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #f90000
 label = %percentage:2%%
@@ -373,19 +379,18 @@ format-disconnected =
 
 [module/date]
 type = internal/date
-interval = 5
+interval = 60
 
-date =
+date = "%d-%m-%Y"
 date-alt = " %Y-%m-%d"
 
 time = %H:%M
 time-alt = %H:%M:%S
 
-format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #0a6cf5
 
-label = %date% %time%
+label = %date% 🕛%time%
 
 [module/pulseaudio]
 type = internal/pulseaudio
@@ -442,36 +447,37 @@ bar-volume-empty = ─
 bar-volume-empty-font = 2
 bar-volume-empty-foreground = ${colors.foreground-alt}
 
+
 [module/battery]
 type = internal/battery
 battery = BAT0
 adapter = ADP0
 full-at = 98
 
-format-charging = <animation-charging> <label-charging>
+format-charging = <label-charging>
+format-charging-prefix = "🔌"
 format-charging-underline = #ffb52a
 
-format-discharging = <animation-discharging> <label-discharging>
+format-discharging = <label-discharging>
+format-discharging-prefix = "🔋"
 format-discharging-underline = ${self.format-charging-underline}
 
-format-full-prefix = " "
+format-full-prefix = "⚡"
 format-full-prefix-foreground = ${colors.foreground-alt}
 format-full-underline = ${self.format-charging-underline}
 
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-foreground = ${colors.foreground-alt}
+#ramp-capacity-0 = 
+#ramp-capacity-1 = 
+#ramp-capacity-2 = 
+#ramp-capacity-foreground = ${colors.foreground-alt}
 
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
+#animation-charging-0 = 
 animation-charging-foreground = ${colors.foreground-alt}
 animation-charging-framerate = 750
 
-animation-discharging-0 = 
-animation-discharging-1 = 
-animation-discharging-2 = 
+#animation-discharging-0 = 
+#animation-discharging-1 = 
+#animation-discharging-2 = 
 animation-discharging-foreground = ${colors.foreground-alt}
 animation-discharging-framerate = 750
 
@@ -529,7 +535,7 @@ format = <label>
 exec = ~/.config/polybar/cmus.sh
 exec-if = pgrep -x cmus
 interval = 0.5
-label-background = ${colors.background-dab}
+#label-background = ${colors.background-dab}
 #click-left = cmus-remote --next
 #click-right = cmus-remote --prev
 #click-middle = cmus-remote --pause
@@ -542,7 +548,7 @@ label-alignment = left
 label-mode-padding = 0
 label-font = 5
 ;format-foreground = #020202
-label = %output%
+label = <%output%>
 
 [module/cmuscontroller]
 type = custom/text

@@ -6,15 +6,19 @@ set shiftwidth=4
 set noexpandtab
 set wrap
 set smartcase
+set ignorecase
 set noswapfile
 set nobackup
 set nocompatible
-filetype plugin on
+filetype plugin indent on
+filetype on
 set laststatus=2
 "set guicursor=
 set hidden
 set title
 set noruler
+set nohlsearch
+set mouse=n
 
 " alot of the plugins are just colorschemes since i have a hard time deciding
 call plug#begin('~/.vim/plugged')
@@ -23,14 +27,16 @@ Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'airblade/vim-rooter'
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'sheerun/vim-polyglot'
 Plug 'lervag/vimtex'
 Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
 Plug 'tpope/vim-fugitive'
 Plug 'preservim/nerdtree'
 Plug 'godlygeek/tabular'
-Plug 'itchyny/calendar.vim'
-Plug 'morhetz/gruvbox'
+Plug 'neovimhaskell/haskell-vim'
+Plug 'justinmk/vim-sneak'
+Plug 'mboughaba/i3config.vim'
 call plug#end()
 
 " use navigation keys to move around windows when splitting
@@ -39,10 +45,12 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-"set background=dark
-colorscheme gruvbox
+set background=dark
+"colorscheme solarized8
+let g:gruvbox_contrast_dark = "hard"
+let g:gruvbox_transparent_bg = 1
 " below command is to keep tmux sane
-"set t_Co=256
+set t_Co=256
 hi Normal guibg=NONE ctermbg=NONE
 "set termguicolors
 hi LineNr cterm=NONE ctermbg=NONE guibg=NONE guifg=NONE term=bold
@@ -99,11 +107,9 @@ cabb Q q
 nnoremap ½ :ls <CR>
 
 "automatically delete trailing whitespace
-autocmd BufWritePre * %s/\s\+$//e
-autocmd BufWritePre * %s/\n\+\%$//e
-autocmd BufWritePre *.[ch] %s/\%$/\r/e
-
-
+"autocmd BufWritePre * %s/\s\+$//e
+"autocmd BufWritePre * %s/\n\+\%$//e
+"autocmd BufWritePre *.[ch] %s/\%$/\r/e
 
 " Function for toggling the bottom statusbar
 let s:hidden_all = 0
@@ -125,19 +131,18 @@ function! ToggleHiddenAll()
 endfunction
 nnoremap <leader>h :call ToggleHiddenAll()<CR>
 
-function! SaveNoWhiteSpace()
-	autocmd BufWritePre * %s/\s\+$//e
-    autocmd BufWritePre * %s/\n\+\%$//e
-    autocmd BufWritePre *.[ch] %s/\%$/\r/e
-endfunction
-nnoremap <leader>wnw :call SaveNoWhiteSpace()<CR>
-
 " autorun xrdb whenever .xresources is being saved
 autocmd BufRead,BufNewFile .Xresources,xdefaults set filetype=xdefaults
 autocmd BufWritePost .Xresources,Xdefaults,.Xresources,xdefaults !xrdb %
 
 " save file as sudo on files that require root permission
-cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
+cnoremap w!! execute 'silent! write !doas tee % >/dev/null' <bar> edit!
 
 " no more autocomment on newline
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
+" i3 config file syntax highlighting
+aug i3config_ft_detection
+  au!
+  au BufNewFile,BufRead ~/.config/i3/config set filetype=i3config
+aug end
