@@ -2,7 +2,7 @@
 
 file="/sys/class/backlight/amdgpu_bl0/subsystem/amdgpu_bl0/brightness"
 
-currentlight=$(doas bat $file)
+currentlight=$(sudo bat $file)
 
 if [[ $1 == "raise" ]]
 then
@@ -17,4 +17,4 @@ then
 	light=255
 fi
 
-echo $light | doas tee $file
+echo $light | sudo tee $file

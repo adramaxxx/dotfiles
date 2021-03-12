@@ -9,7 +9,6 @@ set smartcase
 set ignorecase
 set noswapfile
 set nobackup
-set nocompatible
 filetype plugin indent on
 filetype on
 set laststatus=2
@@ -36,7 +35,9 @@ Plug 'preservim/nerdtree'
 Plug 'godlygeek/tabular'
 Plug 'neovimhaskell/haskell-vim'
 Plug 'justinmk/vim-sneak'
+Plug 'romgrk/doom-one.vim'
 Plug 'mboughaba/i3config.vim'
+Plug 'joshdick/onedark.vim'
 call plug#end()
 
 " use navigation keys to move around windows when splitting
@@ -45,23 +46,23 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-set background=dark
-"colorscheme solarized8
-let g:gruvbox_contrast_dark = "hard"
-let g:gruvbox_transparent_bg = 1
-" below command is to keep tmux sane
-set t_Co=256
-hi Normal guibg=NONE ctermbg=NONE
+"set background=dark
+hi clear SpellBad
+hi clear SignColumn
+"set t_Co=256
+"hi SpellBad cterm=underline
 "set termguicolors
+colorscheme onedark
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+highlight Normal ctermbg=NONE ctermfg=NONE
+"let g:gruvbox_contrast_dark = "hard"
+"let g:gruvbox_transparent_bg = 1
+" below command is to keep tmux sane
+"set termguicolors
+"highlight nonText ctermbg=NONE ctermfg=NONE
 hi LineNr cterm=NONE ctermbg=NONE guibg=NONE guifg=NONE term=bold
 " below command is to remove the ugly thing next to the linenumbers.
-hi clear SignColumn
-hi clear SpellBad
-hi SpellBad cterm=underline
-"hi! Pmenu cterm=NONE gui=NONE ctermbg=233 ctermfg=252 guifg=#1c1e26 guibg=#d5d8da
-"hi! PmenuSbar cterm=NONE gui=NONE ctermbg=236 guibg=#3d425b
-"hi! PmenuSel cterm=NONE gui=NONE ctermbg=240 ctermfg=255 guibg=#5b6389 guifg=#eff0f4
-"hi! PmenuThumb cterm=NONE gui=NONE ctermbg=233 guibg=#1c1e26
+"hi clear SpellBad
 "instant markdown cfg
 map <leader>md :InstantMarkdownPreview<CR>
 let g:instant_markdown_autostart = 0
@@ -146,3 +147,4 @@ aug i3config_ft_detection
   au!
   au BufNewFile,BufRead ~/.config/i3/config set filetype=i3config
 aug end
+

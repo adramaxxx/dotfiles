@@ -4,7 +4,6 @@ setopt autocd		# Automatically cd into typed directory.
 stty stop undef		# Disable ctrl-s to freeze terminal.
 setopt interactive_comments
 
-
 #alias ls='ls --color'
 alias ls='exa'
 #alias ls='exa -al --color=always --group-directories-first' # my preferred listing
@@ -117,7 +116,7 @@ source /usr/share/fzf/key-bindings.zsh
 # }
 
 alias media="tmux a -t cmus"
-alias craftdwm="doas cp config.def.h config.h; make && doas make clean install"
+alias craftdwm="sudo cp config.def.h config.h; make && sudo make clean install"
 alias sendtoclipboard="xclip -selection clipboard < "
 alias dragdrop="dragon-drag-and-drop"
 alias publishsite="hugo; cp -r public/* /etc/http/personalwebsite"
@@ -125,6 +124,5 @@ alias cat="bat"
 alias vidtoaudio="youtube-dl -x --extract-audio --audio-format flac --audio-quality 0"
 export CACUS="cacus.feralhosting.com"
 alias editconf="nvim ~/.config/i3/config"
-alias stopnetmgr="doas systemctl stop NetworkManager"
-alias startnetmgr="doas systemctl start NetworkManager"
+alias downgrade="sudo DOWNGRADE_FROM_ALA=1 downgrade" 
 #refresh_shell

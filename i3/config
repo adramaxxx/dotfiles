@@ -271,7 +271,7 @@ exec --no-startup-id picom -b
 #exec --no-startup-id xautolock -time 10 -locker blurlock
 #exec_always --no-startup-id ff-theme-util
 #exec_always --no-startup-id fix_xcursor
-exec --no-startup-id start-pulseaudio-x11
+#exec --no-startup-id start-pulseaudio-x11
 
 # Color palette used for the terminal ( ~/.Xresources file )
 # Colors are gathered based on the documentation:
@@ -360,9 +360,6 @@ exec --no-startup-id start-pulseaudio-x11
 #    }
 #}
 
-exec_always xset r rate 300 50
-exec_always setxkbmap dk
-exec_always refreshsetup
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # hide/unhide i3status bar
@@ -383,8 +380,8 @@ bindsym $mod+b exec polybar-msg cmd toggle
 #############################
 
 # Set inner/outer gaps
-gaps inner 2
-gaps outer 2
+gaps inner 4
+gaps outer 4
 
 # Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
 # gaps inner|outer current|all set|plus|minus <px>
@@ -435,18 +432,18 @@ mode "$mode_gaps_outer" {
         bindsym Escape mode "default"
 }
 
-# open bluetooth manager
-#bindsym $mod+Mod1+b exec blueman-manager
+
+# enable tapping on mousepad
+exec_always xinput set-prop 'ELAN0001:00 04F3:3140 Touchpad' 'libinput Tapping Enabled' 1
+exec_always xset r rate 300 50
+exec_always setxkbmap dk
+#exec_always refreshsetup.sh
+#exec_always setbg.sh
 # mute microphone
-bindsym XF86AudioMicMute exec mutemicrophone
-
-
-#exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent
-#exec --no-startup-id redshift -l 57.046707:9.935932
+bindsym XF86AudioMicMute exec mutemicrophone.sh
 
 exec --no-startup-id flameshot
 bindsym Print exec --no-startup-id flameshot gui
-exec_always --no-startup-id dunst
 
 bindsym XF86AudioPlay exec $HOME/.config/i3/cmuscontrol
 bindsym XF86AudioPause exec $HOME/.config/i3/cmuscontrol
@@ -459,6 +456,3 @@ bindsym XF86MonBrightnessUp exec brightness raise
 bindsym XF86MonBrightnessDown exec brightness lower
 bindsym XF86AudioRaiseVolume exec volumecontrol raise
 bindsym XF86AudioLowerVolume exec volumecontrol lower
-
-# enable tapping on mousepad
-exec_always xinput set-prop 'ELAN0001:00 04F3:3140 Touchpad' 'libinput Tapping Enabled' 1
