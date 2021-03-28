@@ -1,6 +1,6 @@
 syntax enable
 set number rnu
-set clipboard=unnamedplus
+set clipboard+=unnamedplus
 set tabstop=4 softtabstop=4
 set shiftwidth=4
 set noexpandtab
@@ -17,7 +17,7 @@ set hidden
 set title
 set noruler
 set nohlsearch
-set mouse=n
+set mouse=a
 
 " alot of the plugins are just colorschemes since i have a hard time deciding
 call plug#begin('~/.vim/plugged')
@@ -36,8 +36,9 @@ Plug 'godlygeek/tabular'
 Plug 'neovimhaskell/haskell-vim'
 Plug 'justinmk/vim-sneak'
 Plug 'romgrk/doom-one.vim'
-Plug 'mboughaba/i3config.vim'
 Plug 'joshdick/onedark.vim'
+Plug 'voldikss/vim-floaterm'
+Plug 'morhetz/gruvbox'
 call plug#end()
 
 " use navigation keys to move around windows when splitting
@@ -46,37 +47,23 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-"set background=dark
+colorscheme gruvbox
 hi clear SpellBad
 hi clear SignColumn
-"set t_Co=256
-"hi SpellBad cterm=underline
-"set termguicolors
-colorscheme onedark
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+hi SpellBad cterm=underline,bold
 highlight Normal ctermbg=NONE ctermfg=NONE
-"let g:gruvbox_contrast_dark = "hard"
-"let g:gruvbox_transparent_bg = 1
-" below command is to keep tmux sane
-"set termguicolors
-"highlight nonText ctermbg=NONE ctermfg=NONE
 hi LineNr cterm=NONE ctermbg=NONE guibg=NONE guifg=NONE term=bold
-" below command is to remove the ugly thing next to the linenumbers.
-"hi clear SpellBad
+
 "instant markdown cfg
 map <leader>md :InstantMarkdownPreview<CR>
 let g:instant_markdown_autostart = 0
 let g:instant_markdown_mathjax = 1
-let g:instant_markdown_browser = "chromium"
+let g:instant_markdown_browser = "brave"
+
 " set spell when filetype is .md or .tex
 autocmd BufNewFile,BufRead *.md set spell
 autocmd BufNewFile,BufRead *.tex set spell
 
-" set colorcolumn when working with cpp files
-"autocmd BufNewFile,BufRead *.c set colorcolumn=110
-"autocmd BufNewFile,BufRead *.h set colorcolumn=110
-"autocmd BufNewFile,BufRead *.cpp set colorcolumn=110
-"autocmd BufNewFile,BufRead *.hpp set colorcolumn=110
 
 " remapping to exit terminal mode
 tnoremap <Esc> <C-\><C-n>
@@ -84,8 +71,6 @@ tnoremap <Esc> <C-\><C-n>
 " vimtex config
 nnoremap <leader>lp : VimtexCompile<CR>
 let g:vimtex_quickfix_mode = 0
-"let g:Tex_GotoError = 0
-"let g:Tex_ShowErrorContext = 0
 let g:Tex_DefaultTargetFormat = 'pdf'
 let g:Tex_CompileRule_pdf = 'latexmk -pdf -pvc $*'
 let g:vimtex_view_general_viewer = 'zathura'
@@ -93,6 +78,7 @@ let g:tex_flavor = 'latex'
 
 " remapping leader for faster fzf
 let mapleader=" "
+
 " switching between .h and .c very specific for coc clangd
 map gth :CocCommand clangd.switchSourceHeader <CR>
 
@@ -100,17 +86,15 @@ map gth :CocCommand clangd.switchSourceHeader <CR>
 nnoremap <C-n> :bnext<CR>
 nnoremap <C-p> :bprevious<CR>
 
+" nerd tree toggle
 nmap <F6> :NERDTreeToggle<CR>
 
+" do such that if i accidentally press :W to save, then I do not get an error
 cabb W w
 cabb Q q
 
-nnoremap ½ :ls <CR>
-
-"automatically delete trailing whitespace
-"autocmd BufWritePre * %s/\s\+$//e
-"autocmd BufWritePre * %s/\n\+\%$//e
-"autocmd BufWritePre *.[ch] %s/\%$/\r/e
+" Toggle floating terminal
+nnoremap <leader>fo : FloatermToggle <CR>
 
 " Function for toggling the bottom statusbar
 let s:hidden_all = 0
@@ -142,9 +126,10 @@ cnoremap w!! execute 'silent! write !doas tee % >/dev/null' <bar> edit!
 " no more autocomment on newline
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
-" i3 config file syntax highlighting
-aug i3config_ft_detection
-  au!
-  au BufNewFile,BufRead ~/.config/i3/config set filetype=i3config
-aug end
-
+" airline config
+let g:airline#extensions#tabline#buffer_nr_show = 1
+let g:airline#extensions#tabline#enabled=1
+let g:bufferline_echo = 0
+let g:airline#extensions#tabline#formatter = 'unique_tail'
+let g:airline#extensions#whitespace#enabled = 0
+let g:airline_theme = 'simple'
