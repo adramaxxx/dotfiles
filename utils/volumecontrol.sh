@@ -13,3 +13,4 @@ elif [[ $1 == "muteMic" ]]
 then
 	pactl set-source-mute @DEFAULT_SOURCE@ toggle
 fi
+pkill -RTMIN+5 dwmblocks

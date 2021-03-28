@@ -18,3 +18,4 @@ then
 fi
 
 echo $light | sudo tee $file
+pkill -RTMIN+8 dwmblocks

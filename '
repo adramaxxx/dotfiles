@@ -1,0 +1,9 @@
+#include <stdio.h>
+#include <string.h>
+
+static const char *intelligent_cooling = "\_SB.PCI0.LPC0.EC0.VPC0.DYTC 0x000FB001";
+
+int main (void) {
+	printf("Acpicaller in C\n");
+	return 0;
+}

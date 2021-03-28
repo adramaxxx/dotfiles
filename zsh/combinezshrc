@@ -125,4 +125,5 @@ alias vidtoaudio="youtube-dl -x --extract-audio --audio-format flac --audio-qual
 export CACUS="cacus.feralhosting.com"
 alias editconf="nvim ~/.config/i3/config"
 alias downgrade="sudo DOWNGRADE_FROM_ALA=1 downgrade" 
+alias weather="curl wttr.in"
 #refresh_shell

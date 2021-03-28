@@ -191,7 +191,7 @@ font-8 = Noto Sans Mono Nerd Font:pixelsize=11:1;
 
 modules-left = i3 dwm
 modules-center = cmus
-modules-right = cmuscontroller pulseaudio battery wlan eth date
+modules-right = cmuscontroller pulseaudio brightness battery wlan eth date
 ;modules-right = cmuscontroller filesystem pulseaudio memory cpu wlan eth battery brightness date
 tray-position = right
 tray-padding = 2

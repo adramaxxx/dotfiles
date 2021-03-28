@@ -437,8 +437,8 @@ mode "$mode_gaps_outer" {
 exec_always xinput set-prop 'ELAN0001:00 04F3:3140 Touchpad' 'libinput Tapping Enabled' 1
 exec_always xset r rate 300 50
 exec_always setxkbmap dk
-#exec_always refreshsetup.sh
-#exec_always setbg.sh
+exec_always refreshsetup.sh
+exec_always setbg.sh
 # mute microphone
 bindsym XF86AudioMicMute exec mutemicrophone.sh
 
@@ -454,5 +454,5 @@ bindsym $mod+u exec cmus-remote --prev
 bindsym $mod+minus exec $HOME/.config/i3/cmuscontrol
 bindsym XF86MonBrightnessUp exec brightness raise
 bindsym XF86MonBrightnessDown exec brightness lower
-bindsym XF86AudioRaiseVolume exec volumecontrol raise
-bindsym XF86AudioLowerVolume exec volumecontrol lower
+bindsym XF86AudioRaiseVolume exec volumecontrol.sh raise
+bindsym XF86AudioLowerVolume exec volumecontrol.sh lower

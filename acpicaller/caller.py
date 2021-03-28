@@ -30,3 +30,11 @@ def VerifyModes():
     print("Rapid charge: " + rapidcharge)
     batteryconservation = subprocess.getoutput(acpivalues.verify_battery_conservation)
     print("Battery conservation: " + batteryconservation)
+
+def QuietVerify():
+    powermode = subprocess.getoutput(acpivalues.verify_powermode)
+    print(powermode)
+    rapidcharge = subprocess.getoutput(acpivalues.verify_rapid_charge)
+    print(rapidcharge)
+    batteryconservation = subprocess.getoutput(acpivalues.verify_battery_conservation)
+    print(batteryconservation)

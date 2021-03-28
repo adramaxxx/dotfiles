@@ -2,14 +2,14 @@ env:
   TERM: xterm-256color
 
 import:
-  -  /home/adramax/.config/alacritty/colorschemes/tomorrownight.yml
+  -  /home/adramax/.config/alacritty/colorschemes/gruvbox.yml
 
 font:
   normal:
     family: Monospace
   size: 11
 
-background_opacity: 1
+background_opacity: 0.90
 
 window:
   title: Alacritty
@@ -17,5 +17,5 @@ window:
     instance: Alacritty
     general: Alacritty
   padding:
-    x: 0
-    y: 0
+    x: 1
+    y: 1
