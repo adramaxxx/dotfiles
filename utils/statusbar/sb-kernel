@@ -1,0 +1,4 @@
+#!/bin/sh
+
+kern="$(uname -r)"
+echo -e "🐧 $kern"

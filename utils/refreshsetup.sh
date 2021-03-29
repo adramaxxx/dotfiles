@@ -22,5 +22,6 @@ fi
 $(sleep 1s)
 setbg.sh &
 
-xset r rate 300 50 &
+xset r rate 210 40 &
+#xset r rate 300 50 &
 setxkbmap dk &

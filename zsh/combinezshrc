@@ -72,7 +72,7 @@ bindkey '^[[P' delete-char
 vi-append-x-selection () { RBUFFER=$(xsel -o -p </dev/null)$RBUFFER; }
 zle -N vi-append-x-selection
 bindkey -a '^X' vi-append-x-selection
-vi-yank-x-selection () { print -rn -- $CUTBUFFER | xsel -i -p; }
+vi-yank-x-selection () { print -rn -- $CUTBUFFER | xclip -i -p; }
 zle -N vi-yank-x-selection
 bindkey -a '^Y' vi-yank-x-selection
 
@@ -127,3 +127,5 @@ alias editconf="nvim ~/.config/i3/config"
 alias downgrade="sudo DOWNGRADE_FROM_ALA=1 downgrade" 
 alias weather="curl wttr.in"
 #refresh_shell
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
