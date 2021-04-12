@@ -4,12 +4,7 @@ setopt autocd		# Automatically cd into typed directory.
 stty stop undef		# Disable ctrl-s to freeze terminal.
 setopt interactive_comments
 
-#alias ls='ls --color'
 alias ls='exa'
-#alias ls='exa -al --color=always --group-directories-first' # my preferred listing
-#alias la='exa -a --color=always --group-directories-first'  # all files and dirs
-#alias ll='exa -l --color=always --group-directories-first'  # long format
-#alias lt='exa -aT --color=always --group-directories-first' # tree listing
 
 # export MANPATH="/usr/local/man:$MANPATH"
 export PATH="/sbin:$PATH"
@@ -25,8 +20,8 @@ _comp_options+=(globdots)		# Include hidden files.
 
 # vi mode
 bindkey -v
-export KEYTIMEOUT=5
-
+export KEYTIMEOUT=1
+ 
 # Use vim keys in tab complete menu:
 bindkey -M menuselect 'h' vi-backward-char
 bindkey -M menuselect 'k' vi-up-line-or-history
@@ -34,17 +29,18 @@ bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey -v '^?' backward-delete-char
 
+# formatting for vimmode, insert mode is the starting mode
 # Change cursor shape for different vi modes.
 function zle-keymap-select () {
     case $KEYMAP in
-        vicmd) echo -ne '\e[1 q';;      # block
-        viins|main) echo -ne '\e[5 q';; # beam
+        vicmd) echo -ne '\e[5 q';;      # block
+        viins|main) echo -ne '\e[1 q';; # beam
     esac
 }
 zle -N zle-keymap-select
 zle-line-init() {
     zle -K viins # initiate `vi insert` as keymap (can be removed if `bindkey -V` has been set elsewhere)
-    echo -ne "\e[5 q"
+    echo -ne "\e[1 q"
 }
 zle -N zle-line-init
 echo -ne '\e[1 q' # Use beam shape cursor on startup.
@@ -68,54 +64,23 @@ bindkey -s '^f' 'cd "$(dirname "$(fzf)")"\n'
 
 bindkey '^[[P' delete-char
 
-#enable copy mode in vi zsh
-vi-append-x-selection () { RBUFFER=$(xsel -o -p </dev/null)$RBUFFER; }
-zle -N vi-append-x-selection
-bindkey -a '^X' vi-append-x-selection
-vi-yank-x-selection () { print -rn -- $CUTBUFFER | xclip -i -p; }
-zle -N vi-yank-x-selection
-bindkey -a '^Y' vi-yank-x-selection
-
 # Edit line in vim with ctrl-e:
 autoload edit-command-line; zle -N edit-command-line
 bindkey '^e' edit-command-line
 
-alias remove-orphans='pacman -Rns $(pacman -Qtdq)'
-alias fixdir='sudo find . -type d -exec chmod 770 {} \;'
-alias fixfile='sudo find . -type f -exec chmod 660 {} \;'
-alias size-scan='du -sh * | grep -v "/$" | sort -rh'
-alias size-scan-hidden='du -sh * .* | grep -v "/$" | sort -rh'
-#source ~/.config/private_alias/aliases
+
+function ghc-pkg-reset() {
+    read -p 'erasing all your user ghc and cabal packages - are you sure (y/n) ? ' ans
+    test x$ans == xy && ( \
+        echo 'erasing directories under ~/.ghc'; rm -rf `find ~/.ghc -maxdepth 1 -type d`; \
+        echo 'erasing ~/.cabal/lib'; rm -rf ~/.cabal/lib; \
+        # echo 'erasing ~/.cabal/packages'; rm -rf ~/.cabal/packages; \
+        # echo 'erasing ~/.cabal/share'; rm -rf ~/.cabal/share; \
+        )
+}
+
 alias cmake="cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1"
 
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/share/fzf/completion.zsh
-source /usr/share/fzf/key-bindings.zsh
-
-# # Bind alt+s to prepend sudo on current line
-# prepend_sudo() {
-#   if [[ "$BUFFER" != su(do|)\ * ]]; then
-#     BUFFER="sudo $BUFFER"
-#     (( CURSOR += 5 ))
-#   fi
-# }
-# zle -N prepend_sudo
-# bindkey '^[s' prepend_sudo
-#
-# alias media="tmux a -t cmus"
-# alias termcolor="alacritty-colorscheme"
-# plugins=(git)
-# source $ZSH/oh-my-zsh.sh
-#
-# refresh_shell() {
-#     if [[ "${EUID}" == "0" ]]; then
-#         export PS1="$(print '%{\e[1;31m%}%M%{\e[1;33m%} %c %{\e[1;33m%}%% %{\e[0m%}')" # Root color is red
-#     else
-#         export PS1="$(print '%{\e[1;32m%}%n@%M%{\e[1;33m%} %c %{\e[1;33m%}%% %{\e[0m%}')"
-#     fi
-# }
-
-alias media="tmux a -t cmus"
 alias craftdwm="sudo cp config.def.h config.h; make && sudo make clean install"
 alias sendtoclipboard="xclip -selection clipboard < "
 alias dragdrop="dragon-drag-and-drop"
@@ -126,6 +91,13 @@ export CACUS="cacus.feralhosting.com"
 alias editconf="nvim ~/.config/i3/config"
 alias downgrade="sudo DOWNGRADE_FROM_ALA=1 downgrade" 
 alias weather="curl wttr.in"
-#refresh_shell
+alias editvim="nvim ~/.config/nvim/init.vim"
+
+
+source ~/.config/privatealias
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/fzf/completion.zsh
+source /usr/share/fzf/key-bindings.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

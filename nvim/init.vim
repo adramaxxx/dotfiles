@@ -3,7 +3,6 @@ let &packpath=&runtimepath
 
 " More general settings
 source ~/.config/nvim/settings/settings.vim
-source ~/.config/nvim/settings/colors.vim
 source ~/.config/nvim/settings/keybinds.vim
 
 " Plugin settings
@@ -13,3 +12,6 @@ source ~/.config/nvim/plugins/fzf.vim
 source ~/.config/nvim/plugins/airline.vim
 source ~/.config/nvim/plugins/vimtex.vim
 source ~/.config/nvim/plugins/instantmarkdown.vim
+source ~/.config/nvim/plugins/lightline.vim
+
+source ~/.config/nvim/settings/colors.vim

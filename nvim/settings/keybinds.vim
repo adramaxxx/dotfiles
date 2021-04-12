@@ -23,13 +23,26 @@ vnoremap > >gv
 nnoremap <M-j> :resize -2<CR>
 nnoremap <M-k> :resize +2<CR>
 nnoremap <M-h> :vertical resize -2<CR>
-nnoremap <M-j> :vertical resize +2<CR>
+nnoremap <M-l> :vertical resize +2<CR>
 
 " nerd tree toggle
-nmap <F6> :NERDTreeToggle<CR>
+nmap <F6> :Lexplore<CR>
 
 " Toggle floating terminal
 nnoremap <leader>fo : FloatermToggle <CR>
 
 " remapping to exit terminal mode
 tnoremap <Esc> <C-\><C-n>
+
+" better copying
+vnoremap <leader>y "+y
+nnoremap <leader>Y "+yg_
+nnoremap <leader>y "+y
+nnoremap <leader>p "+p
+nnoremap <leader>P "+P
+
+" laptop specific keybinds for esc key
+nnoremap ½ <Esc>
+inoremap ½ <Esc>
+vnoremap ½ <Esc>
+inoremap ½ <Esc>

@@ -1,11 +1,9 @@
 syntax enable
 set number rnu
-set clipboard+=unnamedplus
 
 set tabstop=4 softtabstop=4
 set shiftwidth=4
 set noexpandtab
-"set cursorline
 set wrap
 set smartcase
 set ignorecase
@@ -14,15 +12,15 @@ set nobackup
 filetype plugin indent on
 filetype on
 set laststatus=2
-"set guicursor=
 set hidden
 set title
 set ruler
 set showcmd
 set nohlsearch
 set scrolloff=8
-set noshowmode
-"set mouse=a
+
+" always show tabline
+set showtabline=2
 
 "autorun xrdb whenever .xresources is being saved
 autocmd BufRead,BufNewFile .Xresources,xdefaults set filetype=xdefaults
@@ -41,3 +39,6 @@ autocmd BufNewFile,BufRead *.tex set spell
 " do such that if i accidentally press :W to save, then I do not get an error
 cabb W w
 cabb Q q
+
+" haskell specific indentation
+autocmd BufNewFile,BufRead *.hs setlocal expandtab autoindent
