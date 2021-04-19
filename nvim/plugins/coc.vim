@@ -151,3 +151,6 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+
+
+" Mappings for coc-snippets to hopefully autocomplete some stuff in latex so I wont have to write curly braces all the time

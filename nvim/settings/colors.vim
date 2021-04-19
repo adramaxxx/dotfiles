@@ -1,15 +1,14 @@
 " colors
 set background=dark
-"colorscheme gruvbox
+colorscheme onedark
+set termguicolors
+"lua require('colorbuddy').colorscheme('gruvbuddy')
 
-lua require('colorbuddy').colorscheme('onebuddy')
-
-hi clear SpellBad
-hi clear SignColumn
-hi SpellBad cterm=underline,bold
+highlight clear SpellBad
+highlight clear SignColumn
+highlight SpellBad cterm=underline,bold gui=underline,bold
 highlight Normal ctermbg=NONE ctermfg=NONE
 highlight Normal guibg=NONE guifg=NONE
-"hi LineNr cterm=NONE ctermbg=NONE guibg=NONE guifg=NONE term=bold
-"highlight clear CursorLine
-"highlight CursorLine ctermbg=234
-"let g:gruvbox_contrast_dark = 'hard'
+highlight LineNr ctermfg=white guifg=white
+highlight NonText ctermfg=white guifg=white
+hi LineNr cterm=NONE ctermbg=NONE guibg=NONE guifg=NONE term=bold

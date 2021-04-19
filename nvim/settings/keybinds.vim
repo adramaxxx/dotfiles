@@ -46,3 +46,6 @@ nnoremap ½ <Esc>
 inoremap ½ <Esc>
 vnoremap ½ <Esc>
 inoremap ½ <Esc>
+
+" remapping to convert visually selected stuff to snippet
+xmap <leader>x  <Plug>(coc-convert-snippet)

@@ -1,15 +1,24 @@
-env:
-  TERM: xterm-256color
+#env:
+#  TERM: xterm-256color
 
 import:
-  -  /home/adramax/.config/alacritty/colorschemes/gruvbox.yml
+
+    -  /home/adramax/.config/alacritty/colorschemes/gruvbox.yml
 
 font:
   normal:
-    family: Monospace
-  size: 11
+    family: JetBrainsMono 
+    style: Regular
+  bold:
+    family: JetBrainsMono
+    style: Bold
+  italic:
+      family: JetBrainsMono
+      style: Italic
 
-background_opacity: 0.90
+  size: 11.0
+
+background_opacity: 0.95
 
 window:
   title: Alacritty
@@ -19,3 +28,9 @@ window:
   padding:
     x: 1
     y: 1
+
+key_bindings:
+  - { key: C, mods: Alt, action: Copy }
+  - { key: V, mods: Alt, action: Paste }
+  - { key: K, mods: Alt|Shift, action: IncreaseFontSize }
+  - { key: J, mods: Alt|Shift, action: DecreaseFontSize }

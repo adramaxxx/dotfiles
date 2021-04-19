@@ -10,6 +10,7 @@ alias ls='exa'
 export PATH="/sbin:$PATH"
 export PATH="/usr/sbin:$PATH"
 export PATH="/usr/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 
 # Basic auto/tab complete:
 autoload -U compinit
@@ -18,33 +19,63 @@ zmodload zsh/complist
 compinit
 _comp_options+=(globdots)		# Include hidden files.
 
-# vi mode
-bindkey -v
-export KEYTIMEOUT=1
- 
-# Use vim keys in tab complete menu:
-bindkey -M menuselect 'h' vi-backward-char
-bindkey -M menuselect 'k' vi-up-line-or-history
-bindkey -M menuselect 'l' vi-forward-char
-bindkey -M menuselect 'j' vi-down-line-or-history
-bindkey -v '^?' backward-delete-char
+# Ensure emacs mode
+bindkey -e
 
-# formatting for vimmode, insert mode is the starting mode
-# Change cursor shape for different vi modes.
-function zle-keymap-select () {
-    case $KEYMAP in
-        vicmd) echo -ne '\e[5 q';;      # block
-        viins|main) echo -ne '\e[1 q';; # beam
-    esac
-}
-zle -N zle-keymap-select
-zle-line-init() {
-    zle -K viins # initiate `vi insert` as keymap (can be removed if `bindkey -V` has been set elsewhere)
-    echo -ne "\e[1 q"
-}
-zle -N zle-line-init
-echo -ne '\e[1 q' # Use beam shape cursor on startup.
-preexec() { echo -ne '\e[1 q' ;} # Use beam shape cursor for each new prompt.
+bindkey "\e[1~" beginning-of-line # Home
+bindkey "\e[4~" end-of-line # End
+bindkey "\e[5~" beginning-of-history # PageUp
+bindkey "\e[6~" end-of-history # PageDown
+bindkey "\e[2~" quoted-insert # Ins
+bindkey "\e[3~" delete-char # Del
+bindkey "\e[5C" forward-word
+bindkey "\eOc" emacs-forward-word
+bindkey "\e[5D" backward-word
+bindkey "\eOd" emacs-backward-word
+bindkey "\e\e[C" forward-word
+bindkey "\e\e[D" backward-word
+bindkey "\e[Z" reverse-menu-complete # Shift+Tab
+
+# fix ctrl + right/left
+bindkey '^[[1;5D' backward-word
+bindkey '^[[1;5C' forward-word
+# fix ctrl + delete ( does not work properly in tmux)
+bindkey '^[[3;5~' kill-word
+
+# allow up and down keys to be used when searching (ctrl + r)
+bindkey '^[[A' up-line-or-search
+bindkey '^[[B' down-line-or-search
+
+
+
+## vi mode
+#bindkey -v
+#export KEYTIMEOUT=1
+# 
+## Use vim keys in tab complete menu:
+#bindkey -M menuselect 'h' vi-backward-char
+#bindkey -M menuselect 'k' vi-up-line-or-history
+#bindkey -M menuselect 'l' vi-forward-char
+#bindkey -M menuselect 'j' vi-down-line-or-history
+#bindkey -v '^?' backward-delete-char
+#bindkey ½ vi-cmd-mode
+#
+## formatting for vimmode, insert mode is the starting mode
+## Change cursor shape for different vi modes.
+#function zle-keymap-select () {
+#    case $KEYMAP in
+#        vicmd) echo -ne '\e[5 q';;      # block
+#        viins|main) echo -ne '\e[2 q';; # beam
+#    esac
+#}
+#zle -N zle-keymap-select
+#zle-line-init() {
+#    zle -K viins # initiate `vi insert` as keymap (can be removed if `bindkey -V` has been set elsewhere)
+#    echo -ne "\e[2 q"
+#}
+#zle -N zle-line-init
+#echo -ne '\e[1 q' # Use beam shape cursor on startup.
+preexec() { echo -ne '\e[2 q' ;} # Use beam shape cursor for each new prompt.
 
 # Use lf to switch directories and bind it to ctrl-o
 lfcd () {
@@ -93,6 +124,10 @@ alias downgrade="sudo DOWNGRADE_FROM_ALA=1 downgrade"
 alias weather="curl wttr.in"
 alias editvim="nvim ~/.config/nvim/init.vim"
 
+# Small helper function to run binary in said location
+function hhrun {
+	~/.local/bin/nvim-haskell-hack-exe
+}
 
 source ~/.config/privatealias
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

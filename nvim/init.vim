@@ -9,9 +9,7 @@ source ~/.config/nvim/settings/keybinds.vim
 source ~/.config/nvim/plugins/plug.vim
 source ~/.config/nvim/plugins/coc.vim
 source ~/.config/nvim/plugins/fzf.vim
-source ~/.config/nvim/plugins/airline.vim
 source ~/.config/nvim/plugins/vimtex.vim
-source ~/.config/nvim/plugins/instantmarkdown.vim
-source ~/.config/nvim/plugins/lightline.vim
+source ~/.config/nvim/plugins/airline.vim
 
 source ~/.config/nvim/settings/colors.vim

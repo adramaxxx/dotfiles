@@ -1,6 +1,6 @@
 #!/bin/sh
-killall -q polybar
-# todo: add wallpaper handler of some sort aswell
+
+
 for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
   monitorcount=$((monitorcount + 1))
 done

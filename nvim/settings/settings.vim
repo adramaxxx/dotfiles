@@ -18,6 +18,7 @@ set ruler
 set showcmd
 set nohlsearch
 set scrolloff=8
+set cursorline
 
 " always show tabline
 set showtabline=2
@@ -35,6 +36,9 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 " set spell when filetype is .md or .tex
 autocmd BufNewFile,BufRead *.md set spell
 autocmd BufNewFile,BufRead *.tex set spell
+
+" change tabs when writing tex to 2 tabs
+autocmd BufNewFile,BufRead *.tex set tabstop=2 softtabstop=2 shiftwidth=2
 
 " do such that if i accidentally press :W to save, then I do not get an error
 cabb W w
