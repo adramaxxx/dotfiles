@@ -4,4 +4,5 @@ let g:airline#extensions#tabline#enabled=1
 let g:bufferline_echo = 0
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 let g:airline#extensions#whitespace#enabled = 0
-let g:airline_theme = 'onedark'
+let g:airline_theme = 'dracula'
+let g:airline_disable_statusline = 1

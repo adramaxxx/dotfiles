@@ -14,14 +14,14 @@ filetype on
 set laststatus=2
 set hidden
 set title
-set ruler
-set showcmd
+set noruler
 set nohlsearch
 set scrolloff=8
-set cursorline
 
-" always show tabline
-set showtabline=2
+" cool cursor
+set guicursor=
+
+set showmode
 
 "autorun xrdb whenever .xresources is being saved
 autocmd BufRead,BufNewFile .Xresources,xdefaults set filetype=xdefaults
@@ -44,5 +44,11 @@ autocmd BufNewFile,BufRead *.tex set tabstop=2 softtabstop=2 shiftwidth=2
 cabb W w
 cabb Q q
 
-" haskell specific indentation
-autocmd BufNewFile,BufRead *.hs setlocal expandtab autoindent
+" split below right when opening a new split
+set splitbelow splitright
+
+" wipe netrw buffers when they are no longer open
+augroup AutoDeleteNetrwHiddenBuffers
+  au!
+  au FileType netrw setlocal bufhidden=wipe
+augroup end
