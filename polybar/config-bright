@@ -1,27 +1,6 @@
-;==========================================================
-;
-;
-;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
-;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
-;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
-;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
-;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
-;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
-;
-;
-;   To learn more about how to configure Polybar
-;   go to https://github.com/polybar/polybar
-;
-;   The README contains a lot of information
-;
-;==========================================================
-
-;Material Design icons are found in gucharmap by searching
-; U+F0078
-; Gruvbox palette
 [colors]
 bg = #282828
-bg-alt = #282c34
+bg-alt = #ffffff
 bg-altalt = #202328
 ;bg-alt = #3c3836
 ;bg-darker = #1d2021
@@ -38,6 +17,7 @@ red = #fa2573
 ;red = #f5669c
 ;yellow = #fabd2f
 yellow = #cecb00
+grey = #bfc3c9 
 
 bg-blue = #458588
 bg-cyan = #689d6a
@@ -54,25 +34,6 @@ trans = #00000000
 semi-trans = #dd282828
 semi-trans-black = #aa000000
 
-;[colors]
-;;background = ${xrdb:color0:#222}
-;;background = #222222
-;background = #3a404a
-;;background = #282c34
-;;background-alt = #414959
-;background-alt = #63666e
-;;background-module = #3b4252
-;background-module = #373d4a
-;;background-alt = #444
-;;foreground = ${xrdb:color7:#222}
-;foreground = #dfdfdf
-;foreground-alt = #555
-;primary = #fc5d7c
-;;primary = #ffb52a
-;secondary = #e60053
-;alert = #bd2c40
-;alt-underline = #89CFF0
-
 [bar/primary]
 enable-ipc = true
 monitor = DisplayPort-0
@@ -83,8 +44,8 @@ height = 30
 radius = 0
 fixed-center = true
 
-;background = ${colors.bg-alt}
 background = ${colors.bg-alt}
+;background = #00000000
 foreground = ${colors.fg}
 
 line-size = 3
@@ -109,13 +70,15 @@ font-0 = "JetBrainsMono Nerd Font:style=Medium:size=10;3"
 font-1 = "JetBrainsMono Nerd Font:style=Bold:size=11;3"
 font-2 = "JetBrainsMono Nerd Font:size=19;5"
 font-3 = "Material Icons:9;4"
-font-4 = "JetBrainsMono Nerd Font:size=14;3"
+font-4 = "JetBrainsMono Nerd Font:style=Bold:size=12;3"
 ;font-4 = "Material Icons Outlined:9;4"
 ;font-5 = Material Design Icons:9;4"
 
-;modules-left = round-left i3 round-right
 modules-left = i3 
 modules-right = kernel mymemory brightness volume battery date 
+
+
+
 ;modules-right = round-left-blue memory brightness volume battery date round-right-blue
 ;modules-right = supdates kernel volume mymemory brightness mybat date 
 
@@ -175,7 +138,7 @@ font-0 = "JetBrainsMono Nerd Font:style=Medium:size=10;3"
 font-1 = "JetBrainsMono Nerd Font:style=Bold:size=10;3"
 font-2 = "JetBrainsMono Nerd Font:size=19;5"
 font-3 = "Material Icons:9;4"
-font-4 = "JetBrainsMono Nerd Font:size=14;3"
+font-4 = "JetBrainsMono Nerd Font:style=Bold:size=11;3"
 ;font-4 = "Material Icons Outlined:9;4"
 ;font-5 = Material Design Icons:9;4"
 
@@ -213,6 +176,7 @@ radius = 0
 fixed-center = true
 
 background = ${colors.bg-alt}
+;background = #00000000
 foreground = ${colors.fg}
 
 line-size = 3
@@ -237,7 +201,7 @@ font-0 = "JetBrainsMono Nerd Font:style=Medium:size=10;3"
 font-1 = "JetBrainsMono Nerd Font:style=Bold:size=11;3"
 font-2 = "JetBrainsMono Nerd Font:size=19;5"
 font-3 = "Material Icons:9;4"
-font-4 = "JetBrainsMono Nerd Font:size=14;3"
+font-4 = "JetBrainsMono Nerd Font:style=Bold:size=11;3"
 ;font-4 = "Material Icons Outlined:9;4"
 ;font-5 = Material Design Icons:9;4"
 
@@ -310,7 +274,7 @@ type = custom/ipc
 hook-0 = sb-volume
 initial = 1
 format = %{T2} <output> %{T-}
-format-foreground = ${colors.white}
+format-foreground = ${colors.black}
 format-background = ${colors.bg-alt}
 
 [module/mybat]
@@ -367,7 +331,7 @@ exec = sb-memory
 interval = 5
 label = %output%
 format = %{T2} <label>  %{T-}
-format-foreground = ${colors.white}
+format-foreground = ${colors.black}
 format-background= ${colors.bg-alt}
 
 
@@ -378,7 +342,7 @@ hook-0 = sb-brightness
 initial = 1
 format = %{T2} <output>% %{T-}
 format-background = ${colors.bg-alt}
-format-foreground = ${colors.white}
+format-foreground = ${colors.black}
 
 [module/xkeyboard]
 type = internal/xkeyboard
@@ -442,28 +406,23 @@ label-mode-padding = 1
 label-mode-background = ${colors.bg-alt}
 
 ; focused = Active workspace on focused monitor
-label-focused = %{T5}%index%%{T-}
-;label-focused-foreground = ${colors.white}
-;label-focused-background = ${colors.black}
-label-focused-foreground = ${colors.white}
-label-focused-background = #285577
+label-focused = %{T5} %index%* %{T-}
+label-focused-foreground = ${colors.black}
+label-focused-background = ${colors.grey}
+;label-focused-underline= ${colors.black}
 label-focused-padding = 2
 
 ; unfocused = Inactive workspace on any monitor
-label-unfocused = %{T5}%index%%{T-}
-;label-unfocused-foreground = ${colors.white}
-;label-unfocused-background = ${colors.black}
-label-unfocused-foreground = #888888
-label-unfocused-backgrond = #222222
+label-unfocused = %{T5} %index%  %{T-}
+label-unfocused-foreground = ${colors.black}
+label-unfocused-background = ${colors.white}
 label-unfocused-padding = 2
 
 ; visible = Active workspace on unfocused monitor
-label-visible = %{T5}%index%%{T-}
+label-visible = %{T5} %index%- %{T-}
 ;label-visible-foreground = ${colors.green}
-;label-visible-background = ${colors.black}
-;label-visible-foreground = ${colors.white}
-label-visible-background = #222222
-label-visible-foreground = #ffffff
+label-visible-background = ${colors.grey}
+label-visible-foreground = ${colors.black}
 ;label-visible-underline = ${self.label-focused-underline}
 label-visible-padding = 2
 ;label-visible-padding = ${self.label-focused-padding}
@@ -598,7 +557,7 @@ time-alt = "%a, %b %d %H:%M:%S"
 
 format = %{T4}%{T-} <label>
 format-background = ${colors.bg-alt}
-format-foreground = ${colors.white}
+format-foreground = ${colors.black}
 format-padding = 1
 label = %{T2}%time%%{T-}
 
@@ -685,7 +644,7 @@ format-charging-background = ${colors.bg-alt}
 ; format-charging-background = ${colors.bg-alt}
 format-charging-padding = 1
 label-charging = %{T2}%percentage%%%{T-}
-label-charging-foreground = ${colors.white}
+label-charging-foreground = ${colors.black}
 
 format-discharging = <ramp-capacity> <label-discharging>
 ; format-discharging-background = ${colors.bg-alt}
@@ -693,7 +652,7 @@ format-discharging-padding = 1
 format-discharging-background = ${colors.bg-alt}
 ;format-discharging-foreground = ${colors.cyan}
 label-discharging = %{T2}%percentage%%%{T-}
-label-discharging-foreground = ${colors.white}
+label-discharging-foreground = ${colors.black}
 
 format-full = <ramp-capacity>
 ; format-full-background = ${colors.bg-alt}
@@ -825,5 +784,8 @@ screenchange-reload = true
 [global/wm]
 margin-top = 0
 margin-bottom = 0
+
+; vim:ft=dosini
+
 
 ; vim:ft=dosini
