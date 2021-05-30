@@ -115,7 +115,6 @@ font-4 = "JetBrainsMono Nerd Font:size=14;3"
 
 ;modules-left = round-left i3 round-right
 modules-left = i3 
-modules-center = round-left cmus round-right
 modules-right = kernel mymemory brightness volume battery date 
 ;modules-right = round-left-blue memory brightness volume battery date round-right-blue
 ;modules-right = supdates kernel volume mymemory brightness mybat date 
