@@ -115,6 +115,7 @@ font-4 = "JetBrainsMono Nerd Font:size=14;3"
 
 ;modules-left = round-left i3 round-right
 modules-left = i3 
+modules-center = round-left cmus round-right
 modules-right = kernel mymemory brightness volume battery date 
 ;modules-right = round-left-blue memory brightness volume battery date round-right-blue
 ;modules-right = supdates kernel volume mymemory brightness mybat date 
@@ -278,15 +279,46 @@ content-foreground = ${colors.bg-blue}
 
 [module/round-left]
 type = custom/text
-
 content = %{T3}%{T-}
-content-foreground = ${colors.bg-alt}
+content-foreground = ${colors.bg-darker}
+
+[module/cmus]
+type = custom/script
+label = %output%
+format = %{T2}<label>%{T-}
+exec = ~/.config/polybar/cmus.sh
+exec-if = pgrep -x cmus
+interval = 0.5
+label-background = ${colors.bg-darker}
+label-foreground = ${colors.white}
+label-padding = 1
+label-maxlen = 80
+#label-minlen = 45
+label-alignment = left
+label-mode-padding = 0
+;label-font = 5
+;format-foreground = #020202
+
+[module/testtext]
+type = custom/text
+
+
+[module/cmuscontroller]
+type = custom/text
+content-padding = 1
+content-font = 2
+content = %{A1:cmus-remote --shuffle:}%{A1:cmus-remote --next:}%{A1:cmus-remote --prev:}%{A1:cmus-remote --play:}%{A1:cmus-remote --pause:}%{A}%{O10}%{A}%{O10}%{A}%{O10}%{A}%{O10}Shuffle%{A}
+content-background = ${colors.bg-darker}
+content-foreground = ${colors.white}
+;content-foreground = #ffffff
+;content-background= ${colors.bg-darker}
+;format-background = ${colors.bg-darker}
 
 [module/round-right]
 type = custom/text
 
 content = %{T3}%{T-}
-content-foreground = ${colors.bg-alt}
+content-foreground = ${colors.bg-darker}
 
 [module/round-right-blue]
 type = custom/text
