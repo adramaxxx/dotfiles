@@ -1,10 +1,13 @@
-" remapping leader for faster fzf
-let mapleader=" "
 
 " for switching between buffers with ctrl+p (previous) and ctrl+n (next)
-nnoremap <C-n> :bnext<CR>
-nnoremap <C-p> :bprevious<CR>
+"nnoremap <silent> <C-n> :bnext<CR>
+"nnoremap <silent> <C-p> :bprevious<CR>
 
+" for switching between tabs with ctrl+p (previous) and ctrl+n (next)
+nnoremap <silent> <C-n> :tabnext<CR>
+nnoremap <silent> <C-p> :tabprevious<CR>
+nnoremap <silent> <C-t> :tabnew<CR>
+"nnoremap <silent> <C-w> :tabclose<CR>
 
 " use navigation keys to move around windows when splitting
 nnoremap <C-J> <C-W><C-J>
@@ -41,15 +44,28 @@ nnoremap <leader>P "+P
 " remapping to convert visually selected stuff to snippet
 xmap <leader>x  <Plug>(coc-convert-snippet)
 
+" Delete current open buffer
+nnoremap <leader>dd :bd <CR>
+
+
+" remap arrow keys to prefix g, inspired by Dr. Lybech
+"nnoremap <silent> <Up>   gk
+"nnoremap <silent> <Down> gj
+"
+"vnoremap <silent> <Up>   gk
+"vnoremap <silent> <Down> gj
+
+
+
 " A nice way to toggle buffers in the top bar
-let s:bufferline = 1
+let s:tab = 1
 function! ToggleBufferline()
-	if s:bufferline == 1
-		let s:bufferline=0
+	if s:tab == 1
+		let s:tab=0
 		set showtabline=0
 	else
-		let s:bufferline=1
-		set showtabline=2
+		let s:tab=1
+		set showtabline=1
 	endif
 endfunction
 nnoremap <leader>tt :call ToggleBufferline()<CR>
@@ -77,3 +93,31 @@ function! ToggleCursorLine()
 	endif
 endfunction
 nnoremap <leader>tl :call ToggleCursorLine()<CR>
+
+"Move by display lines when wrapping lines
+nnoremap <silent> <Up>   gk
+nnoremap <silent> <Down> gj
+
+vnoremap <silent> <Up>   gk
+vnoremap <silent> <Down> gj
+
+" Show tabpage if I am not in the mood for having the tabline visible
+nnoremap <silent> ½ :tabs<CR>
+
+
+" Keybinds for moving visually selected lines up or down
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+
+" delete visually selected to void reg and paste from quote reg
+vnoremap <leader>p "_dP
+
+
+function GetBufName()
+    execute 'echo @%'
+endfunction
+nnoremap <silent> ,f :call GetBufName() <CR>
+
+
+" Toggle Terminal
+nnoremap ,t :ToggleTerminal<CR>

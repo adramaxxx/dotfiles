@@ -1,8 +1,24 @@
 autoload -U colors && colors	# Load colors
-PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
+#PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
 setopt autocd		# Automatically cd into typed directory.
 stty stop undef		# Disable ctrl-s to freeze terminal.
 setopt interactive_comments
+
+# robbyrussell prompt without oh-my-zsh plugins
+PROMPT="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )"
+PROMPT+=" %{$fg[cyan]%}%~%{$reset_color%} "
+
+# Stuff for self-made git integration in prompt
+autoload -Uz vcs_info
+precmd() { vcs_info }
+
+# Formatting the vcs_info_msg_0_ variable
+zstyle ':vcs_info:git:*' formats '(%b)'
+
+# Adding to prompt
+setopt PROMPT_SUBST
+RPROMPT=\$vcs_info_msg_0_
+
 
 alias ls='exa'
 
@@ -39,8 +55,6 @@ bindkey "\e[Z" reverse-menu-complete # Shift+Tab
 # fix ctrl + right/left
 bindkey '^[[1;5D' backward-word
 bindkey '^[[1;5C' forward-word
-# fix ctrl + delete ( does not work properly in tmux)
-bindkey '^[[3;5~' kill-word
 
 # allow up and down keys to be used when searching (ctrl + r)
 bindkey '^[[A' up-line-or-search
@@ -123,11 +137,7 @@ alias editconf="nvim ~/.config/i3/config"
 alias downgrade="sudo DOWNGRADE_FROM_ALA=1 downgrade" 
 alias weather="curl wttr.in"
 alias editvim="nvim ~/.config/nvim/init.vim"
-
-# Small helper function to run binary in said location
-function hhrun {
-	~/.local/bin/nvim-haskell-hack-exe
-}
+alias diredu="cd ~/Documents/education/dat6/"
 
 source ~/.config/privatealias
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -135,4 +145,7 @@ source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/fzf/completion.zsh
 source /usr/share/fzf/key-bindings.zsh
 
+export FZF_DEFAULT_OPTS='
+	--color dark
+'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

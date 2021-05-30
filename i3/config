@@ -13,28 +13,30 @@ default_border pixel 2
 default_floating_border none
 
 # Hide borders
-hide_edge_borders none
+#hide_edge_borders none
 
 # change borders
 #bindsym $mod+u border none
 bindsym $mod+y border pixel 1
-bindsym $mod+ border normal
+bindsym $mod+u border normal
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font xft:URWGothic-Book 11
+#font xft:URWGothic-Book 11
+font xft:JetBrainsMono 12
 
 # Use Mouse+$mod to drag floating windows
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec kitty
 
 # kill focused window
 bindsym $mod+q kill
 
 # start program launcher
-bindsym $mod+d exec --no-startup-id dmenu_run
+#bindsym $mod+d exec --no-startup-id dmenu_run
+bindsym $mod+d exec --no-startup-id rofi -show run
 
 ################################################################################################
 ## sound-section - DO NOT EDIT if you wish to automatically upgrade Alsa -> Pulseaudio later! ##
@@ -107,14 +109,15 @@ bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
-#bindsym $mod+w layout tabbed
+bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+#bindsym $mod+space focus mode_toggle
+bindsym $mod+space exec rofi -show window
 
 # toggle sticky
 bindsym $mod+Shift+s sticky toggle
@@ -150,7 +153,8 @@ set $ws9 9
 set $ws10 10
 
 
-bindsym $mod+p workspace prev
+bindsym $mod+p exec rofi -show run
+#bindsym $mod+p workspace prev
 bindsym $mod+n workspace next
 
 # switch to workspace
@@ -165,26 +169,26 @@ bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace $ws9
 
 # Move focused container to workspace
-bindsym $mod+Ctrl+1 move container to workspace $ws1
-bindsym $mod+Ctrl+2 move container to workspace $ws2
-bindsym $mod+Ctrl+3 move container to workspace $ws3
-bindsym $mod+Ctrl+4 move container to workspace $ws4
-bindsym $mod+Ctrl+5 move container to workspace $ws5
-bindsym $mod+Ctrl+6 move container to workspace $ws6
-bindsym $mod+Ctrl+7 move container to workspace $ws7
-bindsym $mod+Ctrl+8 move container to workspace $ws8
-bindsym $mod+Ctrl+9 move container to workspace $ws9
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
 
 # Move to workspace with focused container
-bindsym $mod+Shift+1 move container to workspace $ws1; workspace $ws1
-bindsym $mod+Shift+2 move container to workspace $ws2; workspace $ws2
-bindsym $mod+Shift+3 move container to workspace $ws3; workspace $ws3
-bindsym $mod+Shift+4 move container to workspace $ws4; workspace $ws4
-bindsym $mod+Shift+5 move container to workspace $ws5; workspace $ws5
-bindsym $mod+Shift+6 move container to workspace $ws6; workspace $ws6
-bindsym $mod+Shift+7 move container to workspace $ws7; workspace $ws7
-bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
-bindsym $mod+Shift+9 move container to workspace $ws9; workspace $ws9
+bindsym $mod+Ctrl+1 move container to workspace $ws1; workspace $ws1
+bindsym $mod+Ctrl+2 move container to workspace $ws2; workspace $ws2
+bindsym $mod+Ctrl+3 move container to workspace $ws3; workspace $ws3
+bindsym $mod+Ctrl+4 move container to workspace $ws4; workspace $ws4
+bindsym $mod+Ctrl+5 move container to workspace $ws5; workspace $ws5
+bindsym $mod+Ctrl+6 move container to workspace $ws6; workspace $ws6
+bindsym $mod+Ctrl+7 move container to workspace $ws7; workspace $ws7
+bindsym $mod+Ctrl+8 move container to workspace $ws8; workspace $ws8
+bindsym $mod+Ctrl+9 move container to workspace $ws9; workspace $ws9
 
 
 # Open applications on specific workspaces
@@ -216,11 +220,10 @@ bindsym $mod+Shift+r restart
 #bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # Set shut down, restart and locking features
-bindsym Mod1+0 mode "$mode_system"
+bindsym Mod4+0 mode "$mode_system"
 set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
 mode "$mode_system" {
-#    bindsym l exec --no-startup-id i3exit i3lock, mode "default"
-    bindsym l exec --no-startup-id i3exit i3lock, mode "default"
+    bindsym l exec --no-startup-id i3exit lock, mode "default"
     bindsym s exec --no-startup-id i3exit suspend, mode "default"
     bindsym u exec --no-startup-id i3exit switch_user, mode "default"
     bindsym e exec --no-startup-id i3exit logout, mode "default"
@@ -260,17 +263,44 @@ mode "resize" {
 # Lock screen
 #bindsym $mod+9 exec --no-startup-id blurlock
 
-bar {
-	status_command i3blocks
-	position top
-}
+#bar {
+#    font xft:JetBrainsMono 14
+#    #status_command i3status
+#	status_command i3blocks -c ~/.config/i3blocks/config
+#	position top
+#	tray_output none
+#    output primary
+#	colors {
+#		background #000000
+#        
+#        separator #282c34
+#        }
+#    #                        # border # background #text
+#	 #	 focused_workspace  #282c34  #414959      #ffffff
+#    #     active_workspace   #282c34  #282c34      #ffffff
+#    #     inactive_workspace #282c34  #282c34      #888888
+#    #     urgent_workspace   #282c34  #900000      #ffffff
+#    #     binding_mode       #2f343a  #900000      #ffffff
+#	#}
+#}
 
+#bar {
+#    font xft:JetBrainsMono 13
+#    status_command i3status
+#	#status_command i3blocks -c ~/.config/i3blocks/config1
+#	position top
+#	tray_output none
+#    output nonprimary
+#}
+
+
+#bindsym $mod+b bar mode toggle
 # hide/unhide i3status bar
 bindsym $mod+b exec polybar-msg cmd toggle
 
 # Theme colors
 # class                   border  backgr. text    indic.   child_border
-  client.focused          #005577 #005577 #80FFF9 #005577
+  client.focused          #689d6a #689d6a #80FFF9 #2694bf
   client.focused_inactive #2F3D44 #2F3D44 #1ABC9C #454948
   client.unfocused        #2F3D44 #2F3D44 #1ABC9C #454948
   client.urgent           #CB4B16 #FDF6E3 #1ABC9C #268BD2
@@ -283,8 +313,8 @@ bindsym $mod+b exec polybar-msg cmd toggle
 #############################
 
 # Set inner/outer gaps
-gaps inner 4
-gaps outer 4
+gaps inner 5
+gaps outer 3
 
 # Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
 # gaps inner|outer current|all set|plus|minus <px>
@@ -292,7 +322,7 @@ gaps outer 4
 # gaps outer all plus 5
 
 # Smart gaps (gaps used if only more than one container on the workspace)
-smart_gaps on
+#smart_gaps on
 
 # Smart borders (draw borders around container only if it is not the only container on this workspace)
 # on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
@@ -302,7 +332,7 @@ smart_borders on
 #set $mode_gaps Gaps: (o) outer, (i) inner
 #set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
 #set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
-#bindsym $mod+Shift+g mode "$mode_gaps"
+bindsym $mod+Shift+g mode "$mode_gaps"
 
 mode "$mode_gaps" {
         bindsym o      mode "$mode_gaps_outer"
@@ -337,24 +367,31 @@ mode "$mode_gaps_outer" {
 
 
 # enable tapping on mousepad
-exec_always xset r rate 300 50
-exec_always setxkbmap dk
-exec_always refreshsetup.sh
-exec_always setbg.sh
+#exec_always xset r rate 300 50
+#exec_always setxkbmap dk -option caps:escape
+#exec_always setbg.sh
 # mute microphone
 bindsym XF86AudioMicMute exec mutemicrophone.sh
 
 exec --no-startup-id flameshot
 bindsym Print exec --no-startup-id flameshot gui
 
-bindsym XF86AudioPlay exec $HOME/.config/i3/cmuscontrol
-bindsym XF86AudioPause exec $HOME/.config/i3/cmuscontrol
-bindsym XF86AudioNext exec cmus-remote --next
-bindsym XF86AudioPrev exec cmus-remote --prev
-bindsym $mod+i exec cmus-remote --next
-bindsym $mod+u exec cmus-remote --prev
-bindsym $mod+minus exec $HOME/.config/i3/cmuscontrol
+#bindsym XF86AudioPlay exec $HOME/.config/i3/cmuscontrol
+#bindsym XF86AudioPause exec $HOME/.config/i3/cmuscontrol
+#bindsym XF86AudioNext exec cmus-remote --next
+#bindsym XF86AudioPrev exec cmus-remote --prev
+#
+#bindsym $mod+i exec cmus-remote --next
+#bindsym $mod+u exec cmus-remote --prev
+#bindsym $mod+minus exec $HOME/.config/i3/cmuscontrol
+
 bindsym XF86MonBrightnessUp exec brightness raise
 bindsym XF86MonBrightnessDown exec brightness lower
+
 bindsym XF86AudioRaiseVolume exec volumecontrol.sh raise
 bindsym XF86AudioLowerVolume exec volumecontrol.sh lower
+
+bindsym $mod+Shift+p exec acpicaller-dmenu
+
+exec_always refreshsetup.sh
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh

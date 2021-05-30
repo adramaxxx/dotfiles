@@ -14,18 +14,18 @@ done
 if [[ $monitorcount == 3 ]]
 then
   $(sleep 2s)
-  polybar --reload primary &
-  polybar --reload secondary &
-  polybar --reload secondarylaptop &
+  polybar -c /home/adramax/.config/polybar/config --reload primary &
+  polybar -c /home/adramax/.config/polybar/config --reload secondarylaptop &
+  polybar -c /home/adramax/.config/polybar/config --reload vertmonitor &
 elif [[ $monitorcount == 2 ]]
 then
   $(sleep 2s)
   polybar --reload primary &
   polybar --reload secondarylaptop &
+  #polybar --reload secondary &
 else
   $(sleep 2s)
-  polybar --reload laptop &
+  polybar --reload secondarylaptop &
 fi
 
 echo "Bars launched..."
-setbg &

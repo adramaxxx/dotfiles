@@ -1,0 +1,5 @@
+#!/bin/sh
+
+clock=$(date '+%H')
+
+date "+📅%d %b %Y (%a) ⏲%H:%M:%S "

@@ -18,4 +18,7 @@ then
 fi
 
 echo $light | sudo tee $file
-pkill -RTMIN+8 dwmblocks
+#pkill -SIGRTMIN+11 i3blocks
+#pkill -RTMIN+8 dwmblocks
+
+polybar-msg hook brightness 1

@@ -1,0 +1,62 @@
+# hotreload config
+bind-key r source-file ~/.tmux.conf \; display-message "Reloaded config"
+
+# make vim usable, no waiting after pressing esc
+set -sg escape-time 0
+
+# change prefix-key to ctrl+a
+unbind C-b
+set-option -g prefix C-a
+bind-key C-a send-prefix
+
+# keybinds for splitting panes
+bind C-e split-window -h
+bind C-h split-window -v
+
+# prevent automatic rename
+set-option -wg automatic-rename off
+
+# Xterm keys
+setw -g xterm-keys on
+
+# vim bindings to switch panes
+bind-key h select-pane -L
+bind-key j select-pane -D
+bind-key k select-pane -U
+bind-key l select-pane -R
+
+# M is the same as left alt
+bind-key -n M-Left previous-window
+bind-key -n M-Right next-window
+bind-key -n M-1 select-window -t 1
+bind-key -n M-2 select-window -t 2
+bind-key -n M-3 select-window -t 3
+bind-key -n M-4 select-window -t 4
+bind-key -n M-5 select-window -t 5
+bind-key -n M-6 select-window -t 6
+#bind-key -n M-0 select-window -t 0
+
+# Join last open window with current
+bind-key @ join-pane -h -s !
+bind-key £ join-pane -v -s !
+
+# automatically renumber when closing a window
+set -g renumber-windows on
+
+# quiet mode
+set -g visual-silence off
+set -g visual-activity on
+setw -g monitor-activity off
+set -g visual-bell off
+set -g bell-action none
+
+set -g default-terminal "tmux-256color"
+bind -T copy-mode-vi y send -X copy-pipe "xsel -b"
+set-window-option -g mode-keys vi
+set-option -g focus-events on
+
+set -ga terminal-overrides ",xterm-256color:Tc"
+
+# fix redraw issue when resizing terminal window
+# Perhaps this fix is only required when using dwm and not i3
+setw -g aggressive-resize on
