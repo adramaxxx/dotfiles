@@ -1,2 +1,2 @@
 #!/bin/env bash
-free --mebi | awk 'NR==2 {printf (" %2.2f GiB\n", ( $3 / 1024))}'
+free --mebi | awk 'NR==2 {printf ("🔮 %2.2f GiB\n", ( $3 / 1024))}'

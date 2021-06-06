@@ -6,7 +6,8 @@ let g:Tex_DefaultTargetFormat = 'pdf'
 let g:vimtex_view_general_viewer = 'zathura'
 let g:tex_flavor = 'latex'
 let g:vimtex_view_automatic = 0
-let g:vimtex_syntax_packages = {'todonotes': {'load': 0}}
+let g:vimtex_syntax_enabled = 1
+let g:vimtex_syntax_packages = {'todonotes': {'load': 0}, 'amsmath': {'load': 0}}
 
 let g:vimtex_compiler_latexmk = { 
         \ 'executable' : 'latexmk',

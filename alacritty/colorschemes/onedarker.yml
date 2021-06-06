@@ -4,6 +4,8 @@ colors:
   primary:
       #background: "#1E1E1E"
       #background: "#2E3440"
+      #background: "#121212"
+      #background: "#201F30"
     background: "#000000"
     foreground: "#D8DEE9"
 
@@ -28,4 +30,3 @@ colors:
     magenta: "#C586C0"
     cyan: "#29B8DB"
     white: "#ECEFF4"
-  # background_opacity: 1.0

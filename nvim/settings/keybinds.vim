@@ -48,15 +48,6 @@ xmap <leader>x  <Plug>(coc-convert-snippet)
 nnoremap <leader>dd :bd <CR>
 
 
-" remap arrow keys to prefix g, inspired by Dr. Lybech
-"nnoremap <silent> <Up>   gk
-"nnoremap <silent> <Down> gj
-"
-"vnoremap <silent> <Up>   gk
-"vnoremap <silent> <Down> gj
-
-
-
 " A nice way to toggle buffers in the top bar
 let s:tab = 1
 function! ToggleBufferline()
@@ -95,6 +86,7 @@ endfunction
 nnoremap <leader>tl :call ToggleCursorLine()<CR>
 
 "Move by display lines when wrapping lines
+" Inspired by Dr. Lybech
 nnoremap <silent> <Up>   gk
 nnoremap <silent> <Down> gj
 

@@ -13,4 +13,3 @@ esac
 capacity=$(cat "$battery/capacity")
 [ "$status" = "🔋" ] && [ "$capacity" -le 25 ] && warn="❗"
 echo "$status$warn$capacity%"
-

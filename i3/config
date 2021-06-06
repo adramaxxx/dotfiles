@@ -29,7 +29,7 @@ font xft:JetBrainsMono 12
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec kitty
+bindsym $mod+Return exec st
 
 # kill focused window
 bindsym $mod+q kill
@@ -263,50 +263,52 @@ mode "resize" {
 # Lock screen
 #bindsym $mod+9 exec --no-startup-id blurlock
 
-#bar {
-#    font xft:JetBrainsMono 14
-#    #status_command i3status
-#	status_command i3blocks -c ~/.config/i3blocks/config
-#	position top
-#	tray_output none
-#    output primary
-#	colors {
-#		background #000000
-#        
-#        separator #282c34
-#        }
-#    #                        # border # background #text
-#	 #	 focused_workspace  #282c34  #414959      #ffffff
-#    #     active_workspace   #282c34  #282c34      #ffffff
-#    #     inactive_workspace #282c34  #282c34      #888888
-#    #     urgent_workspace   #282c34  #900000      #ffffff
-#    #     binding_mode       #2f343a  #900000      #ffffff
-#	#}
-#}
+bar {
+    font xft:JetBrainsMono 13
+    #status_command i3status
+	status_command i3blocks -c ~/.config/i3blocks/config
+	position top
+	tray_output none
+    output primary
+	colors {
+		background #282c34
+        #separator #282c34
+    }
+    #                        # border # background #text
+	 #	 focused_workspace  #282c34  #414959      #ffffff
+    #     active_workspace   #282c34  #282c34      #ffffff
+    #     inactive_workspace #282c34  #282c34      #888888
+    #     urgent_workspace   #282c34  #900000      #ffffff
+    #     binding_mode       #2f343a  #900000      #ffffff
+	#}
+}
 
-#bar {
-#    font xft:JetBrainsMono 13
-#    status_command i3status
-#	#status_command i3blocks -c ~/.config/i3blocks/config1
-#	position top
-#	tray_output none
-#    output nonprimary
-#}
+bar {
+    font xft:JetBrainsMono 13
+    status_command i3status
+    colors {
+        background #282c34
+    }
+	status_command i3blocks -c ~/.config/i3blocks/config1
+	position top
+	tray_output none
+    output nonprimary
+}
 
 
-#bindsym $mod+b bar mode toggle
+bindsym $mod+b bar mode toggle
 # hide/unhide i3status bar
-bindsym $mod+b exec polybar-msg cmd toggle
+#bindsym $mod+b exec polybar-msg cmd toggle
 
 # Theme colors
 # class                   border  backgr. text    indic.   child_border
-  client.focused          #689d6a #689d6a #80FFF9 #2694bf
-  client.focused_inactive #2F3D44 #2F3D44 #1ABC9C #454948
-  client.unfocused        #2F3D44 #2F3D44 #1ABC9C #454948
-  client.urgent           #CB4B16 #FDF6E3 #1ABC9C #268BD2
-  client.placeholder      #000000 #0c0c0c #ffffff #000000
+  client.focused          #005577 #005577 #80FFF9 #005577
+  #client.focused_inactive #2F3D44 #2F3D44 #1ABC9C #454948
+  #client.unfocused        #2F3D44 #2F3D44 #1ABC9C #454948
+  #client.urgent           #CB4B16 #FDF6E3 #1ABC9C #268BD2
+  #client.placeholder      #000000 #0c0c0c #ffffff #000000
 
-  client.background       #2B2C2B
+  #client.background       #2B2C2B
 
 #############################
 ### settings for i3-gaps: ###
@@ -394,4 +396,4 @@ bindsym XF86AudioLowerVolume exec volumecontrol.sh lower
 bindsym $mod+Shift+p exec acpicaller-dmenu
 
 exec_always refreshsetup.sh
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+#exec_always --no-startup-id $HOME/.config/polybar/launch.sh

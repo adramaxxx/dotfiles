@@ -1,0 +1,30 @@
+# Colors (Nebulous night)
+colors:
+  # Default colors
+  primary:
+    #background: "#000000"
+    #background: "#282c34"
+    background: "#0B1015"
+    foreground: "#CED5E5"
+
+  # Normal colors
+  normal:
+    black: "#0b1015"
+    red: "#FB467B"
+    green: "#B8EE92"
+    yellow: "#975EEC"
+    blue: "#0BA8E2"
+    magenta: "#F95CE6"
+    cyan: "#80a0ff"
+    white: "#CED5E5"
+
+  # Bright colors
+  bright:
+    black: "#000000"
+    red: "#FD2E6A"
+    green: "#5EB95D"
+    yellow: "#FFCC00"
+    blue: "#007ED3"
+    magenta: "#FE92E1"
+    cyan: "#56D6D6"
+    white: "#FFFFFF"

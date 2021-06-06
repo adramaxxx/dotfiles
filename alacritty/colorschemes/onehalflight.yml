@@ -1,7 +1,7 @@
 # Colors (One Half Light)
 colors:
   primary:
-    background: '0xfafafa'
+    background: '0xffffff'
     foreground: '0x383a42'
 
   normal:

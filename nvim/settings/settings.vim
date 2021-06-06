@@ -14,20 +14,23 @@ filetype on
 set laststatus=2
 set hidden
 set title
-set noruler
 set scrolloff=8
 set completeopt=menuone,noinsert,noselect
 set incsearch
 set nohlsearch
-set showmode
+set noshowmode
+
+" Search for everything, ignoring upper and lower case letters
+set ignorecase smartcase
 "set signcolumn=yes
 
+
+set cursorline
+
+set guicursor=
 "autorun xrdb whenever .xresources is being saved
 autocmd BufRead,BufNewFile .Xresources,xdefaults set filetype=xdefaults
 autocmd BufWritePost .Xresources,Xdefaults,.Xresources,xdefaults !xrdb %
-
-" guicursor
-set guicursor=
 
 " Only show tabline when more than one tab is open
 set showtabline=1
@@ -39,7 +42,7 @@ cnoremap w!! execute 'silent! write !sudo tee % ' <bar> edit!
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " set spell when filetype is .md or .tex
-autocmd BufNewFile,BufRead *.md set spell
+autocmd BufNewFile,BufRead *.md set spell 
 autocmd BufNewFile,BufRead *.tex set spell
 
 autocmd TermOpen * set nospell
@@ -59,7 +62,3 @@ set splitbelow splitright
 "  au!
 "  au FileType netrw setlocal bufhidden=wipe
 "augroup end
-
-
-let g:indentLine_setColors = 0
-

@@ -2,16 +2,9 @@
 colors:
   # Default Colors
   primary:
-      #foreground:        '#fbf1c7'
-      #foreground: "0xe1e2e3" # maia foreground
-      #background: "0x273136" # maia background
-      #atlantis
-      #background: "0x2a2f38"
-    #foreground: "0xe1e3e4"
-    #foreground: '#dddddd'
-    #background: '#282c34' #sexy grey background
-    #background: '#1d2021' #gruvbox background
     background: '#000000'
+    #background: '#282c34' #sexy grey background
+    foreground: '#ffffff'
   cursor:
     text:   CellBackground
     cursor: CellForeground

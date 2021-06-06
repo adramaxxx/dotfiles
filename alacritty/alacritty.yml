@@ -1,25 +1,29 @@
+background_opacity: .900
+
+cursor:
+  style: Block
+
 env:
   TERM: xterm-256color
 
 import: 
-  - /home/adramax/.config/alacritty/colorschemes/kittydefault.yml
-  #- /home/adramax/Documents/repos/base16-alacritty/colors/base16-default-dark.yml
-
+  #- /home/adramax/.config/alacritty/colorschemes/molokai.yml
+  #- /home/adramax/.config/alacritty/colorschemes/kittydefault.yml
+  - /home/adramax/.config/alacritty/colorschemes/snazzy.yml
 
 font:
     normal:
-        family: JetBrainsMono 
+        family: "JetBrainsMono Nerd Font Mono" 
         style: Regular
     bold:
-        family: JetBrainsMono
+        family: "JetBrainsMono Nerd Font Mono"
         style: Bold
     italic:
-        family: JetBrainsMono
+        family: "JetBrainsMono Nerd Font Mono"
         style: Italic
 
-    size: 10
+    size: 12
 
-background_opacity: 1
 
 window:
   title: Alacritty
@@ -30,8 +34,12 @@ window:
     x: 0
     y: 0
 
+dynamic_padding: true
+
 key_bindings:
   - { key: C, mods: Alt, action: Copy }
   - { key: V, mods: Alt, action: Paste }
   - { key: K, mods: Alt|Shift, action: IncreaseFontSize }
   - { key: J, mods: Alt|Shift, action: DecreaseFontSize }
+  - { key: S, mods: Alt, command: { program: "coat-awk", args: ["raise"] } } 
+  - { key: A, mods: Alt, command: { program: "coat-awk", args: ["lower"] } }

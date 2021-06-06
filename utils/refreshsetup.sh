@@ -30,5 +30,4 @@ xset r rate 300 50 &
 
 # danish layout plus remapping of capslock to escape
 setxkbmap dk -option caps:escape &
-
 picom -b &
