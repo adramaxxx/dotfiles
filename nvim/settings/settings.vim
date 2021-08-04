@@ -1,9 +1,8 @@
 syntax enable
 set number rnu
-
 set tabstop=4 softtabstop=4
 set shiftwidth=4
-set expandtab
+set noexpandtab
 set wrap
 set smartcase
 set ignorecase
@@ -19,15 +18,16 @@ set completeopt=menuone,noinsert,noselect
 set incsearch
 set nohlsearch
 set noshowmode
+set noshowcmd
+set cursorline
+
+"set guicursor=
 
 " Search for everything, ignoring upper and lower case letters
 set ignorecase smartcase
 "set signcolumn=yes
 
 
-set cursorline
-
-set guicursor=
 "autorun xrdb whenever .xresources is being saved
 autocmd BufRead,BufNewFile .Xresources,xdefaults set filetype=xdefaults
 autocmd BufWritePost .Xresources,Xdefaults,.Xresources,xdefaults !xrdb %

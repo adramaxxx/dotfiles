@@ -19,11 +19,12 @@ static const char actualVerifyBat[] = "\\_SB.PCI0.LPC0.EC0.BTSM";
 
 
 void verifyModes();
-void getPowerMode();
-void getRapidCharge();
-void getBatteryConservation();
+void getPowerMode(char *res);
+void getRapidCharge(char *res);
+void getBatteryConservation(char *res);
 void setPowermode(int *choice);
 void setBatteryConservation(int *choice);
 void setRapidCharge(int *choice);
 void writeToFile(const char* value);
 void readFromFile(char *buffer);
+void verifyQuiet(int quiet);

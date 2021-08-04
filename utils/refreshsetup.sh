@@ -15,7 +15,7 @@ elif [[ $monitorcount == 2 ]]
 then
 	$(sleep 1s)
 	xrandr --output eDP --mode 1920x1080 --pos 3440x0 --rotate normal --output HDMI-A-0 --off --output DisplayPort-0 --primary --mode 3440x1440 --pos 0x0 --rotate normal &
-	xrandr --output eDP --mode 1920x1080 --rotate normal --auto --right-of DisplayPort-0 --primary --mode 3440x1440 --auto --rotate normal
+#	xrandr --output eDP --mode 1920x1080 --rotate normal --auto --left-of DisplayPort-0 --primary --mode 3440x1440 --auto --rotate normal
 else
 	$(sleep 1s)
 	xrandr --output eDP --mode 1920x1080 --pos 0x0 --rotate normal --primary --output HDMI-A-0 --off --output DisplayPort-0 --off &
@@ -30,4 +30,4 @@ xset r rate 300 50 &
 
 # danish layout plus remapping of capslock to escape
 setxkbmap dk -option caps:escape &
-picom -b &
+picom -b --experimental-backend &

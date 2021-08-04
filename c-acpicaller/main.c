@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include "calleruilts.h"
+#include "callerutils.h"
 
 
 int main (int argc, char *argv[]) {
@@ -9,6 +9,7 @@ int main (int argc, char *argv[]) {
     int powermode = -1;
     int conservation = -1;
     int rapidcharge = -1;
+    int quiet = 0;
 
     for(int i = 0; i < argc; i++) {
         if(!strcmp(argv[i],"--verify")) {
@@ -22,6 +23,9 @@ int main (int argc, char *argv[]) {
 
         else if (!strcmp(argv[i], "--rapidcharge"))
             rapidcharge = atoi(argv[i+1]);
+
+        else if (!strcmp(argv[i], "--quiet"))
+            quiet = 1;
     }
 
     if (powermode != -1)
@@ -34,7 +38,7 @@ int main (int argc, char *argv[]) {
         setRapidCharge(&rapidcharge);
 
     if (verify == 1)
-        verifyModes();
+        verifyModes(quiet);
 
 	return 0;
 }

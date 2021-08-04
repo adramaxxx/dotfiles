@@ -2,3 +2,4 @@ losslessdownload.sh
 losslessdownloader/
 acpicaller/__pycache__
 acpicaller/
+*.out

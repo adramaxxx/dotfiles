@@ -1,0 +1,6 @@
+#!/bin/sh
+
+currentState="$(pamixer --get-volume)"
+icon="🔊"
+#echo "$icon$vol%"
+echo "$icon $currentState%"

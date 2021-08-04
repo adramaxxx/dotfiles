@@ -18,6 +18,7 @@ then
 fi
 
 echo $light | sudo tee $file
+
 pkill -SIGRTMIN+11 i3blocks
 #pkill -RTMIN+8 dwmblocks
 

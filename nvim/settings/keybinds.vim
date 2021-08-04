@@ -47,6 +47,8 @@ xmap <leader>x  <Plug>(coc-convert-snippet)
 " Delete current open buffer
 nnoremap <leader>dd :bd <CR>
 
+" go to header
+"nnoremap <leader>gsh :CocCommand clangd.switchSourceHeader <CR>
 
 " A nice way to toggle buffers in the top bar
 let s:tab = 1
@@ -113,3 +115,6 @@ nnoremap <silent> ,f :call GetBufName() <CR>
 
 " Toggle Terminal
 nnoremap ,t :ToggleTerminal<CR>
+
+
+command Gsh :CocCommand clangd.switchSourceHeader

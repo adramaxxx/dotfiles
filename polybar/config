@@ -77,12 +77,11 @@ semi-trans-black = #aa000000
 enable-ipc = true
 monitor = DisplayPort-0
 width = 100%
-height = 25
+height = 20
 ;offset-x = 1%
 ;offset-y = 1%
 radius = 0
 fixed-center = true
-
 ;background = ${colors.bg-alt}
 background = ${colors.bg-alt}
 foreground = ${colors.fg}
@@ -99,17 +98,18 @@ padding-right = 0
 module-margin-left = 0
 module-margin-right = 0
 
+
 ;font-0 = fixed:pixelsize=13;1
 ;font-1 = JetBrainsMono:size=11;1
 ;font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 ;font-2 = siji:pixelsize=12;1
 ;font-3 = NotoColorEmoji:fontformat=truetype:scale=10:antialias=true;
 
-font-0 = "JetBrainsMono Nerd Font:style=Medium:size=10;3"
-font-1 = "JetBrainsMono Nerd Font:size=12;3"
-font-2 = "JetBrainsMono Nerd Font:size=19;5"
+font-0 = "JetBrainsMono Nerd Font:style=Medium:size=8;3"
+font-1 = "JetBrainsMono Nerd Font:size=10;3"
+font-2 = "JetBrainsMono Nerd Font:size=10;5"
 font-3 = "Material Icons:9;4"
-font-4 = "JetBrainsMono Nerd Font:style=bold:size=13;3"
+font-4 = "JetBrainsMono Nerd Font:size=10;3"
 ;font-4 = "Material Icons Outlined:9;4"
 ;font-5 = Material Design Icons:9;4"
 
@@ -172,16 +172,16 @@ module-margin-right = 0
 ;font-3 = NotoColorEmoji:fontformat=truetype:scale=10:antialias=true;
 
 font-0 = "JetBrainsMono Nerd Font:style=Medium:size=10;3"
-font-1 = "JetBrainsMono Nerd Font:style=Bold:size=10;3"
-font-2 = "JetBrainsMono Nerd Font:size=19;5"
+font-1 = "JetBrainsMono Nerd Font:size=10;3"
+font-2 = "JetBrainsMono Nerd Font:size=10;5"
 font-3 = "Material Icons:9;4"
-font-4 = "JetBrainsMono Nerd Font:size=13;3"
+font-4 = "JetBrainsMono Nerd Font:size=10;3"
 ;font-4 = "Material Icons Outlined:9;4"
 ;font-5 = Material Design Icons:9;4"
 
 
 modules-left = i3 
-modules-right = kernel mymemory brightness volume battery date 
+modules-right = wlan eth kernel mymemory brightness volume battery date 
 ;modules-right = supdates kernel volume mymemory brightness mybat date 
 
 ;tray-position = right
@@ -235,7 +235,7 @@ module-margin-right = 0
 ;font-3 = NotoColorEmoji:fontformat=truetype:scale=10:antialias=true;
 
 font-0 = "JetBrainsMono Nerd Font:style=Medium:size=10;3"
-font-1 = "JetBrainsMono Nerd Font:style=Bold:size=11;3"
+font-1 = "JetBrainsMono Nerd Font:size=11;3"
 font-2 = "JetBrainsMono Nerd Font:size=19;5"
 font-3 = "Material Icons:9;4"
 font-4 = "JetBrainsMono Nerd Font:size=13;3"
@@ -263,7 +263,6 @@ override-redirect = false
 
 cursor-click = pointer
 cursor-scroll = ns-resize
-
 
 
 [template/module]
@@ -480,13 +479,14 @@ label-focused = %{T5}%index%%{T-}
 label-focused-foreground = ${colors.white}
 label-focused-background = #005577
 label-focused-padding = 2
+label-focused-underline = ${colors.white}
 
 ; unfocused = Inactive workspace on any monitor
 label-unfocused = %{T5}%index%%{T-}
 ;label-unfocused-foreground = ${colors.white}
 ;label-unfocused-background = ${colors.black}
-label-unfocused-foreground = #888888
-label-unfocused-backgrond = #222222
+label-unfocused-foreground = #ffffff
+label-unfocused-backgrond = ${colors.backgrond}
 label-unfocused-padding = 2
 
 ; visible = Active workspace on unfocused monitor
@@ -496,7 +496,7 @@ label-visible = %{T5}%index%%{T-}
 ;label-visible-foreground = ${colors.white}
 label-visible-background = #222222
 label-visible-foreground = #ffffff
-;label-visible-underline = ${self.label-focused-underline}
+;label-visible-underline = ${colors.white}
 label-visible-padding = 2
 ;label-visible-padding = ${self.label-focused-padding}
 
@@ -506,7 +506,7 @@ label-urgent-background = ${colors.red}
 label-urgent-padding = 2
 
 ; Separator in between workspaces
-;label-separator = |
+label-separator = |
 
 
 [module/mpd]
@@ -588,7 +588,9 @@ interface = wlp1s0
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
-format-connected-underline = #9f78e1
+format-connected-foreground = ${colors.white}
+format-connected-padding = 0
+;format-connected-underline = #9f78e1
 label-connected = %essid%
 
 format-disconnected =
@@ -602,17 +604,19 @@ ramp-signal-1 = 
 ramp-signal-2 = 
 ramp-signal-3 = 
 ramp-signal-4 = 
-ramp-signal-foreground = ${colors.foreground-alt}
+;ramp-signal-foreground = ${colors.foreground-alt}
 
 [module/eth]
 type = internal/network
 interface = enp3s0f3u1u3
 interval = 3.0
 
-format-connected-underline = #55aa55
-format-connected-prefix = " "
-format-connected-prefix-foreground = ${colors.foreground-alt}
-label-connected = %local_ip%
+;format-connected-underline = #55aa55
+format-connected-prefix = ""
+format-connected-padding = 1
+format-connected-prefix-foreground = ${colors.white}
+format-connected-foreground = ${colors.white}
+label-connected = %local_ip% 
 
 format-disconnected =
 ;format-disconnected = <label-disconnected>

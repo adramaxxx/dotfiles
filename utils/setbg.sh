@@ -6,11 +6,11 @@ done
 
 if [[ $monitorcount == 3 ]]
 then
-	setroot --on 0 -z Pictures/wallpapers/ultra-mountain2.jpeg --on 2 -z Pictures/wallpapers/ultra-mountain2.jpeg --on 1 -z Pictures/wallpapers/wallpaperoctaviafull.jpeg &
+	setroot --on 0 -z Pictures/wallpapers/ultra-japanese.jpeg --on 2 -z Pictures/wallpapers/ultra-mountain2.jpeg --on 1 -z Pictures/wallpapers/wallpaperoctaviafull.jpeg &
 elif [[ $monitorcount == 2 ]]
 then
-	setroot --on 0 -z Pictures/wallpapers/kek.jpg --on 1 -z Pictures/wallpapers/mountains.jpg &
+	setroot --on 0 -z Pictures/wallpapers/ultra-mountain2.jpeg --on 1 -z Pictures/wallpapers/mountains.jpg &
 elif [[ $monitorcount == 1 ]]
 then
-	setroot --on 0 -z Pictures/wallpapers/ultra-mountain.jpeg &
+	setroot --on 0 -z Pictures/wallpapers/ultra-japanese.jpeg &
 fi

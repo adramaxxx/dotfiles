@@ -1,4 +1,4 @@
-#include "calleruilts.h"
+#include "callerutils.h"
 
 void setPowermode(int *choice)
 {
@@ -28,70 +28,87 @@ void setBatteryConservation(int *choice)
 
 }
 
-void verifyModes()
+void verifyModes(int quiet)
 {
-    getPowerMode();
-    getRapidCharge();
-    getBatteryConservation();
+    char *powerMode;
+    char *battery;
+    char *rapidCharge;
+
+    powerMode = (char *) malloc(MAXSIZE);
+    getPowerMode(powerMode);
+
+    rapidCharge = (char *) malloc(MAXSIZE);
+    getRapidCharge(rapidCharge);
+
+    battery = (char *) malloc(MAXSIZE);
+    getBatteryConservation(battery);
+
+    if(quiet == 0) { 
+        printf("powermode: %s\n", powerMode);
+        printf("rapidcharge: %s\n", rapidCharge);
+        printf("conservation: %s\n", battery);
+    }
+    else {
+        printf("%s\n", powerMode);
+        printf("%s\n", rapidCharge);
+        printf("%s", battery);
+    }
+
+    free(rapidCharge);
+    free(powerMode);
+    free(battery);
 }
 
-void getPowerMode
-()
+void getPowerMode(char *res)
 {
     writeToFile(verifyPowermode);
     char *buffer;
     buffer = (char *) malloc(MAXSIZE);
     readFromFile(buffer);
-    char *res;
 
     if (!strcmp(buffer,"0x1"))
-        res = "extreme";
+        strcpy(res, "extreme");
     else if (!strcmp(buffer, "0x2"))
-        res = "saving";
+        strcpy(res, "saving");
     else
-        res = "intelligent";
+        strcpy(res, "intelligent");
 
     free(buffer);
-    printf("powermode: %s\n", res);
 }
 
 void getRapidCharge
-()
+(char *res)
 {
     writeToFile(verifyRapidCharge);
     char *buffer;
     buffer = (char *) malloc(MAXSIZE);
     readFromFile(buffer);
 
-    char *res;
     if (!strcmp(buffer, "0x0"))
-        res = "disabled";
+        strcpy(res, "disabled");
     else
-        res = "enabled";
+        strcpy(res,"enabled");
 
     free(buffer);
-    printf("rapidcharge: %s\n", res);
 }
 
 
 void getBatteryConservation
-()
+(char *res)
 {
     char *buffer;
     writeToFile(actualVerifyBat);
     buffer = (char *) malloc(MAXSIZE);
     readFromFile(buffer);
 
-    char *res;
-
     if (!strcmp(buffer,"0x0"))
-        res = "disabled";
+        strcpy(res, "disabled");
     else
-        res = "enabled";
+        strcpy(res, "enabled");
 
     free(buffer);
-    printf("battery conservation: %s", res);
 }
+
 
 void writeToFile
 (const char* value)

@@ -2,9 +2,18 @@
 colors:
   # Default Colors
   primary:
-    background: '#000000'
-    #background: '#282c34' #sexy grey background
-    foreground: '#ffffff'
+    # stolen from vimcodedark
+    background: '#1e1e1e'
+      #background: '#000000'
+    foreground: '#d4d4d4'
+
+
+
+    #background: '#2c2e34'
+
+     #foreground: '#ffffff'
+     #foreground: '#e2e2e3'
+
   cursor:
     text:   CellBackground
     cursor: CellForeground

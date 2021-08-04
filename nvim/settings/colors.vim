@@ -1,4 +1,3 @@
-" colors
 "set background=dark
 set termguicolors
 "black
@@ -40,7 +39,6 @@ function! SolarizedDark()
     highlight LineNr gui=bold
     highlight CursorLineNR guifg=#cecb00 gui=bold
     highlight clear TablineFill
-    let g:solarized_extra_hi_groups = 0
     highlight clear VertSplit 
     highlight VertSplit guifg=#282c34 guibg=#282c34
     highlight clear Statusline
@@ -81,7 +79,7 @@ function! XcodeDark()
 endfunction
 
 function! ColorSonoKai()
-    let g:sonokai_style = 'maia'
+    let g:sonokai_style = 'default'
     let g:sonokai_enable_italic = 0
     set background=dark
     colorscheme sonokai
@@ -98,30 +96,27 @@ endfunction
 function! ColorDefault()
     set background=dark
     colorscheme default
-    "highlight clear SpellBad
-    "highlight SpellBad cterm=underline,bold gui=underline,bold
     highlight EndOfBuffer guibg=NONE
-    highlight Normal guibg=NONE 
-    "highlight LineNr gui=bold
+    highlight Normal guibg=NONE guifg=#FFFFFF
     highlight clear SignColumn
     highlight clear StatuslineNC
     highlight StatuslineNC guibg=#282c34 guifg=#808080
-    "highlight Statusline guibg=black
-    "highlight CursorLineNr gui=bold
     highligh clear Pmenu
-    hi Pmenu           guifg=#FFFFFF guibg=#282c34
-    hi PmenuSel                      guibg=#808080
-    hi PmenuSbar                     guibg=#080808
-    hi PmenuThumb      guifg=#66D9EF
-    "highlight clear StatusLine
-    "highlight StatusLine guifg=#FFFFFF guibg=#2c323c
-    "highlight clear TablineFill
-    "highlight clear Tabline
-    "highlight TablineFill guibg=#2c323c
+	highlight Pmenu guibg=#303030 guifg=#FFFFFF
+	highlight clear Tabline
+	highlight clear TablineSel
+	highlight TablineSel guibg=#505050 gui=bold
+	highlight clear TablineFill
+
+	highlight clear Statusline
+	highlight clear StatuslineNC
+	highlight Statusline guifg=#FFFFFF guibg=#2c323c
+	highlight StatuslineNC cterm=reverse guifg=#5c6370
 endfunction
 
 function! ColorGruvboxDark()
-    let g:gruvbox_contrast_dark = 'medium'
+	set background=dark
+    let g:gruvbox_contrast_dark = 'hard'
 
     if exists('+termguicolors')
         let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
@@ -130,22 +125,18 @@ function! ColorGruvboxDark()
 
     let g:gruvbox_invert_selection='0'
 
-    set background=dark
     colorscheme gruvbox
 
-    "highlight clear SignColumn
-    "highlight clear SpellBad
-    highlight SpellBad cterm=underline,bold gui=underline,bold
-
-    highlight ColorColumn ctermbg=0 guibg=grey
-
-    highlight EndOfBuffer guibg=NONE
+	highlight clear SignColumn
 
     highlight Normal guibg=NONE 
 
     "highlight CursorLineNr gui=bold guibg=NONE
     "highlight LineNr guifg=#fabd2f
     
+	" blue
+	highlight LineNr guifg=#5eacd3 gui=bold
+	"highlight CursorLineNR guifg=#5eacd3
 
     " Statusline
     "highlight clear StatusLine
@@ -190,6 +181,7 @@ function! ColorNebulousMidnight()
     highlight TablineFill guibg=#282c34
     highlight CursorLineNr gui=bold
     highlight CursorLine guibg=#282736
+	highlight clear LineNr
     "highlight CursorLineNr guibg=#101010 gui=bold
     "highlight clear SpellBad
     "highlight SpellBad cterm=underline,bold gui=underline,bold
@@ -229,22 +221,21 @@ function! ColorRandomDoomOne()
 endfunction!
 
 function! ColorDracula()
-    let g:dracula_colorterm = 0
+    let g:dracula_colorterm = 1
     colorscheme dracula
-    highlight StatusLine       guifg=#FFFFFF ctermfg=7    
+    "highlight StatusLine       guifg=#FFFFFF ctermfg=7    
     highlight Normal guibg=NONE
-    highlight StatusLineNC     guifg=#202328 ctermfg=7    guifg=#5b6268 ctermbg=8     cterm=none
-    highlight LineNr gui=bold
-    highlight CursorLineNr gui=bold
+    "highlight StatusLineNC     guifg=#202328 ctermfg=7    guifg=#5b6268 ctermbg=8     cterm=none
+    "highlight LineNr gui=bold
+    "highlight CursorLineNr gui=bold
 endfunction
 
 function! ColorGruvbuddyTransparent()
     lua require('colorbuddy').colorscheme('gruvbuddy')
     highlight Normal guibg=NONE 
-    "guifg=#FFFFFF
-    "highlight clear LineNr
+    highlight clear LineNr
     "highlight clear CursorLineNr
-    "highlight clear SignColumn
+    highlight clear SignColumn
     "yellow
     "highlight LineNr guifg=#cecb00 gui=bold
     "highlight CursorLineNR guifg=#cecb00 gui=bold
@@ -254,11 +245,13 @@ function! ColorGruvbuddyTransparent()
     "highlight clear TablineFill 
     "highlight TablineFill guibg=#282c34
     "highlight clear StatusLine
-    highlight StatusLine guifg=#FFFFFF guibg=#2c323c
+    highlight StatusLine guifg=#000000
+	"guibg=#2c323c
 endfunction
 
 function! ColorGruvBuddy()
     lua require('colorbuddy').colorscheme('gruvbuddy')
+	hi Normal guibg=NONE
     "highlight Normal guibg=NONE
     "highligh clear LineNr
     "highlight clear CursorLineNr
@@ -352,15 +345,15 @@ function Base16template(colorname)
     let color = a:colorname
 
     if(color == 'nil')
-        execute 'colorscheme base16-isotope'
-        highlight clear SignColumn
+        execute 'colorscheme base16-tomorrow-night'
+        "highlight clear SignColumn
         "highlight clear CursorLineNr
         "highlight clear LineNr
-        highlight LineNR guibg=NONE
-        highlight CursorLineNr guibg=NONE
-        highlight CursorLineNr guifg=#cecb00 gui=bold
+        "highlight LineNR guibg=NONE
+        "highlight CursorLineNr guibg=NONE
+        "highlight CursorLineNr guifg=#cecb00 gui=bold
         highlight Normal guibg=NONE
-        highlight Statusline guifg=#FFFFFF
+        "highlight Statusline guifg=#FFFFFF
     else
         execute 'colorscheme ' color
     endif
@@ -374,46 +367,64 @@ endfunction
 
 function! ColorDoomOne()
     colorscheme doom-one
-    highlight clear SignColumn
-    highlight clear CursorLineNr
-    highlight clear LineNr
-    highlight CursorLineNr guifg=#cecb00 gui=bold
-    highlight Normal guibg=NONE
-    highlight Statusline guifg=#FFFFFF
+    "highlight clear SignColumn
+    "highlight clear CursorLineNr
+    "highlight clear LineNr
+    "highlight CursorLineNr guifg=#cecb00 gui=bold
+    "highlight Normal guibg=NONE
+    "highlight Statusline guifg=#FFFFFF
 endfunction
 
 
 function! ColorOneDark()
     set background=dark
-    colorscheme one-nvim
-    highlight CursorLineNr gui=bold
-    highlight Statusline guifg=#FFFFFF
-    highlight Normal guibg=NONE guifg=#FFFFFF
-    highlight clear SignColumn
-    highlight TablineSel guifg=#FFFFFF guibg=#005577 gui=bold
+    colorscheme onedark
+    highlight Normal guibg=NONE 
+	highlight clear SignColumn
+	highlight Statusline guifg=#FFFFFF
+    "highlight TablineSel guibg=#005577 gui=bold
+	highlight clear SpellBad
+    highlight SpellBad cterm=underline,bold gui=underline,bold
+	highlight clear LineNr
+	highlight clear CursorLineNr 
+	highlight CursorLineNr gui=bold
 endfunction
 
 function! ColorMolokai()
     let g:rehash256 = 1
+    let g:molokai_original = 0
     set background=dark
     colorscheme molokai
     highlight clear SignColumn
     highlight clear LineNr
-    highlight Normal guibg=NONE 
-    highlight clear CursorLineNr
-    "highlight LineNr gui=bold
-    "highlight CursorLineNr gui=bold guifg=#cecb00
+    highlight Normal guibg=NONE guifg=#FFFFFF
+    highlight CursorLineNr gui=bold
+    "highlight clear CursorLineNr
+    highlight LineNr gui=bold
+    highlight CursorLineNr gui=bold guifg=#cecb00
     highlight clear PmenuThumb
-    hi Pmenu           guifg=#FFFFFF guibg=#404040
-    hi PmenuSel                      guibg=#909090
-    hi PmenuSbar                     guibg=#080808
-    hi PmenuThumb      guifg=#66D9EF
+    "hi Pmenu           guifg=#FFFFFF guibg=#333841
+    "hi PmenuSel                      guibg=#4b5263
+    "hi PmenuSbar                     guibg=#282c34
+    "hi PmenuThumb      guifg=#aab2bf
     "highlight clear StatusLine
     "highlight clear StatuslineNC
     "highlight StatusLine guifg=#FFFFFF guibg=#2c323c gui=bold
     "highlight StatuslineNC guibg=#282c34 guifg=#808080
 endfunction
 
+function! GetAllTreeSitter()
+" configure treesitter
+lua << EOF
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = "all", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+  highlight = {
+    enable = true,              -- false will disable the whole extension
+    disable = { "c", "rust" },  -- list of language that will be disabled
+  },
+}
+EOF
+endfunction
 
 function! ColorNVCode()
     " configure nvcode-color-schemes
@@ -427,7 +438,7 @@ function! ColorNVCode()
     endif
 
     highlight clear SignColumn
-    highlight Normal guibg=NONE guifg=#FFFFFF
+    highlight Normal guibg=NONE 
 endfunction
 
 function! ColorSnazzy()
@@ -435,9 +446,65 @@ function! ColorSnazzy()
     highlight Normal guibg=NONE
     highlight LineNr guifg=#909090
     highlight StatuslineNC guibg=#202020
+    highlight clear SignColumn
 endfunction
 
-call ColorSnazzy()
-"call ColorGruvbuddyTransparent()
-"call ColorMolokai()
-"call ColorNebulousMidnight()
+
+function! PerfectDark()
+    "Almost perfect
+    set background=dark
+    colorscheme PerfectDark
+    hi Pmenu           guifg=#FFFFFF guibg=#505050
+    hi PmenuSel                      guibg=#909090
+    hi PmenuSbar                     guibg=#080808
+    hi PmenuThumb      guifg=#66D9EF
+    hi Normal guibg=NONE
+    hi EndOfBuffer guibg=NONE
+    hi clear TablineFill
+    hi TablineFill guibg=#282c34
+    hi clear Tabline
+    hi Tabline guibg=#505050
+    hi clear VertSplit
+    highlight VertSplit guifg=#4c5563 guibg=#4c5563
+    hi clear SignColumn
+    hi SignColumn guibg=#303030
+    hi LineNr guibg=#303030
+    highlight StatusLine guibg=#2c323c
+    hi clear SignColumn
+    hi LineNr guibg=NONE
+endfunction
+
+function! ColorVimCode()
+	set background=dark
+	colorscheme codedark
+	hi clear SignColumn
+	highlight Normal guibg=NONE 
+	highlight EndOfBuffer guibg=NONE
+	"highlight CursorLine guibg=#333333
+	highlight LineNr guifg=#5eacd3 guibg=NONE gui=bold
+endfunction
+
+function! TomorrowNight()
+	colorscheme Tomorrow-Night
+	highlight Normal guibg=NONE
+endfunction
+
+"call Base16template('nil')
+"call SolarizedDark()
+call ColorVimCode()
+"call TomorrowNight()
+"call SolarizedDark()
+
+" Enable treesitter highlighting
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  highlight = {
+    enable = true,
+    custom_captures = {
+      -- Highlight the @foo.bar capture group with the "Identifier" highlight group.
+      ["foo.bar"] = "Identifier",
+    },
+  },
+}
+EOF
+
