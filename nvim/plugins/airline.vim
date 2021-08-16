@@ -16,7 +16,7 @@ let g:airline#extensions#tabline#show_tab_type = 0
 
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 let g:airline#extensions#whitespace#enabled = 0
-let g:airline_theme = 'codedark'
+let g:airline_theme = 'base16_tomorrow_night'
 let g:airline_disable_statusline = 1
 let g:airline_powerline_fonts = 0
 

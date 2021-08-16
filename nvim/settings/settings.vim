@@ -21,7 +21,7 @@ set noshowmode
 set noshowcmd
 set cursorline
 
-"set guicursor=
+set guicursor=
 
 " Search for everything, ignoring upper and lower case letters
 set ignorecase smartcase

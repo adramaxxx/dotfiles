@@ -15,7 +15,7 @@ set termguicolors
 function! SolarizedLight()
     set background=light
     colorscheme solarized8_high
-    highlight Normal guibg=NONE 
+    "highlight Normal guibg=NONE 
     let g:solarized_extra_hi_groups = 1
     "highlight clear SpellBad
     "highlight SpellBad cterm=underline,bold gui=underline,bold
@@ -27,7 +27,7 @@ endfunction
 
 function! SolarizedDark()
     set background=dark
-    colorscheme solarized8_high
+    colorscheme solarized8
     "highlight clear SpellBad
     "highlight SpellBad cterm=underline,bold gui=underline,bold
     highlight EndOfBuffer guibg=NONE
@@ -127,7 +127,7 @@ function! ColorGruvboxDark()
 
     colorscheme gruvbox
 
-	highlight clear SignColumn
+	"highlight clear SignColumn
 
     highlight Normal guibg=NONE 
 
@@ -135,7 +135,7 @@ function! ColorGruvboxDark()
     "highlight LineNr guifg=#fabd2f
     
 	" blue
-	highlight LineNr guifg=#5eacd3 gui=bold
+	"highlight LineNr guifg=#5eacd3 gui=bold
 	"highlight CursorLineNR guifg=#5eacd3
 
     " Statusline
@@ -245,7 +245,7 @@ function! ColorGruvbuddyTransparent()
     "highlight clear TablineFill 
     "highlight TablineFill guibg=#282c34
     "highlight clear StatusLine
-    highlight StatusLine guifg=#000000
+    highlight StatusLine guifg=#000000 gui=bold
 	"guibg=#2c323c
 endfunction
 
@@ -378,7 +378,7 @@ endfunction
 
 function! ColorOneDark()
     set background=dark
-    colorscheme onedark
+    colorscheme one-nvim
     highlight Normal guibg=NONE 
 	highlight clear SignColumn
 	highlight Statusline guifg=#FFFFFF
@@ -485,15 +485,22 @@ function! ColorVimCode()
 endfunction
 
 function! TomorrowNight()
-	colorscheme Tomorrow-Night
+	colorscheme Tomorrow-Night-Bright
 	highlight Normal guibg=NONE
+	highlight clear LineNr
+	highlight LineNr guifg=#808080
 endfunction
 
-"call Base16template('nil')
-"call SolarizedDark()
-call ColorVimCode()
-"call TomorrowNight()
-"call SolarizedDark()
+function! Base16Materia()
+	colorscheme base16-materia
+	hi Normal guibg=NONE
+endfunction
+
+"call ColorGruvbuddyTransparent()
+"call ColorGruvboxDark()
+"call Base16Materia()
+"call ColorOneNvimLight()
+call SolarizedDark()
 
 " Enable treesitter highlighting
 lua <<EOF
@@ -506,5 +513,3 @@ require'nvim-treesitter.configs'.setup {
     },
   },
 }
-EOF
-
