@@ -1,0 +1,18 @@
+#!/bin/sh
+session="webdev"
+
+tmux new-session -d -s $session
+
+tmux send -t $session:1 "cd /home/adramax/repos/kokansky-webshop; clear " C-m
+#tmux send -t $session:1 "ls " C-m
+tmux rename-window -t zsh code
+
+tmux new-window -t $session:2 -n 'runner'
+tmux send -t $session:2 "cd /home/adramax/repos/kokansky-webshop; testshop.sh " C-m
+
+tmux new-window -t $session:3 -n 'zsh'
+
+tmux select-window -t $session:1
+tmux send -t $session:1 "source uwsgi/bin/activate; nvim" C-m
+
+tmux a -t $session
