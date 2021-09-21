@@ -1,4 +1,4 @@
-
+" Custom keybinds that make my life a lot easier
 " for switching between buffers with ctrl+p (previous) and ctrl+n (next)
 "nnoremap <silent> <C-n> :bnext<CR>
 "nnoremap <silent> <C-p> :bprevious<CR>
@@ -25,9 +25,6 @@ nnoremap <M-k> :resize +5<CR>
 nnoremap <M-h> :vertical resize -5<CR>
 nnoremap <M-l> :vertical resize +5<CR>
 
-" nerd tree toggle
-nmap <F6> :NERDTreeToggle<CR>
-
 " Toggle floating terminal
 nnoremap <leader>fo : FloatermToggle <CR>
 
@@ -47,46 +44,6 @@ xmap <leader>x  <Plug>(coc-convert-snippet)
 " Delete current open buffer
 nnoremap <leader>dd :bd <CR>
 
-" go to header
-"nnoremap <leader>gsh :CocCommand clangd.switchSourceHeader <CR>
-
-" A nice way to toggle buffers in the top bar
-let s:tab = 1
-function! ToggleBufferline()
-	if s:tab == 1
-		let s:tab=0
-		set showtabline=0
-	else
-		let s:tab=1
-		set showtabline=1
-	endif
-endfunction
-nnoremap <leader>tt :call ToggleBufferline()<CR>
-
-let s:statusline = 1
-function! ToggleStatus()
-	if s:statusline == 1
-		let s:statusline=0
-		set laststatus=0
-	else
-		let s:statusline=1
-		set laststatus=2
-	endif
-endfunction
-nnoremap <leader>ts :call ToggleStatus()<CR>
-
-let s:cursorline = 0
-function! ToggleCursorLine()
-	if s:cursorline == 0
-		let s:cursorline = 1
-		set cursorline
-	else
-		let s:cursorline = 0
-		set nocursorline
-	endif
-endfunction
-nnoremap <leader>tl :call ToggleCursorLine()<CR>
-
 "Move by display lines when wrapping lines
 " Inspired by Dr. Lybech
 nnoremap <silent> <Up>   gk
@@ -95,10 +52,6 @@ nnoremap <silent> <Down> gj
 vnoremap <silent> <Up>   gk
 vnoremap <silent> <Down> gj
 
-" Show tabpage if I am not in the mood for having the tabline visible
-nnoremap <silent> ½ :tabs<CR>
-
-
 " Keybinds for moving visually selected lines up or down
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
@@ -106,15 +59,9 @@ vnoremap K :m '<-2<CR>gv=gv
 " delete visually selected to void reg and paste from quote reg
 vnoremap <leader>p "_dP
 
-
-function GetBufName()
-    execute 'echo @%'
-endfunction
-nnoremap <silent> ,f :call GetBufName() <CR>
-
-
 " Toggle Terminal
 nnoremap ,t :ToggleTerminal<CR>
 
-
+" This command probably needs to be replaced with something else at another time, since I am using native lsp now
 command Gsh :CocCommand clangd.switchSourceHeader
+

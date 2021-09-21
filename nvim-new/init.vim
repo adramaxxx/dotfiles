@@ -1,42 +1,42 @@
+set runtimepath^=~/.vim runtimepath+=~/.vim/after
+
+let mapleader=" "
+" Important to get native lsp to work
+set completeopt=menuone,noselect
+
+source ~/.config/nvim/plug.vim
+source ~/.config/nvim/fzf.vim
+source ~/.config/nvim/colors.vim
+
+" Lsp stuff
+luafile ~/.config/nvim/languages.lua
+luafile ~/.config/nvim/completions.lua
+
+source ~/.config/nvim/keybinds.vim
+
+" General settings
 syntax enable
 set number rnu
 set tabstop=4 softtabstop=4
 set shiftwidth=4
 set noexpandtab
-set wrap
-set smartcase
-set ignorecase
+filetype plugin indent on
 set noswapfile
 set nobackup
-filetype plugin indent on
-filetype on
-set laststatus=2
-set hidden
-set title
-set scrolloff=8
-set completeopt=menuone,noinsert,noselect
 set incsearch
-set nohlsearch
-set noshowmode
 set noshowcmd
 set cursorline
+set guicursor=""
 
-set guicursor=
+" Setting for using indentline with tabs
+set list lcs=tab:\|\ 
+
+" Sign column for showing lsp diagnostics
+set signcolumn=yes
 
 " Search for everything, ignoring upper and lower case letters
 set ignorecase smartcase
-"set signcolumn=yes
 
-
-"autorun xrdb whenever .xresources is being saved
-autocmd BufRead,BufNewFile .Xresources,xdefaults set filetype=xdefaults
-autocmd BufWritePost .Xresources,Xdefaults,.Xresources,xdefaults !xrdb %
-
-" Only show tabline when more than one tab is open
-set showtabline=1
-
-" save file as sudo on files that require root permission
-cnoremap w!! execute 'silent! write !sudo tee % ' <bar> edit!
 
 " no more autocomment on newline
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
@@ -56,9 +56,3 @@ cabb Q q
 
 " split below right when opening a new split
 set splitbelow splitright
-
-" wipe netrw buffers when they are no longer open
-"augroup AutoDeleteNetrwHiddenBuffers
-"  au!
-"  au FileType netrw setlocal bufhidden=wipe
-"augroup end
