@@ -1,29 +1,31 @@
-background_opacity: 0.85
-
 cursor:
   style: Block
 
 env:
   TERM: xterm-256color
 
-import: 
-  - /home/adramax/.config/alacritty/colorschemes/onedarker.yml
+import:
   #- /home/adramax/.config/alacritty/colorschemes/kittydefault.yml
-  #- /home/adramax/.config/alacritty/colorschemes/solarizeddark.yml
-  #- /home/adramax/.config/alacritty/colorschemes/gruvbox.yml
+    #  #- /home/adramax/.config/alacritty/colorschemes/monokai.yml
+    #- /home/adramax/.config/alacritty/colorschemes/gruvbox.yml
+    - /home/adramax/.config/alacritty/colorschemes/onedark.yml
+    #- /home/adramax/.config/alacritty/colorschemes/monokai.yml
+    #- /home/adramax/.config/alacritty/colorschemes/solarizeddark.yml
+    #- /home/adramax/.config/alacritty/colorschemes/base16light.yml
 
-font:
-  normal:
-    family: "Monospace" 
-    style: Regular
-    bold:
-      family: "Monospace"
-      style: Bold
-    italic:
-      family: "Monospace"
-      style: Italic
 
-    size: 10
+      #font:
+      #      normal:
+      #        family: "FiraCode" 
+      #        style: Regular
+      #        bold:
+      #          family: "FiraCode"
+      #          style: Bold
+      #        italic:
+      #          family: "FiraCode"
+      #          style: Italic
+      #    
+      #        size: 13
 
 
 window:
@@ -32,10 +34,13 @@ window:
     instance: Alacritty
     general: Alacritty
   padding:
-    x: 0
-    y: 0
+    x: 2
+    y: 2
+  opacity: 1
 
 dynamic_padding: true
+
+dynamic_title: false
 
 key_bindings:
   - { key: C, mods: Alt, action: Copy }
@@ -44,6 +49,4 @@ key_bindings:
   - { key: J, mods: Alt|Shift, action: DecreaseFontSize }
   - { key: S, mods: Alt, command: { program: "coat-awk", args: ["raise"] } } 
   - { key: A, mods: Alt, command: { program: "coat-awk", args: ["lower"] } }
-
-
-enable_experimental_conpty_backend: false
+  - { key: F11,       mods: None,          action: ToggleFullscreen            }

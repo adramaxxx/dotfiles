@@ -14,14 +14,14 @@ done
 if [[ $monitorcount == 3 ]]
 then
   $(sleep 2s)
-  polybar -c /home/adramax/.config/polybar/config --reload primary &
-  polybar -c /home/adramax/.config/polybar/config --reload secondarylaptop &
-  polybar -c /home/adramax/.config/polybar/config --reload vertmonitor &
+  polybar -c /home/adramax/.config/polybar/config-bright --reload primary &
+  polybar -c /home/adramax/.config/polybar/config-bright --reload secondarylaptop &
+  polybar -c /home/adramax/.config/polybar/config-bright --reload vertmonitor &
 elif [[ $monitorcount == 2 ]]
 then
   $(sleep 2s)
-  polybar --reload primary &
-  polybar --reload secondarylaptop &
+  polybar -c /home/adramax/.config/polybar/oldconfig --reload secondary &
+  polybar -c /home/adramax/.config/polybar/oldconfig --reload vertmonitor &
   #polybar --reload secondary &
 else
   $(sleep 2s)

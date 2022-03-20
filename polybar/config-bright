@@ -38,7 +38,7 @@ semi-trans-black = #aa000000
 enable-ipc = true
 monitor = DisplayPort-0
 width = 100%
-height = 25
+height = 22
 ;offset-x = 1%
 ;offset-y = 1%
 radius = 0
@@ -48,7 +48,7 @@ background = ${colors.bg-alt}
 ;background = #00000000
 foreground = ${colors.fg}
 
-line-size = 3
+line-size = 1
 line-color = #f00
 
 border-size = 0
@@ -67,10 +67,10 @@ module-margin-right = 0
 ;font-3 = NotoColorEmoji:fontformat=truetype:scale=10:antialias=true;
 
 font-0 = "JetBrainsMono Nerd Font:style=Medium:size=10;3"
-font-1 = "JetBrainsMono Nerd Font:style=Bold:size=11;3"
-font-2 = "JetBrainsMono Nerd Font:size=19;5"
+font-1 = "JetBrainsMono Nerd Font:style=Bold:size=10;3"
+font-2 = "JetBrainsMono Nerd Font:size=10;5"
 font-3 = "Material Icons:9;4"
-font-4 = "JetBrainsMono Nerd Font:style=Bold:size=12;3"
+font-4 = "JetBrainsMono Nerd Font:style=Bold:size=10;3"
 ;font-4 = "Material Icons Outlined:9;4"
 ;font-5 = Material Design Icons:9;4"
 
@@ -105,7 +105,7 @@ cursor-scroll = ns-resize
 enable-ipc = true
 monitor = eDP
 width = 100%
-height = 30
+height = 25
 ;offset-x = 1%
 ;offset-y = 1%
 radius = 0
@@ -116,7 +116,7 @@ fixed-center = true
 background = ${colors.bg-alt}
 foreground = ${colors.fg}
 
-line-size = 3
+line-size = 1
 line-color = #f00
 
 border-size = 0
@@ -138,7 +138,7 @@ font-0 = "JetBrainsMono Nerd Font:style=Medium:size=10;3"
 font-1 = "JetBrainsMono Nerd Font:style=Bold:size=10;3"
 font-2 = "JetBrainsMono Nerd Font:size=19;5"
 font-3 = "Material Icons:9;4"
-font-4 = "JetBrainsMono Nerd Font:style=Bold:size=11;3"
+font-4 = "JetBrainsMono Nerd Font:style=Bold:size=10;3"
 ;font-4 = "Material Icons Outlined:9;4"
 ;font-5 = Material Design Icons:9;4"
 
@@ -169,7 +169,7 @@ cursor-scroll = ns-resize
 enable-ipc = true
 monitor = HDMI-A-0
 width = 100%
-height = 30
+height = 22
 ;offset-x = 1%
 ;offset-y = 1%
 radius = 0
@@ -179,7 +179,7 @@ background = ${colors.bg-alt}
 ;background = #00000000
 foreground = ${colors.fg}
 
-line-size = 3
+line-size = 1
 line-color = #f00
 
 border-size = 0
@@ -201,7 +201,7 @@ font-0 = "JetBrainsMono Nerd Font:style=Medium:size=10;3"
 font-1 = "JetBrainsMono Nerd Font:style=Bold:size=11;3"
 font-2 = "JetBrainsMono Nerd Font:size=19;5"
 font-3 = "Material Icons:9;4"
-font-4 = "JetBrainsMono Nerd Font:style=Bold:size=11;3"
+font-4 = "JetBrainsMono Nerd Font:style=Bold:size=10;3"
 ;font-4 = "Material Icons Outlined:9;4"
 ;font-5 = Material Design Icons:9;4"
 
@@ -315,7 +315,7 @@ type = custom/ipc
 hook-0 = sb-kernel
 initial = 1
 format-background = ${colors.bg-alt}
-format-foreground = ${colors.white}
+format-foreground = ${colors.black}
 format = %{T2}<output>  %{T-}
 
 [module/centertest]
@@ -406,20 +406,20 @@ label-mode-padding = 1
 label-mode-background = ${colors.bg-alt}
 
 ; focused = Active workspace on focused monitor
-label-focused = %{T5} %index%* %{T-}
+label-focused = %{T5}%index%%{T-}
 label-focused-foreground = ${colors.black}
 label-focused-background = ${colors.grey}
-;label-focused-underline= ${colors.black}
+label-focused-underline= ${colors.bg-altalt}
 label-focused-padding = 2
 
 ; unfocused = Inactive workspace on any monitor
-label-unfocused = %{T5} %index%  %{T-}
+label-unfocused = %{T5}%index%%{T-}
 label-unfocused-foreground = ${colors.black}
 label-unfocused-background = ${colors.white}
 label-unfocused-padding = 2
 
 ; visible = Active workspace on unfocused monitor
-label-visible = %{T5} %index%- %{T-}
+label-visible = %{T5}%index%%{T-}
 ;label-visible-foreground = ${colors.green}
 label-visible-background = ${colors.grey}
 label-visible-foreground = ${colors.black}

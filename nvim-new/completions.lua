@@ -24,7 +24,7 @@ require'compe'.setup {
     spell = false;
     tags = true;
     snippets_nvim = true;
-    treesitter = true;
+    treesitter = false;
   };
 }
 local t = function(str)

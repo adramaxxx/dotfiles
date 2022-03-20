@@ -60,12 +60,6 @@ endfunction
 
 function! NeoSoul()
 	colorscheme NeoSolarized
-	hi Normal guibg=NONE ctermbg=NONE
 endfunction
 
-function! Dracula()
-	colorscheme dracula
-	hi Normal guibg=NONE ctermbg=NONE
-endfunction
 
-call Dracula()

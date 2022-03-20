@@ -131,7 +131,7 @@ bindsym $mod+Shift+minus move scratchpad
 
 # Show the next scratchpad window or hide the focused scratchpad window.
 # If there are multiple scratchpad windows, this command cycles through them.
-#bindsym $mod+minus scratchpad show
+bindsym $mod+p scratchpad show
 
 #navigate workspaces next / previous
 #bindsym $mod+0x2e workspace next
@@ -154,7 +154,9 @@ set $ws9 9
 set $ws10 10
 
 
-bindsym $mod+p exec rofi -show run
+# Todo: Perhaps script screenlayouts using the builtin ipc
+
+#bindsym $mod+p exec rofi -show run
 #bindsym $mod+p workspace prev
 bindsym $mod+n workspace next
 
@@ -264,60 +266,93 @@ mode "resize" {
 # Lock screen
 #bindsym $mod+9 exec --no-startup-id blurlock
 
+#bar {
+#    font xft:JetBrainsMono 10
+#	#status_command i3blocks -c ~/.config/i3blocks/config
+#	status_command i3status
+#	position top
+#	tray_output none
+#	colors {
+#		background #282c34
+#	}
+#}
+
 bar {
-    font xft:JetBrainsMono 10
+    font xft:JetBrainsMono 9
     #status_command i3status
+    colors {
+        background #282c34
+    }
 	status_command i3blocks -c ~/.config/i3blocks/config
 	position top
 	tray_output none
-    #output primary
-	colors {
-		background #282c34
-        #separator #282c34
-    }
-    #                        # border # background #text
-	 #	 focused_workspace  #282c34  #414959      #ffffff
-    #     active_workspace   #282c34  #282c34      #ffffff
-    #     inactive_workspace #282c34  #282c34      #888888
-    #     urgent_workspace   #282c34  #900000      #ffffff
-    #     binding_mode       #2f343a  #900000      #ffffff
-	#}
 }
+# set primary gruvbox colorscheme colors
+set $bg #282828
+set $red #cc241d
+set $green #98971a
+set $yellow #d79921
+set $blue #458588
+set $purple #b16286
+set $aqua #689d68
+set $gray #a89984
+set $darkgray #1d2021
 
 #bar {
-#    font xft:JetBrainsMono 9
-#    #status_command i3status
-#    colors {
-#        background #282c34
-#    }
-#	status_command i3blocks -c ~/.config/i3blocks/config1
-#	position top
-#	tray_output none
+#	font xft:JetBrainsMono 10
+#	status_command i3blocks -c /home/adramax/.config/i3blocks/config
+#	#i3bar_command i3bar --transparency
+#	#status_command /usr/bin/bumblebee-status \
+#	#	-m battery pasink pasource date time \
+#	#	-p time.format="%H:%M" date.format="%a, %b %d %Y" \
+#	#	-t onedark-powerline
+#
+#		position top
+#		tray_output none
+#
+#		colors {
+#			background #101010
+#		}
+
+	#colors {
+	#	background $bg
+    #    # text color used for blocks that do not have a color specified.
+    #    statusline $yellow
+    #    # workspaces section            
+    #    #                    border  backgr. text
+    #    focused_workspace    $aqua $aqua $darkgray
+    #    inactive_workspace   $darkgray $darkgray $yellow
+    #    active_workspace     $darkgray $darkgray $yellow
+    #    urgent_workspace     $red $red $bg
+	#}
+
 #}
 
-
 # hide/unhide i3status bar
-bindsym $mod+b bar mode toggle
+#bindsym $mod+b bar mode toggle
 
 #bindsym $mod+b exec polybar-msg cmd toggle
+#client.focused          $blue $blue $darkgray $purple $darkgray
+#client.focused_inactive $darkgray $darkgray $yellow $purple $darkgray
+#client.unfocused        $darkgray $darkgray $yellow $purple $darkgray
+#client.urgent           $red $red $white $red $red
 
-# Theme colors
-# class                   border  backgr. text    indic.   child_border
-  client.focused          #005577 #005577 #80FFF9 #005577
-  #client.focused_inactive #2F3D44 #2F3D44 #1ABC9C #454948
-  #client.unfocused        #2F3D44 #2F3D44 #1ABC9C #454948
-  #client.urgent           #CB4B16 #FDF6E3 #1ABC9C #268BD2
-  #client.placeholder      #000000 #0c0c0c #ffffff #000000
+# class                 border  bground text    indicator child_border
+#client.focused          #404552 #404552 #9BA2B3 #FDF6E3  #666A76
+#client.focused_inactive #2F343F #2F343F #595F6D #454948
+#client.unfocused        #2F343F #2F343F #595F6D #454948
+#client.urgent           #CB4B16 #FDF6E3 #1ABC9C #268BD2
+#client.placeholder      #000000 #0c0c0c #ffffff #000000 
 
-  #client.background       #2B2C2B
+#client.background       #2B2C2B
 
 #############################
 ### settings for i3-gaps: ###
 #############################
 
 # Set inner/outer gaps
-gaps inner 5
-gaps outer 3
+gaps inner 2
+gaps outer 5
 
 # Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
 # gaps inner|outer current|all set|plus|minus <px>
@@ -325,7 +360,7 @@ gaps outer 3
 # gaps outer all plus 5
 
 # Smart gaps (gaps used if only more than one container on the workspace)
-smart_gaps on
+#smart_gaps on
 
 # Smart borders (draw borders around container only if it is not the only container on this workspace)
 # on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)

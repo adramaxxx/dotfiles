@@ -2,11 +2,12 @@
 colors:
   # Default colors
   primary:
-    background: '0x282c34'
+    #background: '0x282c34'
     #background: '0x151515'
-    #background: '0x000000'
-    foreground: '0xeaeaea'
-      #foreground: '0xffffff'
+    background: '0x000000'
+    #background: '0x26292c'
+    #foreground: '0xeaeaea'
+    foreground: '0xffffff'
 
   # Colors the cursor will use if `custom_cursor_colors` is true
   cursor:
@@ -17,8 +18,8 @@ colors:
   normal:
     black:   '0x121212'
     red:     '0xfa2573'
-    # green:   '0x98e123' # Correct Molokai colour
-    green:   '0x9cff00' # Better looking colour
+    green:   '0x98e123' # Correct Molokai colour
+    #green:   '0x9cff00' # Better looking colour
     yellow:  '0xdfd460'
     blue:    '0x1080d0'
     magenta: '0x8700ff'

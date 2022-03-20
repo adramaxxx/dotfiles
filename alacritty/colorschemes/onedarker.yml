@@ -2,8 +2,8 @@ colors:
   # Default colors
   primary:
     # Vim code darker background and foreground
-    background: '0x1e1e1e'
-    #background: '0x000000'
+    #background: '0x1e1e1e'
+    background: '0x000000'
     foreground: '0xd4d4d4'
     #background: '0x1e2127'
     #foreground: '0xabb2bf'

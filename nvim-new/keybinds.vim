@@ -65,3 +65,5 @@ nnoremap ,t :ToggleTerminal<CR>
 " This command probably needs to be replaced with something else at another time, since I am using native lsp now
 command Gsh :CocCommand clangd.switchSourceHeader
 
+" Search for file under cursor with regex
+"command Scw echo expand("<cword>")

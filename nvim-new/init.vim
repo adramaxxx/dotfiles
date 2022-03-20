@@ -1,16 +1,15 @@
 set runtimepath^=~/.vim runtimepath+=~/.vim/after
 
 let mapleader=" "
-" Important to get native lsp to work
-set completeopt=menuone,noselect
-
 source ~/.config/nvim/plug.vim
 source ~/.config/nvim/fzf.vim
 source ~/.config/nvim/colors.vim
 
 " Lsp stuff
-luafile ~/.config/nvim/languages.lua
-luafile ~/.config/nvim/completions.lua
+"luafile ~/.config/nvim/languages.lua
+"luafile ~/.config/nvim/completions.lua
+
+source ~/.config/nvim/coc.vim
 
 source ~/.config/nvim/keybinds.vim
 
@@ -26,10 +25,14 @@ set nobackup
 set incsearch
 set noshowcmd
 set cursorline
-set guicursor=""
+set hidden
+set noshowmode
+let g:airline#extensions#tabline#enabled = 0
+
+set laststatus=0
 
 " Setting for using indentline with tabs
-set list lcs=tab:\|\ 
+"set list lcs=tab:\|\ 
 
 " Sign column for showing lsp diagnostics
 set signcolumn=yes
@@ -56,3 +59,24 @@ cabb Q q
 
 " split below right when opening a new split
 set splitbelow splitright
+
+let g:OmniSharp_highlighting = 0 
+"let g:OmniSharp_highlighting = 0
+
+" Enable treesitter
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+	highlight = {
+	enable = true,              -- false will disable the whole extension
+	-- Setting this to true will run `:h syntax` and tree-sitter at the same time.
+	-- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
+	-- Using this option may slow down your editor, and you may see some duplicate highlights.
+	-- Instead of true it can also be a list of languages
+	additional_vim_regex_highlighting = false,
+	},
+}
+EOF
+
+let g:EasyMotion_smartcase = 1
+nmap , <Plug>(easymotion-overwin-f)
+map , <Plug>(easymotion-prefix)

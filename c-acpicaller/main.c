@@ -28,6 +28,8 @@ int main (int argc, char *argv[]) {
             quiet = 1;
     }
 
+	printf("hej");
+
     if (powermode != -1)
         setPowermode(&powermode);
 
