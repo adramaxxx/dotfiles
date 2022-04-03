@@ -64,7 +64,7 @@ function! NeoSoul()
 endfunction
 
 function! Dracula()
-	colorscheme dracula
+	colorscheme gruvbox
 	hi Normal guibg=NONE ctermbg=NONE
 endfunction
 
