@@ -1,5 +1,6 @@
 set runtimepath^=~/.vim runtimepath+=~/.vim/after
 
+let g:ale_disale_lsp = 1
 let mapleader=" "
 source ~/.config/nvim/plug.vim
 source ~/.config/nvim/fzf.vim
