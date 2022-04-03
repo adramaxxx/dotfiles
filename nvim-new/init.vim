@@ -30,6 +30,9 @@ set noshowmode
 let g:airline#extensions#tabline#enabled = 0
 
 set laststatus=0
+set colorcolumn=80
+"set guicursor=""
+
 
 " Setting for using indentline with tabs
 "set list lcs=tab:\|\ 

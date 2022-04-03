@@ -4,8 +4,8 @@
 "nnoremap <silent> <C-p> :bprevious<CR>
 
 " for switching between tabs with ctrl+p (previous) and ctrl+n (next)
-nnoremap <silent> <C-n> :tabnext<CR>
-nnoremap <silent> <C-p> :tabprevious<CR>
+nnoremap <silent> <C-M-n> :tabnext<CR>
+nnoremap <silent> <C-M-p> :tabprevious<CR>
 nnoremap <silent> <C-t> :tabnew<CR>
 "nnoremap <silent> <C-w> :tabclose<CR>
 

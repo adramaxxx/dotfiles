@@ -9,7 +9,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'godlygeek/tabular'
 	Plug 'tpope/vim-fugitive'
 	"Plug 'hrsh7th/nvim-compe'
-    Plug 'caenrique/nvim-toggle-terminal'
+    "Plug 'caenrique/nvim-toggle-terminal'
 	Plug 'voldikss/vim-floaterm'
 	Plug 'tomasr/molokai'
     Plug 'mkitt/tabline.vim'
