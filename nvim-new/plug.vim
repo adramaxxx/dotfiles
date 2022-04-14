@@ -30,4 +30,6 @@ call plug#begin('~/.vim/plugged')
 	Plug 'kyazdani42/nvim-web-devicons' " lua
 	Plug 'ryanoasis/vim-devicons' " vimscript
 	Plug 'folke/which-key.nvim'
+	Plug 'RRethy/nvim-base16'
+	Plug 'tpope/vim-commentary'
 call plug#end()

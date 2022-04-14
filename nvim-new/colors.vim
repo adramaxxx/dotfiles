@@ -108,8 +108,8 @@ endfunction
 
 function! ColorDracula()
 	colorscheme dracula
-	hi Normal guibg=NONE ctermbg=NONE
-	highlight clear SignColumn
+	"hi Normal guibg=NONE ctermbg=NONE
+	"highlight clear SignColumn
 endfunction
 
 call ColorDracula()

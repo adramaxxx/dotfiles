@@ -48,10 +48,10 @@ set hidden
 set noshowmode
 let g:airline#extensions#tabline#enabled = 0
 
-set colorcolumn=80
+set colorcolumn=110
 "set guicursor=""
 
-set signcolumn=yes
+set signcolumn=no
 
 " Search for everything, ignoring upper and lower case letters
 set ignorecase smartcase
