@@ -6,12 +6,16 @@ env:
 
 import:
   #- /home/adramax/.config/alacritty/colorschemes/kittydefault.yml
-    #  #- /home/adramax/.config/alacritty/colorschemes/monokai.yml
-    - /home/adramax/.config/alacritty/colorschemes/gruvbox.yml
+  #- /home/adramax/.config/alacritty/colorschemes/codedark.yml
+  #- /home/adramax/.config/alacritty/colorschemes/spacevimdark.yml
+  #- /home/adramax/.config/alacritty/colorschemes/monokai.yml
+    # /home/adramax/.config/alacritty/colorschemes/gruvbox.yml
     #- /home/adramax/.config/alacritty/colorschemes/onedark.yml
     #- /home/adramax/.config/alacritty/colorschemes/monokai.yml
     #- /home/adramax/.config/alacritty/colorschemes/solarizeddark.yml
     #- /home/adramax/.config/alacritty/colorschemes/base16light.yml
+    #- /home/adramax/.config/alacritty/colorschemes/tomorrownightbright.yml
+    - /home/adramax/.config/alacritty/colorschemes/dracula.yml
 
 
 font:
@@ -25,7 +29,7 @@ font:
           family: "JetBrainsMono"
           style: Italic
     
-        size: 13
+        size: 10
 
 
 window:
@@ -36,7 +40,7 @@ window:
   padding:
     x: 2
     y: 2
-  opacity: 0.90
+  opacity: 1
 
 dynamic_padding: true
 

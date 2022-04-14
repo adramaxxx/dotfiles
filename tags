@@ -1,0 +1,250 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_EXCMD	mixed	/number, pattern, mixed, or combineV2/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROC_CWD	/home/adramax/Documents/repos/dotfiles/	//
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	5.9.0	/p5.9.20210905.0/
+"256" Variations	alacritty/colorschemes/base16-alacritty/README.md	/^## "256" Variations$/;"	s	chapter:base16-alacritty
+$FZF_DEFAULT_COMMAND	nvim-new/fzf.vim	/^let $FZF_DEFAULT_COMMAND="rg --files --hidden"$/;"	v
+,	nvim-new/init.vim	/^map , <Plug>(easymotion-prefix)$/;"	m
+,	nvim-new/init.vim	/^nmap , <Plug>(easymotion-overwin-f)$/;"	m
+,t	nvim-new/keybinds.vim	/^nnoremap ,t :ToggleTerminal<CR>$/;"	m
+<	nvim-new/keybinds.vim	/^vnoremap < <gv$/;"	m
+<C-H>	nvim-new/keybinds.vim	/^nnoremap <C-H> <C-W><C-H>$/;"	m
+<C-J>	nvim-new/keybinds.vim	/^nnoremap <C-J> <C-W><C-J>$/;"	m
+<C-K>	nvim-new/keybinds.vim	/^nnoremap <C-K> <C-W><C-K>$/;"	m
+<C-L>	nvim-new/keybinds.vim	/^nnoremap <C-L> <C-W><C-L>$/;"	m
+<C-M-n>	nvim-new/keybinds.vim	/^nnoremap <silent> <C-M-n> :tabnext<CR>$/;"	m
+<C-M-p>	nvim-new/keybinds.vim	/^nnoremap <silent> <C-M-p> :tabprevious<CR>$/;"	m
+<C-b>	nvim-new/coc.vim	/^  inoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? "\\<c-r>=coc#float#scroll(0)\\</;"	m
+<C-b>	nvim-new/coc.vim	/^  nnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\\<C-b>"$/;"	m
+<C-b>	nvim-new/coc.vim	/^  vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\\<C-b>"$/;"	m
+<C-f>	nvim-new/coc.vim	/^  inoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? "\\<c-r>=coc#float#scroll(1)\\</;"	m
+<C-f>	nvim-new/coc.vim	/^  nnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\\<C-f>"$/;"	m
+<C-f>	nvim-new/coc.vim	/^  vnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\\<C-f>"$/;"	m
+<C-p>	nvim-new/fzf.vim	/^nnoremap <C-p> :Files<CR>$/;"	m
+<C-s>	nvim-new/coc.vim	/^nmap <silent> <C-s> <Plug>(coc-range-select)$/;"	m
+<C-s>	nvim-new/coc.vim	/^xmap <silent> <C-s> <Plug>(coc-range-select)$/;"	m
+<C-t>	nvim-new/keybinds.vim	/^nnoremap <silent> <C-t> :tabnew<CR>$/;"	m
+<Down>	nvim-new/keybinds.vim	/^nnoremap <silent> <Down> gj$/;"	m
+<Down>	nvim-new/keybinds.vim	/^vnoremap <silent> <Down> gj$/;"	m
+<M-h>	nvim-new/keybinds.vim	/^nnoremap <M-h> :vertical resize -5<CR>$/;"	m
+<M-j>	nvim-new/keybinds.vim	/^nnoremap <M-j> :resize -5<CR>$/;"	m
+<M-k>	nvim-new/keybinds.vim	/^nnoremap <M-k> :resize +5<CR>$/;"	m
+<M-l>	nvim-new/keybinds.vim	/^nnoremap <M-l> :vertical resize +5<CR>$/;"	m
+<S-TAB>	nvim-new/coc.vim	/^inoremap <expr><S-TAB> pumvisible() ? "\\<C-p>" : "\\<C-h>"$/;"	m
+<S-TAB>	nvim/plugins/lsp-config.vim	/^inoremap <expr><S-TAB> pumvisible() ? "\\<C-p>" : "\\<C-h>"$/;"	m
+<S-k>	nvim/plugins/lsp-config.vim	/^nnoremap <silent> <S-k> <cmd>lua vim.lsp.buf.signature_help()<CR>$/;"	m
+<TAB>	nvim-new/coc.vim	/^inoremap <silent><expr> <TAB>$/;"	m
+<TAB>	nvim/plugins/lsp-config.vim	/^inoremap <silent><expr> <TAB> pumvisible() ? "\\<C-n>" : "\\<TAB>"$/;"	m
+<Up>	nvim-new/keybinds.vim	/^nnoremap <silent> <Up>   gk$/;"	m
+<Up>	nvim-new/keybinds.vim	/^vnoremap <silent> <Up>   gk$/;"	m
+<c-@>	nvim-new/coc.vim	/^  inoremap <silent><expr> <c-@> coc#refresh()$/;"	m
+<c-space>	nvim-new/coc.vim	/^  inoremap <silent><expr> <c-space> coc#refresh()$/;"	m
+<cr>	nvim-new/coc.vim	/^inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()$/;"	m
+<leader>P	nvim-new/keybinds.vim	/^nnoremap <leader>P "+P$/;"	m
+<leader>Y	nvim-new/keybinds.vim	/^nnoremap <leader>Y "+yg_$/;"	m
+<leader>a	nvim-new/coc.vim	/^nmap <leader>a  <Plug>(coc-codeaction-selected)$/;"	m
+<leader>a	nvim-new/coc.vim	/^xmap <leader>a  <Plug>(coc-codeaction-selected)$/;"	m
+<leader>ac	nvim-new/coc.vim	/^nmap <leader>ac  <Plug>(coc-codeaction)$/;"	m
+<leader>b	nvim-new/fzf.vim	/^map <leader>b :Buffers<CR>$/;"	m
+<leader>dd	nvim-new/keybinds.vim	/^nnoremap <leader>dd :bd <CR>$/;"	m
+<leader>f	nvim-new/coc.vim	/^nmap <leader>f  <Plug>(coc-format-selected)$/;"	m
+<leader>f	nvim-new/coc.vim	/^xmap <leader>f  <Plug>(coc-format-selected)$/;"	m
+<leader>fo	nvim-new/keybinds.vim	/^nnoremap <leader>fo : FloatermToggle <CR>$/;"	m
+<leader>g	nvim-new/fzf.vim	/^nnoremap <leader>g :Rg<CR>$/;"	m
+<leader>m	nvim-new/fzf.vim	/^nnoremap <leader>m :Marks<CR>$/;"	m
+<leader>p	nvim-new/keybinds.vim	/^nnoremap <leader>p "+p$/;"	m
+<leader>p	nvim-new/keybinds.vim	/^vnoremap <leader>p "_dP$/;"	m
+<leader>qf	nvim-new/coc.vim	/^nmap <leader>qf  <Plug>(coc-fix-current)$/;"	m
+<leader>rn	nvim-new/coc.vim	/^nmap <leader>rn <Plug>(coc-rename)$/;"	m
+<leader>t	nvim-new/fzf.vim	/^nnoremap <leader>t :Tags<CR>$/;"	m
+<leader>x	nvim-new/keybinds.vim	/^xmap <leader>x  <Plug>(coc-convert-snippet)$/;"	m
+<leader>y	nvim-new/keybinds.vim	/^nnoremap <leader>y "+y$/;"	m
+<leader>y	nvim-new/keybinds.vim	/^vnoremap <leader>y "+y$/;"	m
+<space>a	nvim-new/coc.vim	/^nnoremap <silent><nowait> <space>a  :<C-u>CocList diagnostics<cr>$/;"	m
+<space>c	nvim-new/coc.vim	/^nnoremap <silent><nowait> <space>c  :<C-u>CocList commands<cr>$/;"	m
+<space>e	nvim-new/coc.vim	/^nnoremap <silent><nowait> <space>e  :<C-u>CocList extensions<cr>$/;"	m
+<space>j	nvim-new/coc.vim	/^nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>$/;"	m
+<space>k	nvim-new/coc.vim	/^nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>$/;"	m
+<space>o	nvim-new/coc.vim	/^nnoremap <silent><nowait> <space>o  :<C-u>CocList outline<cr>$/;"	m
+<space>p	nvim-new/coc.vim	/^nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>$/;"	m
+<space>s	nvim-new/coc.vim	/^nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<cr>$/;"	m
+>	nvim-new/keybinds.vim	/^vnoremap > >gv$/;"	m
+BD	nvim-new/fzf.vim	/^command! BD call fzf#run(fzf#wrap({$/;"	c
+ColorMolokai	nvim-new/colors.vim	/^function! ColorMolokai()$/;"	f
+Dracula	nvim-new/colors.vim	/^function! Dracula()$/;"	f
+Files	nvim-new/fzf.vim	/^command! -bang -nargs=? -complete=dir Files$/;"	c
+Fold	nvim-new/coc.vim	/^command! -nargs=? Fold :call     CocAction('fold', <f-args>)$/;"	c
+Format	nvim-new/coc.vim	/^command! -nargs=0 Format :call CocAction('format')$/;"	c
+GGrep	nvim-new/fzf.vim	/^command! -bang -nargs=* GGrep$/;"	c
+Gsh	nvim-new/keybinds.vim	/^command Gsh :CocCommand clangd.switchSourceHeader$/;"	c
+Installation	alacritty/colorschemes/base16-alacritty/README.md	/^## Installation$/;"	s	chapter:base16-alacritty
+J	nvim-new/keybinds.vim	/^vnoremap J :m '>+1<CR>gv=gv$/;"	m
+K	nvim-new/coc.vim	/^nnoremap <silent> K :call <SID>show_documentation()<CR>$/;"	m
+K	nvim-new/keybinds.vim	/^vnoremap K :m '<-2<CR>gv=gv$/;"	m
+K	nvim/plugins/lsp-config.vim	/^nnoremap <silent> K <cmd>lua vim.lsp.buf.hover()<CR>$/;"	m
+M.on_write	nvim/lua/status.lua	/^M.on_write = function()$/;"	f
+M.set_status	nvim/lua/status.lua	/^M.set_status = function(line)$/;"	f
+M.set_write	nvim/lua/status.lua	/^M.set_write = function(count)$/;"	f
+MAXSIZE	c-acpicaller/callerutils.h	/^#define MAXSIZE /;"	d
+Nebulous	nvim-new/colors.vim	/^function! Nebulous()$/;"	f
+NeoSoul	nvim-new/colors.vim	/^function! NeoSoul()$/;"	f
+OR	nvim-new/coc.vim	/^command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')$/;"	c
+QuietVerify	acpicaller/caller.py	/^def QuietVerify():$/;"	f
+RG	nvim-new/fzf.vim	/^command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)$/;"	c
+Rg	nvim-new/fzf.vim	/^command! -bang -nargs=* Rg$/;"	c
+RipgrepFzf	nvim-new/fzf.vim	/^function! RipgrepFzf(query, fullscreen)$/;"	f
+SetBatteryConservation	acpicaller/caller.py	/^def SetBatteryConservation(batteryConservation):$/;"	f
+SetPowerMode	acpicaller/caller.py	/^def SetPowerMode(powermode):$/;"	f
+SetRapidCharge	acpicaller/caller.py	/^def SetRapidCharge(rapidcharge):$/;"	f
+StatusLine	nvim/lua/status.lua	/^function StatusLine()$/;"	f
+Usage	acpicaller/README.md	/^# Usage$/;"	c
+VerifyModes	acpicaller/caller.py	/^def VerifyModes():$/;"	f
+[g	nvim-new/coc.vim	/^nmap <silent> [g <Plug>(coc-diagnostic-prev)$/;"	m
+[g	nvim/plugins/lsp-config.vim	/^nnoremap <silent> [g <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>$/;"	m
+]g	nvim-new/coc.vim	/^nmap <silent> ]g <Plug>(coc-diagnostic-next)$/;"	m
+]g	nvim/plugins/lsp-config.vim	/^nnoremap <silent> ]g <cmd>lua vim.lsp.diagnostic.goto_next()<CR>$/;"	m
+_G.s_tab_complete	nvim-new/completions.lua	/^_G.s_tab_complete = function()$/;"	f
+_G.s_tab_complete	nvim/plugins/compe-config.lua	/^_G.s_tab_complete = function()$/;"	f
+_G.tab_complete	nvim-new/completions.lua	/^_G.tab_complete = function()$/;"	f
+_G.tab_complete	nvim/plugins/compe-config.lua	/^_G.tab_complete = function()$/;"	f
+ac	nvim-new/coc.vim	/^omap ac <Plug>(coc-classobj-a)$/;"	m
+ac	nvim-new/coc.vim	/^xmap ac <Plug>(coc-classobj-a)$/;"	m
+acpi_destination	acpicaller/acpivalues.py	/^acpi_destination = r"> \/proc\/acpi\/call"$/;"	v
+acpi_destination	c-acpicaller/callerutils.h	/^static const char acpi_destination[] = "\/proc\/acpi\/call";$/;"	v	typeref:typename:const char[]
+acpicaller	c-acpicaller/Makefile	/^acpicaller: main.c callerutils.c$/;"	t
+actualVerifyBat	c-acpicaller/callerutils.h	/^static const char actualVerifyBat[] = "\\\\_SB.PCI0.LPC0.EC0.BTSM";$/;"	v	typeref:typename:const char[]
+af	nvim-new/coc.vim	/^omap af <Plug>(coc-funcobj-a)$/;"	m
+af	nvim-new/coc.vim	/^xmap af <Plug>(coc-funcobj-a)$/;"	m
+args	acpicaller/acpicaller.py	/^    args = my_parser.parse_args()$/;"	v
+backend	i3/picom.conf	/^backend = "glx";$/;"	k
+base16-alacritty	alacritty/colorschemes/base16-alacritty/README.md	/^# base16-alacritty$/;"	c
+battery_conservation_off	acpicaller/acpivalues.py	/^battery_conservation_off = r"'\\_SB.PCI0.LPC0.EC0.VPC0.SBMC 0x05'"$/;"	v
+battery_conservation_on	acpicaller/acpivalues.py	/^battery_conservation_on = r"'\\_SB.PCI0.LPC0.EC0.VPC0.SBMC 0x03'"$/;"	v
+battery_saving	acpicaller/acpivalues.py	/^battery_saving = r"'\\_SB.PCI0.LPC0.EC0.VPC0.DYTC 0x0013B001'"$/;"	v
+battey_consevation_off	c-acpicaller/callerutils.h	/^static const char battey_consevation_off[] = "\\\\_SB.PCI0.LPC0.EC0.VPC0.SBMC 0x05";$/;"	v	typeref:typename:const char[]
+battey_consevation_on	c-acpicaller/callerutils.h	/^static const char battey_consevation_on[] = "\\\\_SB.PCI0.LPC0.EC0.VPC0.SBMC 0x03";$/;"	v	typeref:typename:const char[]
+battey_saving	c-acpicaller/callerutils.h	/^static const char battey_saving[] = "\\\\_SB.PCI0.LPC0.EC0.VPC0.DYTC 0x0013B001";$/;"	v	typeref:typename:const char[]
+channels	utils/daemon.conf	/^default-sample-channels = 2$/;"	k
+check_back_space	nvim-new/completions.lua	/^local check_back_space = function()$/;"	f
+check_back_space	nvim/plugins/compe-config.lua	/^local check_back_space = function()$/;"	f
+constrain_string	nvim/lua/status.lua	/^local function constrain_string(line, max_len, cut_on_end)$/;"	f
+corners	i3/picom.conf	/^detect-rounded-corners = true;$/;"	k
+daemonize	utils/daemon.conf	/^daemonize = no$/;"	k
+damage	i3/picom.conf	/^use-damage = true$/;"	k
+dbe	i3/picom.conf	/^dbe = false;$/;"	k
+delta	i3/picom.conf	/^fade-delta = 5;$/;"	k
+dotfiles	README.md	/^# dotfiles$/;"	c
+exclude	i3/picom.conf	/^blur-background-exclude = [$/;"	k
+exclude	i3/picom.conf	/^fade-exclude = [ ];$/;"	k
+exclude	i3/picom.conf	/^focus-exclude = [ "class_g = 'Cairo-clock'" ];$/;"	k
+exclude	i3/picom.conf	/^shadow-exclude = [$/;"	k
+exteme_pefomance	c-acpicaller/callerutils.h	/^static const char exteme_pefomance[] = "\\\\_SB.PCI0.LPC0.EC0.VPC0.DYTC 0x0012B001";$/;"	v	typeref:typename:const char[]
+extreme_performance	acpicaller/acpivalues.py	/^extreme_performance = r"'\\_SB.PCI0.LPC0.EC0.VPC0.DYTC 0x0012B001'"$/;"	v
+fading	i3/picom.conf	/^fading = true;$/;"	k
+fence	i3/picom.conf	/^xrender-sync-fence = true;$/;"	k
+fixed	i3/picom.conf	/^blur-background-fixed = false;$/;"	k
+focused	i3/picom.conf	/^mark-ovredir-focused = true;$/;"	k
+focused	i3/picom.conf	/^mark-wmwin-focused = true;$/;"	k
+format	utils/daemon.conf	/^default-sample-format = float32le$/;"	k
+fragments	utils/daemon.conf	/^default-fragments = 2$/;"	k
+front	i3/picom.conf	/^glx-copy-from-front = false;$/;"	k
+g:EasyMotion_smartcase	nvim-new/init.vim	/^let g:EasyMotion_smartcase = 1$/;"	v
+g:OmniSharp_highlighting	nvim-new/init.vim	/^let g:OmniSharp_highlighting = 0 $/;"	v
+g:airline#extensions#tabline#enabled	nvim-new/init.vim	/^let g:airline#extensions#tabline#enabled = 0$/;"	v
+g:fzf_action	nvim-new/fzf.vim	/^let g:fzf_action = {$/;"	v
+g:fzf_colors	nvim-new/fzf.vim	/^let g:fzf_colors =$/;"	v
+g:fzf_history_dir	nvim-new/fzf.vim	/^let g:fzf_history_dir = '~\/.local\/share\/fzf-history'$/;"	v
+g:fzf_layout	nvim-new/fzf.vim	/^let g:fzf_layout = {'down':'~30%', 'window': { 'width': 0.8, 'height': 0.8,'yoffset':0.5,'xoffse/;"	v
+g:fzf_tags_command	nvim-new/fzf.vim	/^let g:fzf_tags_command = 'ctags -R'$/;"	v
+g:rehash256	nvim-new/colors.vim	/^    let g:rehash256 = 1$/;"	v
+gD	nvim/plugins/lsp-config.vim	/^nnoremap <silent> gD <cmd>lua vim.lsp.buf.declaration()<CR>$/;"	m
+gd	nvim-new/coc.vim	/^nmap <silent> gd <Plug>(coc-definition)$/;"	m
+gd	nvim/plugins/lsp-config.vim	/^nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>$/;"	m
+getBatteryConservation	c-acpicaller/callerutils.c	/^void getBatteryConservation$/;"	f	typeref:typename:void
+getPowerMode	c-acpicaller/callerutils.c	/^void getPowerMode(char *res)$/;"	f	typeref:typename:void
+getRapidCharge	c-acpicaller/callerutils.c	/^void getRapidCharge$/;"	f	typeref:typename:void
+get_file_name	nvim/lua/status.lua	/^local function get_file_name()$/;"	f
+get_git_info	nvim/lua/status.lua	/^local function get_git_info(force)$/;"	f
+gi	nvim-new/coc.vim	/^nmap <silent> gi <Plug>(coc-implementation)$/;"	m
+gi	nvim/plugins/lsp-config.vim	/^nnoremap <silent> gi <cmd>lua vim.lsp.buf.implementation()<CR>$/;"	m
+gr	nvim-new/coc.vim	/^nmap <silent> gr <Plug>(coc-references)$/;"	m
+gr	nvim/plugins/lsp-config.vim	/^nnoremap <silent> gr <cmd>lua vim.lsp.buf.references()<CR>$/;"	m
+gruvbox_dark_bg	alacritty/colorschemes/gruvbox.yml	/^    background: &gruvbox_dark_bg '#282828'$/;"	a
+gy	nvim-new/coc.vim	/^nmap <silent> gy <Plug>(coc-type-definition)$/;"	m
+harpoon_status	nvim/lua/status.lua	/^local function harpoon_status()$/;"	f
+ic	nvim-new/coc.vim	/^omap ic <Plug>(coc-classobj-i)$/;"	m
+ic	nvim-new/coc.vim	/^xmap ic <Plug>(coc-classobj-i)$/;"	m
+if	nvim-new/coc.vim	/^omap if <Plug>(coc-funcobj-i)$/;"	m
+if	nvim-new/coc.vim	/^xmap if <Plug>(coc-funcobj-i)$/;"	m
+intelligent_cooling	acpicaller/acpivalues.py	/^intelligent_cooling = r"'\\_SB.PCI0.LPC0.EC0.VPC0.DYTC 0x000FB001'"$/;"	v
+intelligent_cooling	c-acpicaller/callerutils.h	/^static const char intelligent_cooling[] = "\\\\_SB.PCI0.LPC0.EC0.VPC0.DYTC 0x000FB001";$/;"	v	typeref:typename:const char[]
+leader	i3/picom.conf	/^detect-client-leader = true;$/;"	k
+level	utils/daemon.conf	/^nice-level = -11$/;"	k
+lfe	utils/daemon.conf	/^remixing-consume-lfe = no$/;"	k
+lfe	utils/daemon.conf	/^remixing-produce-lfe = no$/;"	k
+lock	i3/i3exit.sh	/^lock() {$/;"	f
+lsp_info	nvim/lua/status.lua	/^local function lsp_info()$/;"	f
+main	c-acpicaller/main.c	/^int main (int argc, char *argv[]) {$/;"	f	typeref:typename:int
+map	utils/daemon.conf	/^default-channel-map = front-left,front-right$/;"	k
+mapleader	nvim-new/init.vim	/^let mapleader=" "$/;"	v
+method	utils/daemon.conf	/^resample-method = soxr-vhq$/;"	k
+msec	utils/daemon.conf	/^default-fragment-size-msec = 125$/;"	k
+my_parser	acpicaller/acpicaller.py	/^    my_parser = argparse.ArgumentParser()$/;"	v
+mygroup	nvim-new/coc.vim	/^augroup mygroup$/;"	a
+opacity	i3/picom.conf	/^active-opacity = 1;$/;"	k
+opacity	i3/picom.conf	/^detect-client-opacity = true;$/;"	k
+opacity	i3/picom.conf	/^frame-opacity = 1;$/;"	k
+opacity	i3/picom.conf	/^inactive-opacity = 1;$/;"	k
+opacity	i3/picom.conf	/^shadow-opacity = 0.3;$/;"	k
+override	i3/picom.conf	/^inactive-opacity-override = false;$/;"	k
+pixmap	i3/picom.conf	/^glx-no-rebind-pixmap = true;$/;"	k
+possible	i3/picom.conf	/^unredir-if-possible = false;$/;"	k
+priority	utils/daemon.conf	/^high-priority = yes$/;"	k
+priority	utils/daemon.conf	/^realtime-priority = 9$/;"	k
+radius	i3/picom.conf	/^shadow-radius = 5;$/;"	k
+rapid_chage_off	c-acpicaller/callerutils.h	/^static const char rapid_chage_off[] = "\\\\_SB.PCI0.LPC0.EC0.VPC0.SBMC 0x08";$/;"	v	typeref:typename:const char[]
+rapid_chage_on	c-acpicaller/callerutils.h	/^static const char rapid_chage_on[] = "\\\\_SB.PCI0.LPC0.EC0.VPC0.SBMC 0x07";$/;"	v	typeref:typename:const char[]
+rapid_charge_off	acpicaller/acpivalues.py	/^rapid_charge_off = r"'\\_SB.PCI0.LPC0.EC0.VPC0.SBMC 0x08'"$/;"	v
+rapid_charge_on	acpicaller/acpivalues.py	/^rapid_charge_on = r"'\\_SB.PCI0.LPC0.EC0.VPC0.SBMC 0x07'"$/;"	v
+rate	i3/picom.conf	/^refresh-rate = 0;$/;"	k
+rate	utils/daemon.conf	/^alternate-sample-rate = 44100$/;"	k
+rate	utils/daemon.conf	/^default-sample-rate = 48000$/;"	k
+readFromFile	c-acpicaller/callerutils.c	/^void readFromFile$/;"	f	typeref:typename:void
+rtprio	utils/daemon.conf	/^rlimit-rtprio = 9$/;"	k
+s:check_back_space	nvim-new/coc.vim	/^function! s:check_back_space() abort$/;"	f
+s:delete_buffers	nvim-new/fzf.vim	/^function! s:delete_buffers(lines)$/;"	f
+s:list_buffers	nvim-new/fzf.vim	/^function! s:list_buffers()$/;"	f
+s:show_documentation	nvim-new/coc.vim	/^function! s:show_documentation()$/;"	f
+scheduling	utils/daemon.conf	/^realtime-scheduling = yes$/;"	k
+setBatteryConservation	c-acpicaller/callerutils.c	/^void setBatteryConservation(int *choice)$/;"	f	typeref:typename:void
+setPowermode	c-acpicaller/callerutils.c	/^void setPowermode(int *choice)$/;"	f	typeref:typename:void
+setRapidCharge	c-acpicaller/callerutils.c	/^void setRapidCharge(int *choice)$/;"	f	typeref:typename:void
+shadow	i3/picom.conf	/^no-dock-shadow = true;$/;"	k
+shadow	i3/picom.conf	/^shadow = true;$/;"	k
+shaped	i3/picom.conf	/^shadow-ignore-shaped = false;$/;"	k
+split	nvim/lua/status.lua	/^local function split(inputstr, sep)$/;"	f
+stencil	i3/picom.conf	/^glx-no-stencil = true;$/;"	k
+step	i3/picom.conf	/^fade-in-step = 0.03;$/;"	k
+step	i3/picom.conf	/^fade-out-step = 0.03;$/;"	k
+t	nvim-new/completions.lua	/^local t = function(str)$/;"	f
+t	nvim/plugins/compe-config.lua	/^local t = function(str)$/;"	f
+transient	i3/picom.conf	/^detect-transient = true;$/;"	k
+verifyModes	c-acpicaller/callerutils.c	/^void verifyModes(int quiet)$/;"	f	typeref:typename:void
+verifyPowermode	c-acpicaller/callerutils.h	/^static const char verifyPowermode[] = "\\\\_SB.PCI0.LPC0.EC0.SPMO";$/;"	v	typeref:typename:const char[]
+verifyRapidCharge	c-acpicaller/callerutils.h	/^static const char verifyRapidCharge[] = "\\\\_SB.PCI0.LPC0.EC0.QCHO";$/;"	v	typeref:typename:const char[]
+verify_battery_conservation	acpicaller/acpivalues.py	/^verify_battery_conservation = r"echo '\\_SB.PCI0.LPC0.EC0.BTSM' > \/proc\/acpi\/call; cat \/proc/;"	v
+verify_powermode	acpicaller/acpivalues.py	/^verify_powermode = r"echo '\\_SB.PCI0.LPC0.EC0.SPMO' > \/proc\/acpi\/call; cat \/proc\/acpi\/cal/;"	v
+verify_rapid_charge	acpicaller/acpivalues.py	/^verify_rapid_charge = r"echo '\\_SB.PCI0.LPC0.EC0.QCHO' > \/proc\/acpi\/call; cat \/proc\/acpi\//;"	v
+vsync	i3/picom.conf	/^vsync = true;$/;"	k
+win	i3/picom.conf	/^use-ewmh-active-win = true;$/;"	k
+wintypes	i3/picom.conf	/^wintypes : $/;"	k
+writeToFile	c-acpicaller/callerutils.c	/^void writeToFile$/;"	f	typeref:typename:void
+x	i3/picom.conf	/^shadow-offset-x = 1;$/;"	k
+y	i3/picom.conf	/^shadow-offset-y = 1;$/;"	k

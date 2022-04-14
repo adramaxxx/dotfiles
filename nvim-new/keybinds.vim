@@ -60,10 +60,10 @@ vnoremap K :m '<-2<CR>gv=gv
 vnoremap <leader>p "_dP
 
 " Toggle Terminal
-nnoremap ,t :ToggleTerminal<CR>
+"nnoremap ,t :ToggleTerminal<CR>
 
 " This command probably needs to be replaced with something else at another time, since I am using native lsp now
-command Gsh :CocCommand clangd.switchSourceHeader
+"command Gsh :CocCommand clangd.switchSourceHeader
 
 " Search for file under cursor with regex
 "command Scw echo expand("<cword>")

@@ -2,8 +2,6 @@
 colors:
   # Default Colors
   primary:
-    #background: '#282c34'
-    #background: '#282828'
     background: '#000000'
     foreground: '#ffffff'
   cursor:
