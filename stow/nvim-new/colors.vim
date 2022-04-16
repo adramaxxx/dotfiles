@@ -2,11 +2,11 @@ function! ColorMolokai()
     let g:rehash256 = 1
     set background=dark
 	colorscheme molokai
-    highlight Normal guibg=NONE guifg=#FFFFFF
+    highlight Normal guibg=NONE 
     highlight CursorLineNr gui=bold
-    highlight Normal guibg=NONE guifg=#FFFFFF
+    highlight Normal guibg=NONE 
     highlight CursorLineNr gui=bold 
-	highlight clear SignColumn
+	"highlight clear SignColumn
     highlight LineNr gui=bold guibg=NONE guifg=#808080
     highlight CursorLineNr gui=bold guifg=#cecb00
     hi Pmenu           guifg=#FFFFFF guibg=#333841
@@ -32,7 +32,21 @@ function! ColorMolokai2()
     hi PmenuThumb      guifg=#aab2bf
 endfunction
 
-
+function EnableTreeSitter()
+" Enable treesitter
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+	highlight = {
+	enable = true,              -- false will disable the whole extension
+	-- Setting this to true will run `:h syntax` and tree-sitter at the same time.
+	-- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
+	-- Using this option may slow down your editor, and you may see some duplicate highlights.
+	-- Instead of true it can also be a list of languages
+	additional_vim_regex_highlighting = false,
+	},
+}
+EOF
+endfunction
 
 function! Nebulous()
 "	lua <<EOF
@@ -104,12 +118,19 @@ function! CodeDark()
 	colorscheme codedark
 	hi Normal guibg=NONE ctermbg=NONE
 	highlight clear SignColumn
+	highlight clear NonText
 endfunction
 
 function! ColorDracula()
 	colorscheme dracula
+	hi Normal guibg=NONE ctermbg=NONE
+	"highlight clear SignColumn
+endfunction
+
+function! ColorModeMode()
+	colorscheme modus-vivendi
 	"hi Normal guibg=NONE ctermbg=NONE
 	"highlight clear SignColumn
 endfunction
 
-call ColorDracula()
+call ColorMolokai()

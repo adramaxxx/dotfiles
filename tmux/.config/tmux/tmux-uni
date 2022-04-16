@@ -1,0 +1,18 @@
+#!/bin/bash
+
+session="uni"
+
+tmux new-session -d -s $session
+
+tmux send -t $session:1 "cd /home/adramax/Documents/repos/p6rapport; clear" C-m
+tmux rename-window -t zsh report
+
+tmux new-window -t $session:2 -n 'diredu'
+tmux send -t $session:2 "cd /home/adramax/Documents/education/dat6; clear" C-m
+
+tmux new-window -t $session:3 -n 'zsh'
+
+tmux select-window -t $session:1
+tmux send -t $session:1 "nvim" C-m
+
+tmux a -t $session

@@ -7,13 +7,13 @@ env:
 import:
   #- /home/adramax/.config/alacritty/colorschemes/kittydefault.yml
   #- /home/adramax/.config/alacritty/colorschemes/onemegadark.yml
-  #- /home/adramax/.config/alacritty/colorschemes/codedark.yml
+    - /home/adramax/.config/alacritty/colorschemes/codedark.yml
   #- /home/adramax/.config/alacritty/colorschemes/spacevimdark.yml
   #- /home/adramax/.config/alacritty/colorschemes/monokai.yml
     # /home/adramax/.config/alacritty/colorschemes/gruvbox.yml
     #- /home/adramax/.config/alacritty/colorschemes/onedark.yml
     #- /home/adramax/.config/alacritty/colorschemes/monokai.yml
-    - /home/adramax/.config/alacritty/colorschemes/solarizeddark.yml
+    #- /home/adramax/.config/alacritty/colorschemes/solarizeddark.yml
     #- /home/adramax/.config/alacritty/colorschemes/base16light.yml
     #- /home/adramax/.config/alacritty/colorschemes/tomorrownightbright.yml
     #- /home/adramax/.config/alacritty/colorschemes/dracula.yml

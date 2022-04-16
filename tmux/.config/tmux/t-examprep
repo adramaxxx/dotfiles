@@ -1,0 +1,15 @@
+#!/bin/sh
+
+session="examprep"
+
+tmux new-session -d -s $session
+
+tmux send -t $session:1 "cd /home/adramax/Documents/education/dat6; clear " C-m
+#tmux send -t $session:1 "ls " C-m
+tmux rename-window -t zsh notes
+
+tmux new-window -t $session:2 -n 'zsh'
+
+tmux select-window -t $session:1
+
+tmux a -t $session

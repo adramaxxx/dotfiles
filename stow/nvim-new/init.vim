@@ -11,16 +11,9 @@ source ~/.config/nvim/plug.vim
 source ~/.config/nvim/fzf.vim
 
 " statusline configuration
+"" galaxyline with evil line example configuration
 set laststatus=3
-highlight WinSeparator guibg=NONE
-
-" Dead sourcing of express line for now
-"luafile ~/.config/nvim/lua/statusline.lua
-
-""" galaxyline with evil line example configuration
 luafile ~/.config/nvim/lua/spaceline.lua
-
-"" whichkey setup
 
 "Colorscheme settings
 source ~/.config/nvim/colors.vim
@@ -73,18 +66,3 @@ autocmd BufNewFile,BufRead *.tex set tabstop=2 softtabstop=2 shiftwidth=2
 set splitbelow splitright
 
 let g:OmniSharp_highlighting = 0 
-
-" Enable treesitter
-lua <<EOF
-require'nvim-treesitter.configs'.setup {
-	highlight = {
-	enable = true,              -- false will disable the whole extension
-	-- Setting this to true will run `:h syntax` and tree-sitter at the same time.
-	-- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
-	-- Using this option may slow down your editor, and you may see some duplicate highlights.
-	-- Instead of true it can also be a list of languages
-	additional_vim_regex_highlighting = false,
-	},
-}
-EOF
-" in .vimrc/init.vim
