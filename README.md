@@ -18,3 +18,8 @@ I plan to do some cleanup at some point in time (perhaps never).
 - zsh
 	- bat as alternative to cat
 	- exa as alternative to ls
+
+## Stow
+My dotfiles can be installed using GNU stow by running stow.
+
+Not all configuration files are set up to work with gnu stow.
