@@ -1,31 +1,48 @@
-if ! exa -v &> /dev/null
-then
-	alias ls="ls --color-always=true "
-else
-	alias ls="exa"
-fi
+## Note to self, wsl does not like the dev/null checks
+## autoload colors
+autoload -Uz vcs_info
+autoload -U colors && colors
 
-if ! bat -v &> /dev/null
-then
-	alias cat="bat"
-else 
-	alias cat="cat"
-fi
-
-# export MANPATH="/usr/local/man:$MANPATH"
+export MANPATH="/usr/local/man:$MANPATH"
 export PATH="/sbin:$PATH"
 export PATH="/usr/sbin:$PATH"
 export PATH="/usr/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
-export TERM=xterm-256color
 
+## Prompt
+# Prompt. Using single quotes around the PROMPT is very important, otherwise
+# the git branch will always be empty. Using single quotes delays the
+# evaluation of the prompt. Also PROMPT is an alias to PS1.
+git_prompt() {
+    local branch="$(git symbolic-ref HEAD 2> /dev/null | cut -d'/' -f3)"
+    local branch_truncated="${branch:0:30}"
+    if (( ${#branch} > ${#branch_truncated} )); then
+        branch="${branch_truncated}..."
+    fi
 
-# Basic auto/tab complete:
+    [ -n "${branch}" ] && echo " (${branch})"
+}
+setopt PROMPT_SUBST
+
+PROMPT='%B%{$fg[green]%}%n@%{$fg[green]%}%M %{$fg[blue]%}%~%{$fg[yellow]%}$(git_prompt)%{$reset_color%} %(?.$.%{$fg[red]%}$)%b '
+
+# Completoin settings
 autoload -U compinit
-zstyle ':completion:*' menu select
+compinit
 zmodload zsh/complist
 compinit
 _comp_options+=(globdots)		# Include hidden files.
+
+zstyle ':completion:*' menu select=2
+zstyle ':completion:*' completer _expand _complete _correct _approximate
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*' list-colors ''
+zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
+zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=* l:|=*'
+zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
+zstyle ':completion:*' use-compctl false
+zstyle ':completion:*' verbose true
+
 
 ## Keybindings mode
 source ~/.config/zsh/emacskeys.zsh
@@ -45,7 +62,10 @@ alias weather="curl wttr.in"
 alias editvim="nvim ~/.config/nvim/init.vim"
 alias diredu="cd ~/Documents/education/dat6/"
 
-alias rp="cd ~/Documents/repos/p6rapport"
+
+alias ls="ls --color=auto "
+alias cat="bat"
+
 
 ## git aliases
 alias gs="git status"
@@ -59,7 +79,6 @@ if [[ $TERM == "xterm-kitty" ]]; then
   alias ssh="kitty +kitten ssh"
 fi
 
-# Change default manpage reader to bat
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 # Use zsh_history file for autosuggestions, and persists these between shell sessions
@@ -69,21 +88,19 @@ SAVEHIST=100000
 setopt appendhistory
 
 ### FZF releated stuff
+export FZF_DEFAULT_COMMAND="rg --files --hiden --follow --glob '!.git'"
 export FZF_DEFAULT_OPTS='
 	--color dark
 '
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 ### 
 
-### prompt 
-source $HOME/.config/zsh/zsh-prompt
-###
-
-source ~/.config/privatealias
+#source ~/.config/privatealias
 
 ### Zsh plugins
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/share/fzf/completion.zsh
-source /usr/share/fzf/key-bindings.zsh
+## Modified paths to fit ubuntu's place of placing these files
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/doc/fzf/examples/completion.zsh
+source /usr/share/doc/fzf/examples/key-bindings.zsh
 ### 
