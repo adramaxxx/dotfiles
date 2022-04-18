@@ -51,6 +51,7 @@ alias rp="cd ~/Documents/repos/p6rapport"
 alias gs="git status"
 alias ga="git add"
 alias gm="git commit"
+alias gp="git push"
 ### 
 
 # If ssh using kitty terminal
