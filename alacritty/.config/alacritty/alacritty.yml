@@ -6,30 +6,31 @@ env:
 
 import:
   #- /home/adramax/.config/alacritty/colorschemes/kittydefault.yml
+  #- /home/adramax/.config/alacritty/colorschemes/onemegadark.yml
   #- /home/adramax/.config/alacritty/colorschemes/codedark.yml
   #- /home/adramax/.config/alacritty/colorschemes/spacevimdark.yml
   #- /home/adramax/.config/alacritty/colorschemes/monokai.yml
     # /home/adramax/.config/alacritty/colorschemes/gruvbox.yml
     #- /home/adramax/.config/alacritty/colorschemes/onedark.yml
     #- /home/adramax/.config/alacritty/colorschemes/monokai.yml
-    #- /home/adramax/.config/alacritty/colorschemes/solarizeddark.yml
+    - /home/adramax/.config/alacritty/colorschemes/solarizeddark.yml
     #- /home/adramax/.config/alacritty/colorschemes/base16light.yml
     #- /home/adramax/.config/alacritty/colorschemes/tomorrownightbright.yml
-    - /home/adramax/.config/alacritty/colorschemes/dracula.yml
+    #- /home/adramax/.config/alacritty/colorschemes/dracula.yml
 
 
 font:
       normal:
-        family: "JetBrainsMono" 
+        family: "HackNerdFont" 
         style: Regular
         bold:
-          family: "JetBrainsMono"
+          family: "FiraCode"
           style: Bold
         italic:
-          family: "JetBrainsMono"
+          family: "FiraCode"
           style: Italic
     
-        size: 10
+        size: 9
 
 
 window:
@@ -38,8 +39,8 @@ window:
     instance: Alacritty
     general: Alacritty
   padding:
-    x: 2
-    y: 2
+    x: 0
+    y: 0
   opacity: 1
 
 dynamic_padding: true

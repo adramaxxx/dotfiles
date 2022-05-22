@@ -14,3 +14,7 @@ I plan to do some cleanup at some point in time (perhaps never).
 - Tmux
 	- (Tmux plugin manager)[https://github.com/tmux-plugins/tpm]
 		- Is available as an AUR package, might have to build myself on ubuntu
+
+- zsh
+	- bat as alternative to cat
+	- exa as alternative to ls

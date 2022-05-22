@@ -3,6 +3,7 @@ colors:
   # Default Colors
   primary:
     background: '#000000'
+      #background: '#282c34'
     foreground: '#ffffff'
   cursor:
     text:   CellBackground

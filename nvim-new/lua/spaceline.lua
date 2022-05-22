@@ -6,6 +6,7 @@ local condition = require('galaxyline.condition')
 local gls = gl.section
 gl.short_line_list = {'NvimTree','vista','dbui','packer'}
 
+
 local function get_coc_lsp()
     local f, status = pcall(vim.api.nvim_get_var, 'coc_status')
     if not f or status == '' then
@@ -108,7 +109,7 @@ gls.left[7] = {
 gls.left[8] = {
   DiagnosticError = {
     provider = 'DiagnosticError',
-    icon = '  ',
+    icon = '   ',
     highlight = {colors.red,colors.bg}
   }
 }

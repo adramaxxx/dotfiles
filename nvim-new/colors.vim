@@ -32,7 +32,21 @@ function! ColorMolokai2()
     hi PmenuThumb      guifg=#aab2bf
 endfunction
 
-
+function EnableTreeSitter()
+" Enable treesitter
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+	highlight = {
+	enable = true,              -- false will disable the whole extension
+	-- Setting this to true will run `:h syntax` and tree-sitter at the same time.
+	-- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
+	-- Using this option may slow down your editor, and you may see some duplicate highlights.
+	-- Instead of true it can also be a list of languages
+	additional_vim_regex_highlighting = false,
+	},
+}
+EOF
+endfunction
 
 function! Nebulous()
 "	lua <<EOF
@@ -104,12 +118,31 @@ function! CodeDark()
 	colorscheme codedark
 	hi Normal guibg=NONE ctermbg=NONE
 	highlight clear SignColumn
+	highlight clear NonText
 endfunction
 
 function! ColorDracula()
 	colorscheme dracula
+	hi Normal guibg=NONE ctermbg=NONE
+	"highlight clear SignColumn
+endfunction
+
+function! ColorModeMode()
+	colorscheme modus-vivendi
+	"hi Normal guibg=NONE ctermbg=NONE
+	"highlight clear SignColumn
+endfunction
+
+function! ColorDarkPlus()
+	colorscheme darkplus
 	"hi Normal guibg=NONE ctermbg=NONE
 	"highlight clear SignColumn
 endfunction
 
 call ColorDracula()
+call EnableTreeSitter()
+
+"lua <<EOF
+"vim.cmd('colorscheme solarized')
+"EOF
+"
