@@ -67,5 +67,3 @@ set splitbelow splitright
 let g:OmniSharp_highlighting = 0 
 
 let g:vimspector_enable_mappings = "HUMAN"
-
-
